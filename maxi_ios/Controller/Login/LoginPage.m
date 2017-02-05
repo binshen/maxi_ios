@@ -25,21 +25,11 @@
 
 @implementation LoginPage
 
--(void)viewWillAppear:(BOOL)animated
-{
-    [super viewWillAppear:YES];
-
-    self.navigationController.navigationBarHidden = YES;
-
-}
--(void)viewDidDisappear:(BOOL)animated
-{
-    [super viewDidDisappear:YES];
-    //self.navigationController.navigationBarHidden = NO;
-}
-
 - (void)viewDidLoad {
     [super viewDidLoad];
+
+    self.title = @"注册";
+    [self setNavigationLeft:@"返回" sel:@selector(backAction)];
 
     nomalLoginBtn = [UIButton buttonWithType:UIButtonTypeCustom];
     nomalLoginBtn.frame = CGRectMake(30, SCREEN_HEIGHT/2+65, SCREEN_WIDTH-60, 40);

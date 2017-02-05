@@ -47,7 +47,7 @@
     btnLoginView.image = [UIImage imageNamed:@"btn_login.png"];
     btnLoginView.userInteractionEnabled = YES;
     [btnLoginView.layer setMasksToBounds:YES];
-    [btnRegisterView addGestureRecognizer:[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(goToLoginPage:)]];
+    [btnLoginView addGestureRecognizer:[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(goToLoginPage:)]];
     [self.view addSubview:btnLoginView];
 }
 
