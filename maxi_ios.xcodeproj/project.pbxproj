@@ -372,16 +372,16 @@
 			isa = PBXGroup;
 			children = (
 				3514ABA0B624FC59919332EE /* ic_launcher_40x40.png */,
-				3514A66CAFC1B2A1234EE74E /* start_1242x2208.png */,
-				3514AFED2637CB9F186664FF /* ic_launcher_80x80.png */,
-				3514A0D2C6FCFFBB32576E33 /* start_750x1334.png */,
-				3514A1A2BADE4EE0A753513E /* ic_launcher_87x87.png */,
 				3514A30898FBD41A1B59CC77 /* ic_launcher_58x58.png */,
-				3514AA3ECA28EE56EEC18794 /* ic_launcher_180x180.png */,
+				3514AC8BC7208669FA092C16 /* ic_launcher_60x60.png */,
+				3514AFED2637CB9F186664FF /* ic_launcher_80x80.png */,
+				3514A1A2BADE4EE0A753513E /* ic_launcher_87x87.png */,
 				3514A57D686685B52EC53C84 /* ic_launcher_120x120.png */,
+				3514AA3ECA28EE56EEC18794 /* ic_launcher_180x180.png */,
+				3514A66CAFC1B2A1234EE74E /* start_1242x2208.png */,
+				3514A0D2C6FCFFBB32576E33 /* start_750x1334.png */,
 				3514AF7888C33E73AC3D24F4 /* start_640x960.png */,
 				3514AAD51144418E8E423B7E /* start_640x1136.png */,
-				3514AC8BC7208669FA092C16 /* ic_launcher_60x60.png */,
 				3514AC1CDAB6F785989A7282 /* start_320x480.png */,
 			);
 			path = images;
