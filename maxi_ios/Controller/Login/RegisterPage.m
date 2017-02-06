@@ -8,9 +8,8 @@
 
 @interface RegisterPage() {
 
-    WPTextField * userPhoneTextField;
+    UITextField * userPhoneTextField;
     UITextField * userCodeTextField;
-    UITextField * userNameTextField;
     UITextField * userPasswordTextField;
 
     GloriaLabel * getCheckCodeLabel;
@@ -26,24 +25,32 @@
     [super viewDidLoad];
 
     self.title = @"注册";
+    NSDictionary *dic = [NSDictionary dictionaryWithObjects:[NSArray arrayWithObjects:[UIColor blackColor], [UIFont systemFontOfSize:20 weight:20], nil] forKeys:[NSArray arrayWithObjects:NSForegroundColorAttributeName, NSFontAttributeName, nil]];
+    self.navigationController.navigationBar.titleTextAttributes = dic;
     [self setNavigationLeft:@"返回" sel:@selector(backAction)];
 
-    userPhoneTextField = [[WPTextField alloc] initWithFrame:CGRectMake(20, 25, SCREEN_WIDTH-40, 35)];
+    userPhoneTextField = [[UITextField alloc] initWithFrame:CGRectMake(20, 25, SCREEN_WIDTH-40, 35)];
     userPhoneTextField.placeholder = @"请输入手机号";
+    UIImageView *userPhoneImageView = [[UIImageView alloc] initWithFrame:CGRectMake(-20, 0, 32, 30)];
+    userPhoneImageView.image = [UIImage imageNamed:@"shouji"];
+    userPhoneTextField.leftView = userPhoneImageView;
+    userPhoneTextField.leftViewMode = UITextFieldViewModeAlways;
+    //userPhoneTextField.borderStyle = UITextBorderStyleRoundedRect;
+    userPhoneTextField.contentVerticalAlignment = UIControlContentVerticalAlignmentCenter;
     userPhoneTextField.delegate = self;
+    [userPhoneTextField setSecureTextEntry:YES];
     [self.view addSubview:userPhoneTextField];
+
+    UIView *lineView = [[UIView alloc]initWithFrame:CGRectMake(0, 36, SCREEN_WIDTH-40, 1)];
+    lineView.backgroundColor = [UIColor blueColor];
+    [userPhoneTextField addSubview:lineView];
 
     userCodeTextField = [[WPTextField alloc] initWithFrame:CGRectMake(20, 75, SCREEN_WIDTH-150, 35)];
     userCodeTextField.placeholder = @"请输入验证码";
     userCodeTextField.delegate = self;
     [self.view addSubview:userCodeTextField];
 
-    userNameTextField = [[WPTextField alloc] initWithFrame:CGRectMake(20, 125, SCREEN_WIDTH-40, 35)];
-    userNameTextField.placeholder = @"请输入姓名";
-    userNameTextField.delegate = self;
-    [self.view addSubview:userNameTextField];
-
-    userPasswordTextField = [[WPTextField alloc] initWithFrame:CGRectMake(20, 175, SCREEN_WIDTH-40, 35)];
+    userPasswordTextField = [[WPTextField alloc] initWithFrame:CGRectMake(20, 125, SCREEN_WIDTH-40, 35)];
     userPasswordTextField.placeholder = @"请输入登录密码";
     userPasswordTextField.delegate = self;
     [self.view addSubview:userPasswordTextField];

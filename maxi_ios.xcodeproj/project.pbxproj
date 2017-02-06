@@ -23,6 +23,7 @@
 		3514A2BBE7D31F78523FCA55 /* SBJsonStreamParserAccumulator.m in Sources */ = {isa = PBXBuildFile; fileRef = 3514A7A9ECD7F28F70EA31B0 /* SBJsonStreamParserAccumulator.m */; };
 		3514A2C8C8CA4F93E7B7F110 /* btn_register.png in Resources */ = {isa = PBXBuildFile; fileRef = 3514A594703839DB67AAE7BD /* btn_register.png */; };
 		3514A2D09DCCD74AD32B76AD /* UIAlertView+MKNKAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 3514AE1378F915FDC0800414 /* UIAlertView+MKNKAdditions.m */; };
+		3514A30C434F806591A9EDD8 /* shouji@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3514A852DBFAE9ACF8D3086A /* shouji@2x.png */; };
 		3514A3399518E5B21D4D8193 /* ic_launcher_60x60.png in Resources */ = {isa = PBXBuildFile; fileRef = 3514AC8BC7208669FA092C16 /* ic_launcher_60x60.png */; };
 		3514A351E46B02AA596D0757 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 3514A5BE56B94336D37A84B9 /* Reachability.m */; };
 		3514A35B1D98CCAF194B30A3 /* NSString+MKNKAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 3514A9D231EE204115EF1659 /* NSString+MKNKAdditions.m */; };
@@ -71,6 +72,7 @@
 		3514AB11088EFE1D33C23E9E /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 3514A565EB1472E09732D6EF /* MBProgressHUD.m */; };
 		3514AB376B5F8003BEC48061 /* UIImage+GIF.m in Sources */ = {isa = PBXBuildFile; fileRef = 3514A96A1B31EBA3C6B40F00 /* UIImage+GIF.m */; };
 		3514AB4901D600A83C9F4724 /* bj@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3514ADB9A5BA88E309861048 /* bj@2x.png */; };
+		3514AB575F8095A572361AEE /* mima@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3514A7771BCB9B405FCA7354 /* mima@2x.png */; };
 		3514AB6C4F5F6ECD122B3A4B /* UIImageView+MKNKAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 3514A6B9E989964801F7705B /* UIImageView+MKNKAdditions.m */; };
 		3514AB6F0CF04FE4F1A9896D /* NSMutableDictionary+MKNKAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 3514A5F505630794D99CC450 /* NSMutableDictionary+MKNKAdditions.m */; };
 		3514AB889884EFC8642F7FD3 /* GloriaLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 3514A1A1387D0CEFEAC9B39F /* GloriaLabel.m */; };
@@ -92,6 +94,7 @@
 		3514AE1D0B338F32F38D1729 /* SDWebImageDownloaderOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 3514AACF5A7BCBAA9C927300 /* SDWebImageDownloaderOperation.m */; };
 		3514AE37B3398C5C47A77107 /* LoginPage.m in Sources */ = {isa = PBXBuildFile; fileRef = 3514AA82AEFFD9F46183F46B /* LoginPage.m */; };
 		3514AE783E4275AF8949D7E1 /* MKNetworkRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 3514A29454E033DE86046692 /* MKNetworkRequest.m */; };
+		3514AEA05A495E830ECE0419 /* code@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3514A8B592F48737C5F10223 /* code@2x.png */; };
 		3514AFB349BB1B7F0DBC1DFD /* UIImage+animatedGIF.m in Sources */ = {isa = PBXBuildFile; fileRef = 3514A9EF20F58147229589F0 /* UIImage+animatedGIF.m */; };
 		3514AFC9BFFB400C7BED270F /* BaseWebPage.m in Sources */ = {isa = PBXBuildFile; fileRef = 3514A5998E0EFE55CEEB92E2 /* BaseWebPage.m */; };
 		FD3A1E7F1E4308E2000D0AED /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = FD3A1E7E1E4308E2000D0AED /* main.m */; };
@@ -193,6 +196,7 @@
 		3514A7399FB6E038A57747F0 /* DeviceInfoWidget.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DeviceInfoWidget.m; sourceTree = "<group>"; };
 		3514A73A49204706CDE0256F /* PrefixHeader.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
 		3514A741C8E58607A3A80DC4 /* BaseNavCtrl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseNavCtrl.m; sourceTree = "<group>"; };
+		3514A7771BCB9B405FCA7354 /* mima@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "mima@2x.png"; sourceTree = "<group>"; };
 		3514A787C60C3F758ACFE7DE /* MKAnnotationView+WebCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MKAnnotationView+WebCache.h"; sourceTree = "<group>"; };
 		3514A7880216DB3600D06E78 /* LoginPage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginPage.h; sourceTree = "<group>"; };
 		3514A79A737A7009276D187A /* UIButton+WebCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIButton+WebCache.h"; sourceTree = "<group>"; };
@@ -203,7 +207,9 @@
 		3514A8008E378FD6834162CF /* NSHTTPURLResponse+MKNKAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSHTTPURLResponse+MKNKAdditions.h"; sourceTree = "<group>"; };
 		3514A83A0630D9B0CC79BF42 /* NSDate+RFC1123.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+RFC1123.h"; sourceTree = "<group>"; };
 		3514A84F03A461717112D4A8 /* SBJsonStreamParserAdapter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJsonStreamParserAdapter.m; sourceTree = "<group>"; };
+		3514A852DBFAE9ACF8D3086A /* shouji@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "shouji@2x.png"; sourceTree = "<group>"; };
 		3514A8A7A00ADC10110F64FD /* WPTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WPTextField.h; sourceTree = "<group>"; };
+		3514A8B592F48737C5F10223 /* code@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "code@2x.png"; sourceTree = "<group>"; };
 		3514A8B90DBCD60AA339D18F /* Global.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Global.h; sourceTree = "<group>"; };
 		3514A8BECCD5992F7CE92737 /* SDWebImageDownloader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDWebImageDownloader.h; sourceTree = "<group>"; };
 		3514A8D6F6404B4284BAB2DC /* ResultInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ResultInfo.h; sourceTree = "<group>"; };
@@ -398,6 +404,9 @@
 				3514ADB9A5BA88E309861048 /* bj@2x.png */,
 				3514A594703839DB67AAE7BD /* btn_register.png */,
 				3514AA118765E42DA169E500 /* btn_login.png */,
+				3514A7771BCB9B405FCA7354 /* mima@2x.png */,
+				3514A852DBFAE9ACF8D3086A /* shouji@2x.png */,
+				3514A8B592F48737C5F10223 /* code@2x.png */,
 			);
 			path = images;
 			sourceTree = "<group>";
@@ -754,6 +763,7 @@
 				TargetAttributes = {
 					FD3A1E791E4308E2000D0AED = {
 						CreatedOnToolsVersion = 8.2.1;
+						DevelopmentTeam = 7X3Z6AJPMX;
 						ProvisioningStyle = Automatic;
 					};
 					FD3A1E921E4308E2000D0AED = {
@@ -812,6 +822,9 @@
 				3514AB4901D600A83C9F4724 /* bj@2x.png in Resources */,
 				3514A2C8C8CA4F93E7B7F110 /* btn_register.png in Resources */,
 				3514A161D0154CBD6CA3599E /* btn_login.png in Resources */,
+				3514AB575F8095A572361AEE /* mima@2x.png in Resources */,
+				3514A30C434F806591A9EDD8 /* shouji@2x.png in Resources */,
+				3514AEA05A495E830ECE0419 /* code@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1053,9 +1066,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				DEVELOPMENT_TEAM = 7X3Z6AJPMX;
 				GCC_PREFIX_HEADER = maxi_ios/PrefixHeader.pch;
 				INFOPLIST_FILE = maxi_ios/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.maxi.waterpurifier.maxi-ios";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -1067,9 +1081,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				DEVELOPMENT_TEAM = 7X3Z6AJPMX;
 				GCC_PREFIX_HEADER = maxi_ios/PrefixHeader.pch;
 				INFOPLIST_FILE = maxi_ios/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.maxi.waterpurifier.maxi-ios";
 				PRODUCT_NAME = "$(TARGET_NAME)";
