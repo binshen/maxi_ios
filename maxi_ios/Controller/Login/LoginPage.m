@@ -8,18 +8,11 @@
 #import "RegisterPage.h"
 
 @interface LoginPage() {
-    UIButton * nomalLoginBtn;
     UITextField * userPhoneTextField;
-    UITextField * userPwdTextFeild;
+    UITextField * userPasswordTextField;
+    UIImageView * btnLoginView;
 
-    UIButton * registBtn;
-    UIButton * forgetBtn;
 
-    GloriaLabel * tipsLabel;
-
-    UIImageView * logoImageView;
-
-    UIView *normalLoginView; //普通登录界面
 }
 @end
 
@@ -28,77 +21,53 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 
-    self.title = @"注册";
-    [self setNavigationLeft:@"返回" sel:@selector(backAction)];
+    self.title = @"登录";
+    NSDictionary *dic = [NSDictionary dictionaryWithObjects:[NSArray arrayWithObjects:[UIColor blackColor], [UIFont systemFontOfSize:20 weight:20], nil] forKeys:[NSArray arrayWithObjects:NSForegroundColorAttributeName, NSFontAttributeName, nil]];
+    self.navigationController.navigationBar.titleTextAttributes = dic;
+    //[self setNavigationLeft:@"返回" sel:@selector(backAction)];
+    UIImage* backImage = [UIImage imageNamed:@"btn_back"];
+    UIButton* backButton= [[UIButton alloc] initWithFrame:CGRectMake(0,0,16,20)];
+    [backButton setBackgroundImage:backImage forState:UIControlStateNormal];
+    [backButton addTarget:self action:@selector(backAction) forControlEvents:UIControlEventTouchUpInside];
+    UIBarButtonItem* leftBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:backButton];
+    self.navigationItem.leftBarButtonItem = leftBarButtonItem;
 
-    nomalLoginBtn = [UIButton buttonWithType:UIButtonTypeCustom];
-    nomalLoginBtn.frame = CGRectMake(30, SCREEN_HEIGHT/2+65, SCREEN_WIDTH-60, 40);
-    [nomalLoginBtn setTitle:@"登录" forState:UIControlStateNormal];
-    nomalLoginBtn.backgroundColor = BLUE_BUTTON_COLOR;
-    nomalLoginBtn.titleLabel.font = [UIFont systemFontOfSize: 18.0];
-    [nomalLoginBtn setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
-    nomalLoginBtn.layer.masksToBounds=YES;
-    nomalLoginBtn.layer.cornerRadius=8.0f;
-    [nomalLoginBtn addTarget:self action:@selector(userLogin) forControlEvents:UIControlEventTouchUpInside];
-    [self.view addSubview:nomalLoginBtn];
-
-    registBtn = [UIButton buttonWithType:UIButtonTypeRoundedRect];
-    registBtn.frame = CGRectMake(SCREEN_WIDTH-150, SCREEN_HEIGHT/2+125, 120, 40);
-    [registBtn setTitle:@"忘记密码？" forState:UIControlStateNormal];
-    registBtn.titleLabel.font = [UIFont systemFontOfSize: 16.0];
-    [registBtn setTitleColor:BLUE_BUTTON_COLOR forState:UIControlStateNormal];
-    [registBtn addTarget:self action:@selector(fogotPwdAction) forControlEvents:UIControlEventTouchUpInside];
-    [self.view addSubview:registBtn];
-
-    registBtn = [UIButton buttonWithType:UIButtonTypeRoundedRect];
-    registBtn.frame = CGRectMake(30, SCREEN_HEIGHT/2+125, 60, 40);
-    [registBtn setTitle:@"注册" forState:UIControlStateNormal];
-    registBtn.titleLabel.font = [UIFont systemFontOfSize: 16.0];
-    [registBtn setTitleColor:BLUE_BUTTON_COLOR forState:UIControlStateNormal];
-    [registBtn addTarget:self action:@selector(registAction) forControlEvents:UIControlEventTouchUpInside];
-    [self.view addSubview:registBtn];
-
-    userPhoneTextField = [[UITextField alloc] initWithFrame:CGRectMake(30, SCREEN_HEIGHT/2-60, SCREEN_WIDTH-60, 35)];
-    userPhoneTextField.placeholder = @"    请输入手机号";
-    userPhoneTextField.font = [UIFont fontWithName:@"Arial" size:16];
-    userPhoneTextField.delegate = self;
-    userPhoneTextField.layer.borderColor = [RgbColor(213, 213, 213) CGColor];
-    userPhoneTextField.layer.masksToBounds=YES;
-    userPhoneTextField.layer.cornerRadius=8.0f;
-    userPhoneTextField.layer.borderWidth= 1.0f;
-    userPhoneTextField.keyboardType = UIKeyboardTypeNumberPad;
+    userPhoneTextField = [[UITextField alloc] initWithFrame:CGRectMake(20, 25, SCREEN_WIDTH-40, 35)];
+    userPhoneTextField.placeholder = @"  请输入手机号";
+    UIImageView *textImageView1 = [[UIImageView alloc] initWithFrame:CGRectMake(-20, 0, 32, 30)];
+    textImageView1.image = [UIImage imageNamed:@"shouji"];
+    userPhoneTextField.leftView = textImageView1;
+    userPhoneTextField.leftViewMode = UITextFieldViewModeAlways;
     userPhoneTextField.contentVerticalAlignment = UIControlContentVerticalAlignmentCenter;
+    userPhoneTextField.delegate = self;
+    [userPhoneTextField setSecureTextEntry:YES];
     [self.view addSubview:userPhoneTextField];
+    UIView *lineView1 = [[UIView alloc]initWithFrame:CGRectMake(0, 36, SCREEN_WIDTH-40, 1)];
+    lineView1.backgroundColor = kUIColorFromRGB(0x1b96fe);
+    [userPhoneTextField addSubview:lineView1];
 
-    userPwdTextFeild = [[UITextField alloc] initWithFrame:CGRectMake(30, SCREEN_HEIGHT/2, SCREEN_WIDTH-60, 35)];
-    userPwdTextFeild.placeholder = @"    请输入密码";
-    userPwdTextFeild.secureTextEntry = YES;
-    userPwdTextFeild.font = [UIFont fontWithName:@"Arial" size:16];
-    userPwdTextFeild.delegate = self;
-    userPwdTextFeild.tag = 204;
-    userPwdTextFeild.layer.borderColor = [RgbColor(213, 213, 213) CGColor];
-    userPwdTextFeild.layer.masksToBounds=YES;
-    userPwdTextFeild.layer.cornerRadius=8.0f;
-    userPwdTextFeild.layer.borderWidth= 1.0f;
-    userPwdTextFeild.contentVerticalAlignment = UIControlContentVerticalAlignmentCenter;
-    [self.view addSubview:userPwdTextFeild];
+    userPasswordTextField = [[UITextField alloc] initWithFrame:CGRectMake(20, 75, SCREEN_WIDTH-40, 35)];
+    userPasswordTextField.placeholder = @"  请输入6-16位密码";
+    UIImageView *textImageView3 = [[UIImageView alloc] initWithFrame:CGRectMake(-20, 0, 32, 30)];
+    textImageView3.image = [UIImage imageNamed:@"mima"];
+    userPasswordTextField.leftView = textImageView3;
+    userPasswordTextField.leftViewMode = UITextFieldViewModeAlways;
+    userPasswordTextField.contentVerticalAlignment = UIControlContentVerticalAlignmentCenter;
+    userPasswordTextField.delegate = self;
+    [userPasswordTextField setSecureTextEntry:YES];
+    [self.view addSubview:userPasswordTextField];
+    UIView *lineView3 = [[UIView alloc]initWithFrame:CGRectMake(0, 36, SCREEN_WIDTH-40, 1)];
+    lineView3.backgroundColor = kUIColorFromRGB(0x1b96fe);
+    [userPasswordTextField addSubview:lineView3];
 
-    tipsLabel = [[GloriaLabel alloc] initWithFrame:CGRectMake(0, 160, SCREEN_WIDTH, 60)];
-    tipsLabel.font = [UIFont systemFontOfSize:26.0];
-    tipsLabel.textColor = [UIColor blackColor];
-    tipsLabel.textAlignment = NSTextAlignmentCenter;
-    tipsLabel.text = @"FEI环境数";
-    [self.view addSubview:tipsLabel];
 
-    logoImageView = [[UIImageView alloc] initWithFrame:CGRectMake((SCREEN_WIDTH-250)/2, 60, 250, 100)];
-    logoImageView.image = [UIImage imageNamed:@"logo"];
-    logoImageView.userInteractionEnabled = YES;
-    //logoImageView.backgroundColor = [UIColor whiteColor];
-    [logoImageView.layer setMasksToBounds:YES];
-    [logoImageView.layer setCornerRadius:5.0]; //设置矩形四个圆角半径
-    [self.view addSubview:logoImageView];
 
-    // Do any additional setup after loading the view.
+    btnLoginView = [[UIImageView alloc] initWithFrame:CGRectMake(20, SCREEN_HEIGHT-140, SCREEN_WIDTH-40, 40)];
+    btnLoginView.image = [UIImage imageNamed:@"btn_register2"];
+    btnLoginView.userInteractionEnabled = YES;
+    [btnLoginView.layer setMasksToBounds:YES];
+    [btnLoginView addGestureRecognizer:[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(doUserLogin:)]];
+    [self.view addSubview:btnLoginView];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -106,8 +75,7 @@
     // Dispose of any resources that can be recreated.
 }
 
--(void)userLogin
-{
+-(void)doUserLogin:(UIGestureRecognizer *)gestureRecognizer {
     // 执行登录操作
     MBProgressHUD *HUD = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
     HUD.labelText = @"登录中...";
@@ -119,7 +87,7 @@
     NSString *path = [[NSString alloc] initWithFormat:@"/user/login"];
     NSMutableDictionary *param = [[NSMutableDictionary alloc] init];
     [param setValue:userPhoneTextField.text forKey:@"username"];
-    [param setValue:userPwdTextFeild.text forKey:@"password"];
+    [param setValue:userPasswordTextField.text forKey:@"password"];
 
     MKNetworkHost *host = [[MKNetworkHost alloc] initWithHostName:MORAL_API_BASE_PATH];
     MKNetworkRequest *request = [host requestWithPath:path params:param httpMethod:HTTPPOST];
@@ -243,7 +211,7 @@
 -(void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event
 {
     [self textFieldShouldReturn:userPhoneTextField];
-    [self textFieldShouldReturn:userPwdTextFeild];
+    [self textFieldShouldReturn:userPasswordTextField];
 }
 
 @end

@@ -46,7 +46,6 @@
     userPhoneTextField.delegate = self;
     [userPhoneTextField setSecureTextEntry:YES];
     [self.view addSubview:userPhoneTextField];
-
     UIView *lineView1 = [[UIView alloc]initWithFrame:CGRectMake(0, 36, SCREEN_WIDTH-40, 1)];
     lineView1.backgroundColor = kUIColorFromRGB(0x1b96fe);
     [userPhoneTextField addSubview:lineView1];
