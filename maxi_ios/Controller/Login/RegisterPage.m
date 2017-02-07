@@ -14,7 +14,7 @@
     UIImageView * btnRegisterView;
 
     GloriaLabel * getCheckCodeLabel;
-    UIImageView *btnRequestCodeView;
+    UIImageView * btnRequestCodeView;
 
     dispatch_source_t _timer;
 }

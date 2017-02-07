@@ -63,9 +63,10 @@
 
     lblForgetPassword = [[GloriaLabel alloc] initWithFrame:CGRectMake(SCREEN_WIDTH-110, 125, 90, 35)];
     //lblForgetPassword.font = FONT14;
-    //lblForgetPassword.textColor = kUIColorFromRGB(0x1b96fe);
+    lblForgetPassword.textColor = [UIColor grayColor];
     lblForgetPassword.textAlignment = NSTextAlignmentCenter;
     lblForgetPassword.text = @"忘记密码";
+    lblForgetPassword.userInteractionEnabled = YES;
     [lblForgetPassword addGestureRecognizer:[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(goToForgetPassword:)]];
     [self.view addSubview:lblForgetPassword];
 
