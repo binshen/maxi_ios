@@ -79,6 +79,7 @@
 		3514AB6F0CF04FE4F1A9896D /* NSMutableDictionary+MKNKAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 3514A5F505630794D99CC450 /* NSMutableDictionary+MKNKAdditions.m */; };
 		3514AB889884EFC8642F7FD3 /* GloriaLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 3514A1A1387D0CEFEAC9B39F /* GloriaLabel.m */; };
 		3514AB94F8B3EA3C75EEB2DC /* SBJsonStreamWriterAccumulator.m in Sources */ = {isa = PBXBuildFile; fileRef = 3514ACF599DC7B4D12780D83 /* SBJsonStreamWriterAccumulator.m */; };
+		3514ABEA510DF5FD97AC4459 /* ForgetPwdPage.m in Sources */ = {isa = PBXBuildFile; fileRef = 3514A4C0DEBC7060B8048CF3 /* ForgetPwdPage.m */; };
 		3514AC02FA4E45DB3082DB36 /* NSData+ImageContentType.m in Sources */ = {isa = PBXBuildFile; fileRef = 3514A53F74B6223C9B61CB12 /* NSData+ImageContentType.m */; };
 		3514AC0EC1F6B5238E0C84D3 /* BottomButtonView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3514A66C8BE1A46C5C868103 /* BottomButtonView.m */; };
 		3514AC4CA7806AB2614DF8B5 /* NSDate+RFC1123.m in Sources */ = {isa = PBXBuildFile; fileRef = 3514AE9C3BC56D83D48B2C11 /* NSDate+RFC1123.m */; };
@@ -161,6 +162,7 @@
 		3514A4BA40F2F8503ACB0ECA /* NSDate+Util.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+Util.h"; sourceTree = "<group>"; };
 		3514A4BDDB53F41BBDB94A61 /* SBJsonTokeniser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJsonTokeniser.m; sourceTree = "<group>"; };
 		3514A4BF13E9B1881EE2E102 /* NSObject+SBJson.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+SBJson.m"; sourceTree = "<group>"; };
+		3514A4C0DEBC7060B8048CF3 /* ForgetPwdPage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ForgetPwdPage.m; sourceTree = "<group>"; };
 		3514A4F350F6CE1262D75CE1 /* BasePageCtrl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BasePageCtrl.m; sourceTree = "<group>"; };
 		3514A509A997613A6224C787 /* UIImage+WebP.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+WebP.h"; sourceTree = "<group>"; };
 		3514A53610C6508D79E86E03 /* BackgroundRunner.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BackgroundRunner.h; sourceTree = "<group>"; };
@@ -288,6 +290,7 @@
 		3514AF67EAF30AF7EAACD7F9 /* UIImageView+HighlightedWebCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImageView+HighlightedWebCache.h"; sourceTree = "<group>"; };
 		3514AF7888C33E73AC3D24F4 /* start_640x960.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = start_640x960.png; sourceTree = "<group>"; };
 		3514AF9000C98588B8769CC6 /* HTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTool.h; sourceTree = "<group>"; };
+		3514AF945D415F6850D96497 /* ForgetPwdPage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ForgetPwdPage.h; sourceTree = "<group>"; };
 		3514AF9767678703C2EEE7ED /* SDWebImagePrefetcher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SDWebImagePrefetcher.m; sourceTree = "<group>"; };
 		3514AFBFD4CD9A8DC0DEF7D5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3514AFDDEFB963D335F6B419 /* btn_register2@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "btn_register2@2x.png"; sourceTree = "<group>"; };
@@ -580,6 +583,8 @@
 				3514AA82AEFFD9F46183F46B /* LoginPage.m */,
 				3514A47AB84AE8EA16E9ED3A /* NaviPage.m */,
 				3514AE4AD1BAF7ECB1F1E70C /* NaviPage.h */,
+				3514A4C0DEBC7060B8048CF3 /* ForgetPwdPage.m */,
+				3514AF945D415F6850D96497 /* ForgetPwdPage.h */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -931,6 +936,7 @@
 				3514AAA4AAA431EC36773BC1 /* RegisterPage.m in Sources */,
 				3514AE37B3398C5C47A77107 /* LoginPage.m in Sources */,
 				3514A2797F195321FCCB1DCF /* NaviPage.m in Sources */,
+				3514ABEA510DF5FD97AC4459 /* ForgetPwdPage.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -6,13 +6,14 @@
 #import "LoginPage.h"
 #import "GloriaLabel.h"
 #import "RegisterPage.h"
+#import "ForgetPwdPage.h"
 
 @interface LoginPage() {
     UITextField * userPhoneTextField;
     UITextField * userPasswordTextField;
     UIImageView * btnLoginView;
 
-
+    GloriaLabel * lblForgetPassword;
 }
 @end
 
@@ -60,7 +61,13 @@
     lineView3.backgroundColor = kUIColorFromRGB(0x1b96fe);
     [userPasswordTextField addSubview:lineView3];
 
-
+    lblForgetPassword = [[GloriaLabel alloc] initWithFrame:CGRectMake(SCREEN_WIDTH-110, 125, 90, 35)];
+    //lblForgetPassword.font = FONT14;
+    //lblForgetPassword.textColor = kUIColorFromRGB(0x1b96fe);
+    lblForgetPassword.textAlignment = NSTextAlignmentCenter;
+    lblForgetPassword.text = @"忘记密码";
+    [lblForgetPassword addGestureRecognizer:[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(goToForgetPassword:)]];
+    [self.view addSubview:lblForgetPassword];
 
     btnLoginView = [[UIImageView alloc] initWithFrame:CGRectMake(20, SCREEN_HEIGHT-140, SCREEN_WIDTH-40, 40)];
     btnLoginView.image = [UIImage imageNamed:@"btn_register2"];
@@ -73,6 +80,11 @@
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+-(void)goToForgetPassword:(UIGestureRecognizer *)gestureRecognizer {
+    ForgetPwdPage * forgetPwdPage = [[ForgetPwdPage alloc] initIsFirstPage:NO];
+    [self.navigationController pushViewController:forgetPwdPage animated:YES];
 }
 
 -(void)doUserLogin:(UIGestureRecognizer *)gestureRecognizer {
