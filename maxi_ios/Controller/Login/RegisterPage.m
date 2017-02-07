@@ -11,10 +11,11 @@
     UITextField * userPhoneTextField;
     UITextField * userCodeTextField;
     UITextField * userPasswordTextField;
+    UIImageView * btnRegisterView;
 
     GloriaLabel * getCheckCodeLabel;
-    UIButton * registerBtn;
-    UIButton *requestCodeBtn;
+    UIImageView *btnRequestCodeView;
+
     dispatch_source_t _timer;
 }
 @end
@@ -54,7 +55,6 @@
     userCodeTextField.delegate = self;
     [userCodeTextField setSecureTextEntry:YES];
     [self.view addSubview:userCodeTextField];
-
     UIView *lineView2 = [[UIView alloc]initWithFrame:CGRectMake(0, 36, SCREEN_WIDTH-150, 1)];
     lineView2.backgroundColor = kUIColorFromRGB(0x1b96fe);
     [userCodeTextField addSubview:lineView2];
@@ -69,29 +69,42 @@
     userPasswordTextField.delegate = self;
     [userPasswordTextField setSecureTextEntry:YES];
     [self.view addSubview:userPasswordTextField];
-
     UIView *lineView3 = [[UIView alloc]initWithFrame:CGRectMake(0, 36, SCREEN_WIDTH-40, 1)];
     lineView3.backgroundColor = kUIColorFromRGB(0x1b96fe);
     [userPasswordTextField addSubview:lineView3];
 
-    requestCodeBtn = [UIButton buttonWithType:UIButtonTypeRoundedRect];
-    requestCodeBtn.frame = CGRectMake(SCREEN_WIDTH-120, 50, 120, 40);
-    [requestCodeBtn setTitleColor:BLACKTEXTCOLOR_SUB forState:UIControlStateNormal];
-    requestCodeBtn.userInteractionEnabled = NO;
-    [requestCodeBtn addTarget:self action:@selector(getCheckCodeAction) forControlEvents:UIControlEventTouchUpInside];
-    [self.view addSubview:requestCodeBtn];
+    btnRequestCodeView = [[UIImageView alloc] initWithFrame:CGRectMake(SCREEN_WIDTH-110, 75, 90, 35)];
+    btnRequestCodeView.image = [UIImage imageNamed:@"btn_request_code"];
+    btnRequestCodeView.userInteractionEnabled = YES;
+    [btnRequestCodeView.layer setMasksToBounds:YES];
+    [btnRequestCodeView addGestureRecognizer:[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(doRequestCode:)]];
+    [self.view addSubview:btnRequestCodeView];
 
     getCheckCodeLabel = [[GloriaLabel alloc] initWithFrame:CGRectMake(SCREEN_WIDTH-110, 75, 90, 35)];
     getCheckCodeLabel.font = FONT14;
-    getCheckCodeLabel.backgroundColor = BLUE_BUTTON_COLOR;
-    getCheckCodeLabel.textColor = [UIColor whiteColor];
+    getCheckCodeLabel.textColor = kUIColorFromRGB(0x1b96fe);
     getCheckCodeLabel.textAlignment = NSTextAlignmentCenter;
     getCheckCodeLabel.text = @"获取验证码";
     [self.view addSubview:getCheckCodeLabel];
+
+    btnRegisterView = [[UIImageView alloc] initWithFrame:CGRectMake(20, SCREEN_HEIGHT-140, SCREEN_WIDTH-40, 40)];
+    btnRegisterView.image = [UIImage imageNamed:@"btn_register2"];
+    btnRegisterView.userInteractionEnabled = YES;
+    [btnRegisterView.layer setMasksToBounds:YES];
+    [btnRegisterView addGestureRecognizer:[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(doRegister:)]];
+    [self.view addSubview:btnRegisterView];
 }
 
 //获取验证码
 -(void)getCheckCodeAction {
+
+}
+
+-(void)doRequestCode:(UIGestureRecognizer *)gestureRecognizer {
+
+}
+
+-(void)doRegister:(UIGestureRecognizer *)gestureRecognizer {
 
 }
 
