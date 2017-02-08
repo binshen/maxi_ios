@@ -4,6 +4,7 @@
 //
 
 #import "HomePage.h"
+#import "SDCycleScrollView.h"
 
 @interface HomePage() {
 
@@ -16,28 +17,26 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 
-//    UINavigationBar *navBar = self.navigationController.navigationBar;
-//    #define kSCNavBarImageTag 10
-//    if ([navBar respondsToSelector:@selector(setBackgroundImage:forBarMetrics:)]) {
-//        //if iOS 5.0 and later
-//        [navBar setBackgroundImage:[UIImage imageNamed:@"navbar1.png"] forBarMetrics:UIBarMetricsDefault];
-//    } else {
-//        UIImageView *imageView = (UIImageView *)[navBar viewWithTag:kSCNavBarImageTag];
-//        if (imageView == nil) {
-//            imageView = [[UIImageView alloc] initWithImage: [UIImage imageNamed:@"navbar1.png"]];
-//            [imageView setTag:kSCNavBarImageTag];
-//            [navBar insertSubview:imageView atIndex:0];
-//        }
-//    }
-
     self.navigationController.navigationBar.backgroundColor = kUIColorFromRGB(0x2698f9);
     self.navigationController.navigationItem.hidesBackButton = true;
     [self.navigationController.navigationBar setBackgroundImage:[UIImage imageNamed:@"bg_logo.png"] forBarMetrics:UIBarMetricsDefault];
+
+    // https://github.com/gsdios/SDCycleScrollView
+    UIScrollView *demoContainerView = [[UIScrollView alloc] initWithFrame:self.view.frame];
+    demoContainerView.contentSize = CGSizeMake(self.view.frame.size.width, 1200);
+    [self.view addSubview:demoContainerView];
+
+    NSArray *imageNames = @[@"home_slider1.png", @"home_slider1.png", @"home_slider1.png", @"home_slider1.png"];
+    CGFloat w = self.view.bounds.size.width;
+    SDCycleScrollView *cycleScrollView = [SDCycleScrollView cycleScrollViewWithFrame:CGRectMake(0, 0, w, 120) shouldInfiniteLoop:YES imageNamesGroup:imageNames];
+    cycleScrollView.delegate = self;
+    cycleScrollView.pageControlStyle = SDCycleScrollViewPageContolStyleAnimated;
+    [demoContainerView addSubview:cycleScrollView];
+    cycleScrollView.scrollDirection = UICollectionViewScrollDirectionHorizontal;
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+    //Dispose of any resources that can be recreated.
 }
-
 @end
