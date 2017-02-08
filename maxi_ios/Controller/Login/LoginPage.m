@@ -72,7 +72,7 @@
     [self.view addSubview:lblForgetPassword];
 
     btnLoginView = [[UIImageView alloc] initWithFrame:CGRectMake(20, SCREEN_HEIGHT-140, SCREEN_WIDTH-40, 40)];
-    btnLoginView.image = [UIImage imageNamed:@"btn_register2"];
+    btnLoginView.image = [UIImage imageNamed:@"btn_login2"];
     btnLoginView.userInteractionEnabled = YES;
     [btnLoginView.layer setMasksToBounds:YES];
     [btnLoginView addGestureRecognizer:[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(doUserLogin:)]];
