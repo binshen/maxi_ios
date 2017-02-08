@@ -7,6 +7,7 @@
 #import "GloriaLabel.h"
 #import "RegisterPage.h"
 #import "ForgetPwdPage.h"
+#import "HomePage.h"
 
 @interface LoginPage() {
     UITextField * userPhoneTextField;
@@ -89,6 +90,10 @@
 }
 
 -(void)doUserLogin:(UIGestureRecognizer *)gestureRecognizer {
+
+    HomePage * page = [[HomePage alloc] initIsFirstPage:NO];
+    [self.navigationController pushViewController:page animated:YES];
+/*
     // 执行登录操作
     MBProgressHUD *HUD = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
     HUD.labelText = @"登录中...";
@@ -153,7 +158,7 @@
     }];
 
     [host startRequest:request];
-
+*/
 }
 
 -(void)registAction
