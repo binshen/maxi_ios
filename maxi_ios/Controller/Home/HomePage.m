@@ -18,8 +18,9 @@
     [super viewDidLoad];
 
     self.navigationController.navigationBar.backgroundColor = kUIColorFromRGB(0x2698f9);
-    self.navigationController.navigationItem.hidesBackButton = true;
-    [self.navigationController.navigationBar setBackgroundImage:[UIImage imageNamed:@"bg_logo.png"] forBarMetrics:UIBarMetricsDefault];
+    self.navigationItem.hidesBackButton = YES;
+    UIImageView *imgView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"bg_logo"]];
+    self.navigationItem.titleView = imgView;
 
     // https://github.com/gsdios/SDCycleScrollView
     UIScrollView *demoContainerView = [[UIScrollView alloc] initWithFrame:self.view.frame];
