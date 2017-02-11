@@ -48,6 +48,7 @@
 		3514A5426DEB85C0E2B902BF /* logo@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3514ABA34FCD89EE3F27F5EB /* logo@2x.png */; };
 		3514A553D123DCAB9A67E48D /* MonitorView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3514AC25143456D0B61613A1 /* MonitorView.m */; };
 		3514A5B1E492B757D71E29DF /* DateUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 3514A6A62C7F3DBF7453A4B4 /* DateUtil.m */; };
+		3514A5C556B90B6C11FAAD37 /* UIButton+ImageTitleStyle.m in Sources */ = {isa = PBXBuildFile; fileRef = 3514A463CAC63D4F98DA6830 /* UIButton+ImageTitleStyle.m */; };
 		3514A684FFF1F1582F113C90 /* MKNetworkHost.m in Sources */ = {isa = PBXBuildFile; fileRef = 3514A077CE093F386E7F34AD /* MKNetworkHost.m */; };
 		3514A6A7AD0EB55E99A90060 /* UIImage+WebP.m in Sources */ = {isa = PBXBuildFile; fileRef = 3514A918D06DCD8BE55CADC5 /* UIImage+WebP.m */; };
 		3514A6C77C4A4FE42C508296 /* SBJsonStreamWriter.m in Sources */ = {isa = PBXBuildFile; fileRef = 3514AC525A2A0ECBB9BEE160 /* SBJsonStreamWriter.m */; };
@@ -184,6 +185,7 @@
 		3514A4385368548304CC6B25 /* bg_logo@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bg_logo@2x.png"; sourceTree = "<group>"; };
 		3514A438975DE14126EF33A3 /* SBJsonWriter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJsonWriter.h; sourceTree = "<group>"; };
 		3514A44D17AC165A41F7CCD5 /* HTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTool.m; sourceTree = "<group>"; };
+		3514A463CAC63D4F98DA6830 /* UIButton+ImageTitleStyle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIButton+ImageTitleStyle.m"; sourceTree = "<group>"; };
 		3514A47006F82376C68D69A7 /* UIView+SDExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+SDExtension.m"; sourceTree = "<group>"; };
 		3514A477D374D03002831C5B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = maxi_ios/Base.lproj/LaunchScreen.storyboard; sourceTree = SOURCE_ROOT; };
 		3514A47AB84AE8EA16E9ED3A /* NaviPage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NaviPage.m; sourceTree = "<group>"; };
@@ -319,6 +321,7 @@
 		3514AE1378F915FDC0800414 /* UIAlertView+MKNKAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIAlertView+MKNKAdditions.m"; sourceTree = "<group>"; };
 		3514AE1B25EAF6DD40B5D572 /* TADotView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TADotView.m; sourceTree = "<group>"; };
 		3514AE23DD9DDAD9918AA285 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.info; path = Info.plist; sourceTree = "<group>"; };
+		3514AE374D0EEE548F097925 /* UIButton+ImageTitleStyle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIButton+ImageTitleStyle.h"; sourceTree = "<group>"; };
 		3514AE4AD1BAF7ECB1F1E70C /* NaviPage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NaviPage.h; sourceTree = "<group>"; };
 		3514AE58037487E590E872D9 /* BasePageCtrl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BasePageCtrl.h; sourceTree = "<group>"; };
 		3514AE854DAA617D47573B66 /* SDWebImageOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDWebImageOperation.h; sourceTree = "<group>"; };
@@ -434,6 +437,8 @@
 				3514A95DC4BB81971861CE38 /* UICustom */,
 				3514AEEC4970DAEF03F7620C /* Widget */,
 				3514A8A7A00ADC10110F64FD /* WPTextField.h */,
+				3514AE374D0EEE548F097925 /* UIButton+ImageTitleStyle.h */,
+				3514A463CAC63D4F98DA6830 /* UIButton+ImageTitleStyle.m */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -1065,6 +1070,7 @@
 				3514A727F4E9B47A2DD15E9C /* SDCycleScrollView.m in Sources */,
 				3514A857EBFBB9224C29F0F6 /* UIView+SDExtension.m in Sources */,
 				3514A0C6FC979E37F4110033 /* SDCollectionViewCell.m in Sources */,
+				3514A5C556B90B6C11FAAD37 /* UIButton+ImageTitleStyle.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

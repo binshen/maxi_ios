@@ -4,7 +4,9 @@
 //
 
 #import "HomePage.h"
+#import "GloriaLabel.h"
 #import "SDCycleScrollView.h"
+#import "UIButton+ImageTitleStyle.h"
 
 @interface HomePage() {
 
@@ -34,48 +36,97 @@
     cycleScrollView.pageControlStyle = SDCycleScrollViewPageContolStyleAnimated;
     cycleScrollView.scrollDirection = UICollectionViewScrollDirectionHorizontal;
     [containerView addSubview:cycleScrollView];
-
+/*
     UIImage *img1 = [UIImage imageNamed:@"icon1_mxjs"];
     CGFloat width = img1.size.width;
     CGFloat height = img1.size.height;
     UIImageView *icon1 = [[UIImageView alloc] initWithImage: img1];
     CGFloat len = (SCREEN_WIDTH-4*width)/8;
-    icon1.frame = CGRectMake(len, 130, width, height);
+    //icon1.frame = CGRectMake(len, 130, width, height);
+    icon1.center = CGPointMake(SCREEN_WIDTH/8,130+height/2);
+    [containerView addSubview:icon1];
+
+    UILabel * lbl1 = [[UILabel alloc] init];
+    lbl1.font = FONT12;
+    lbl1.textColor = [UIColor blueColor];
+    lbl1.textAlignment = NSTextAlignmentCenter;
+    lbl1.text = @"离析净水";
+    lbl1.center = CGPointMake(SCREEN_WIDTH/8,130+height+80);
+    [containerView addSubview:lbl1];
+*/
+    UIImage *img1 = [UIImage imageNamed:@"icon1_mxjs"];
+    CGFloat width = img1.size.width+10;
+    CGFloat height = img1.size.height;
+    CGFloat len = (SCREEN_WIDTH-4*width)/8;
+    UIButton *icon1 = [[UIButton alloc] initWithFrame:CGRectMake(len, 135, width, height)];
+    [icon1 setTitle:@"淼溪净水" forState:UIControlStateNormal];
+    [icon1 setTitleColor:[UIColor grayColor] forState:UIControlStateNormal];
+    [icon1 setFont:FONT12];
+    [icon1 setImage:img1 forState:UIControlStateNormal];
+    [icon1 setButtonImageTitleStyle:ButtonImageTitleStyleTop padding:2];
     [containerView addSubview:icon1];
 
     UIImage *img2 = [UIImage imageNamed:@"icon2_znjj"];
-    UIImageView *icon2 = [[UIImageView alloc] initWithImage: img2];
-    icon2.frame = CGRectMake(len*3+width, 130, width, height);
+    UIButton *icon2 = [[UIButton alloc] initWithFrame:CGRectMake(len*3+width, 135, width, height)];
+    [icon2 setTitle:@"智能家居" forState:UIControlStateNormal];
+    [icon2 setTitleColor:[UIColor grayColor] forState:UIControlStateNormal];
+    [icon2 setFont:FONT12];
+    [icon2 setImage:img2 forState:UIControlStateNormal];
+    [icon2 setButtonImageTitleStyle:ButtonImageTitleStyleTop padding:2];
     [containerView addSubview:icon2];
 
     UIImage *img3 = [UIImage imageNamed:@"icon3_ycyl"];
-    UIImageView *icon3 = [[UIImageView alloc] initWithImage: img3];
-    icon3.frame = CGRectMake(len*5+2*width, 130, width, height);
+    UIButton *icon3 = [[UIButton alloc] initWithFrame:CGRectMake(len*5+width*2, 135, width, height)];
+    [icon3 setTitle:@"远程医疗" forState:UIControlStateNormal];
+    [icon3 setTitleColor:[UIColor grayColor] forState:UIControlStateNormal];
+    [icon3 setFont:FONT12];
+    [icon3 setImage:img3 forState:UIControlStateNormal];
+    [icon3 setButtonImageTitleStyle:ButtonImageTitleStyleTop padding:2];
     [containerView addSubview:icon3];
 
     UIImage *img4 = [UIImage imageNamed:@"icon4_bmfw"];
-    UIImageView *icon4 = [[UIImageView alloc] initWithImage: img4];
-    icon4.frame = CGRectMake(len*7+3*width, 130, width, height);
+    UIButton *icon4 = [[UIButton alloc] initWithFrame:CGRectMake(len*7+width*3, 135, width, height)];
+    [icon4 setTitle:@"便民服务" forState:UIControlStateNormal];
+    [icon4 setTitleColor:[UIColor grayColor] forState:UIControlStateNormal];
+    [icon4 setFont:FONT12];
+    [icon4 setImage:img4 forState:UIControlStateNormal];
+    [icon4 setButtonImageTitleStyle:ButtonImageTitleStyleTop padding:2];
     [containerView addSubview:icon4];
 
     UIImage *img5 = [UIImage imageNamed:@"icon5_wmdc"];
-    UIImageView *icon5 = [[UIImageView alloc] initWithImage: img5];
-    icon5.frame = CGRectMake(len, 180+height, width, height);
+    UIButton *icon5 = [[UIButton alloc] initWithFrame:CGRectMake(len, 165+height, width, height)];
+    [icon5 setTitle:@"外卖订餐" forState:UIControlStateNormal];
+    [icon5 setTitleColor:[UIColor grayColor] forState:UIControlStateNormal];
+    [icon5 setFont:FONT12];
+    [icon5 setImage:img5 forState:UIControlStateNormal];
+    [icon5 setButtonImageTitleStyle:ButtonImageTitleStyleTop padding:2];
     [containerView addSubview:icon5];
 
     UIImage *img6 = [UIImage imageNamed:@"icon6_sgsx"];
-    UIImageView *icon6 = [[UIImageView alloc] initWithImage: img6];
-    icon6.frame = CGRectMake(len*3+width, 180+height, width, height);
+    UIButton *icon6 = [[UIButton alloc] initWithFrame:CGRectMake(len*3+width, 165+height, width, height)];
+    [icon6 setTitle:@"蔬果生鲜" forState:UIControlStateNormal];
+    [icon6 setTitleColor:[UIColor grayColor] forState:UIControlStateNormal];
+    [icon6 setFont:FONT12];
+    [icon6 setImage:img6 forState:UIControlStateNormal];
+    [icon6 setButtonImageTitleStyle:ButtonImageTitleStyleTop padding:2];
     [containerView addSubview:icon6];
 
     UIImage *img7 = [UIImage imageNamed:@"icon7_zxjc"];
-    UIImageView *icon7 = [[UIImageView alloc] initWithImage: img7];
-    icon7.frame = CGRectMake(len*5+2*width, 180+height, width, height);
+    UIButton *icon7 = [[UIButton alloc] initWithFrame:CGRectMake(len*5+width*2, 165+height, width, height)];
+    [icon7 setTitle:@"装修建材" forState:UIControlStateNormal];
+    [icon7 setTitleColor:[UIColor grayColor] forState:UIControlStateNormal];
+    [icon7 setFont:FONT12];
+    [icon7 setImage:img7 forState:UIControlStateNormal];
+    [icon7 setButtonImageTitleStyle:ButtonImageTitleStyleTop padding:2];
     [containerView addSubview:icon7];
 
     UIImage *img8 = [UIImage imageNamed:@"icon8_sqzx"];
-    UIImageView *icon8 = [[UIImageView alloc] initWithImage: img8];
-    icon8.frame = CGRectMake(len*7+3*width, 180+height, width, height);
+    UIButton *icon8 = [[UIButton alloc] initWithFrame:CGRectMake(len*7+width*3, 165+height, width, height)];
+    [icon8 setTitle:@"社区资讯" forState:UIControlStateNormal];
+    [icon8 setTitleColor:[UIColor grayColor] forState:UIControlStateNormal];
+    [icon8 setFont:FONT12];
+    [icon8 setImage:img8 forState:UIControlStateNormal];
+    [icon8 setButtonImageTitleStyle:ButtonImageTitleStyleTop padding:2];
     [containerView addSubview:icon8];
 }
 
