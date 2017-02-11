@@ -26,8 +26,7 @@
 
     // https://github.com/gsdios/SDCycleScrollView
     UIScrollView *containerView = [[UIScrollView alloc] initWithFrame:self.view.frame];
-    containerView.contentSize = CGSizeMake(self.view.frame.size.width, 800);
-    [self.view addSubview:containerView];
+
 
     NSArray *imageNames = @[@"home_slider1.png", @"home_slider1.png", @"home_slider1.png", @"home_slider1.png"];
     CGFloat w = self.view.bounds.size.width;
@@ -112,20 +111,80 @@
     [icon8 setButtonImageTitleStyle:ButtonImageTitleStyleTop padding:2];
     [containerView addSubview:icon8];
 
-    UIImageView *sp = [[UIImageView alloc] initWithFrame:CGRectMake(0, 180+height*2, SCREEN_WIDTH, 3)];
-    sp.image = [UIImage imageNamed:@"line_h_gray"];
-    [containerView addSubview:sp];
+    UIImageView *sp1 = [[UIImageView alloc] initWithFrame:CGRectMake(0, 180+height*2, SCREEN_WIDTH, 3)];
+    sp1.image = [UIImage imageNamed:@"line_h_gray"];
+    [containerView addSubview:sp1];
 
-    UIImageView *sp_v = [[UIImageView alloc] initWithFrame:CGRectMake(0, 183+height*2, 5, 35)];
-    sp_v.image = [UIImage imageNamed:@"line_v_red"];
-    [containerView addSubview:sp_v];
+    UIImageView *sp_v1 = [[UIImageView alloc] initWithFrame:CGRectMake(0, 183+height*2, 5, 35)];
+    sp_v1.image = [UIImage imageNamed:@"line_v_red"];
+    [containerView addSubview:sp_v1];
 
-    GloriaLabel *lbl_ad = [[GloriaLabel alloc] initWithFrame:CGRectMake(15, 183+height*2, SCREEN_WIDTH-15, 35)];
-    lbl_ad.text = @"广告位";
-    lbl_ad.textColor = [UIColor grayColor];
-    [containerView addSubview:lbl_ad];
+    GloriaLabel *lbl_ad1 = [[GloriaLabel alloc] initWithFrame:CGRectMake(15, 183+height*2, SCREEN_WIDTH-15, 35)];
+    lbl_ad1.text = @"广告位";
+    lbl_ad1.textColor = [UIColor grayColor];
+    [containerView addSubview:lbl_ad1];
+
+    UIView *view1 = [[UIView alloc] init];
+
+    UIImage *img11 = [UIImage imageNamed:@"demo_ad1"];
+    CGFloat h1 = img11.size.height;
+    UIImageView *ad11 = [[UIImageView alloc] initWithFrame:CGRectMake(10,10,(SCREEN_WIDTH-30)/2, h1)];
+    ad11.image = img11;
+    [view1 addSubview:ad11];
+
+    UIImage *img12 = [UIImage imageNamed:@"demo_ad2"];
+    CGFloat h2 = img12.size.height;
+    UIImageView *ad12 = [[UIImageView alloc] initWithFrame:CGRectMake((SCREEN_WIDTH-30)/2+20,10,(SCREEN_WIDTH-30)/2, h2)];
+    ad12.image = img12;
+    [view1 addSubview:ad12];
+
+    UIImage *img13 = [UIImage imageNamed:@"demo_ad2"];
+    CGFloat h3 = img13.size.height;
+    UIImageView *ad13 = [[UIImageView alloc] initWithFrame:CGRectMake(10, h1+20,(SCREEN_WIDTH-30)/2, h3)];
+    ad13.image = img13;
+    [view1 addSubview:ad13];
+
+    UIImage *img14 = [UIImage imageNamed:@"demo_ad1"];
+    CGFloat h4 = img14.size.height;
+    UIImageView *ad14 = [[UIImageView alloc] initWithFrame:CGRectMake((SCREEN_WIDTH-30)/2+20,h2+20,(SCREEN_WIDTH-30)/2, h4)];
+    ad14.image = img14;
+    [view1 addSubview:ad14];
+
+    view1.backgroundColor = [UIColor lightGrayColor];
+    view1.frame = CGRectMake(0, 218+height*2, SCREEN_WIDTH, h1+h3+30);
+    [containerView addSubview:view1];
+
+    CGFloat x_height = 218+height*2+h1+h3+30;
+
+    UIImageView *sp_v2 = [[UIImageView alloc] initWithFrame:CGRectMake(0, x_height, 5, 35)];
+    sp_v2.image = [UIImage imageNamed:@"line_v_red"];
+    [containerView addSubview:sp_v2];
+
+    GloriaLabel *lbl_ad2 = [[GloriaLabel alloc] initWithFrame:CGRectMake(15, x_height, SCREEN_WIDTH-15, 35)];
+    lbl_ad2.text = @"广告位";
+    lbl_ad2.textColor = [UIColor grayColor];
+    [containerView addSubview:lbl_ad2];
 
 
+    UIView *view2 = [[UIView alloc] init];
+    UIImageView *ad21 = [[UIImageView alloc] initWithFrame:CGRectMake(10,10,(SCREEN_WIDTH-30)/2, h1)];
+    ad21.image = img11;
+    [view2 addSubview:ad21];
+    UIImageView *ad22 = [[UIImageView alloc] initWithFrame:CGRectMake((SCREEN_WIDTH-30)/2+20,10,(SCREEN_WIDTH-30)/2, h2)];
+    ad22.image = img12;
+    [view2 addSubview:ad22];
+    UIImageView *ad23 = [[UIImageView alloc] initWithFrame:CGRectMake(10, h1+20,(SCREEN_WIDTH-30)/2, h3)];
+    ad23.image = img13;
+    [view2 addSubview:ad23];
+    UIImageView *ad24 = [[UIImageView alloc] initWithFrame:CGRectMake((SCREEN_WIDTH-30)/2+20,h2+20,(SCREEN_WIDTH-30)/2, h4)];
+    ad24.image = img14;
+    [view2 addSubview:ad24];
+    view2.backgroundColor = [UIColor lightGrayColor];
+    view2.frame = CGRectMake(0, x_height+35, SCREEN_WIDTH, h1+h3+30);
+    [containerView addSubview:view2];
+
+    containerView.contentSize = CGSizeMake(self.view.frame.size.width, x_height+h1+h2+65);
+    [self.view addSubview:containerView];
 }
 
 - (void)didReceiveMemoryWarning {
