@@ -26,7 +26,7 @@
 
     // https://github.com/gsdios/SDCycleScrollView
     UIScrollView *containerView = [[UIScrollView alloc] initWithFrame:self.view.frame];
-    containerView.contentSize = CGSizeMake(self.view.frame.size.width, 1200);
+    containerView.contentSize = CGSizeMake(self.view.frame.size.width, 800);
     [self.view addSubview:containerView];
 
     NSArray *imageNames = @[@"home_slider1.png", @"home_slider1.png", @"home_slider1.png", @"home_slider1.png"];
@@ -36,24 +36,7 @@
     cycleScrollView.pageControlStyle = SDCycleScrollViewPageContolStyleAnimated;
     cycleScrollView.scrollDirection = UICollectionViewScrollDirectionHorizontal;
     [containerView addSubview:cycleScrollView];
-/*
-    UIImage *img1 = [UIImage imageNamed:@"icon1_mxjs"];
-    CGFloat width = img1.size.width;
-    CGFloat height = img1.size.height;
-    UIImageView *icon1 = [[UIImageView alloc] initWithImage: img1];
-    CGFloat len = (SCREEN_WIDTH-4*width)/8;
-    //icon1.frame = CGRectMake(len, 130, width, height);
-    icon1.center = CGPointMake(SCREEN_WIDTH/8,130+height/2);
-    [containerView addSubview:icon1];
 
-    UILabel * lbl1 = [[UILabel alloc] init];
-    lbl1.font = FONT12;
-    lbl1.textColor = [UIColor blueColor];
-    lbl1.textAlignment = NSTextAlignmentCenter;
-    lbl1.text = @"离析净水";
-    lbl1.center = CGPointMake(SCREEN_WIDTH/8,130+height+80);
-    [containerView addSubview:lbl1];
-*/
     UIImage *img1 = [UIImage imageNamed:@"icon1_mxjs"];
     CGFloat width = img1.size.width+10;
     CGFloat height = img1.size.height;
@@ -128,6 +111,21 @@
     [icon8 setImage:img8 forState:UIControlStateNormal];
     [icon8 setButtonImageTitleStyle:ButtonImageTitleStyleTop padding:2];
     [containerView addSubview:icon8];
+
+    UIImageView *sp = [[UIImageView alloc] initWithFrame:CGRectMake(0, 180+height*2, SCREEN_WIDTH, 3)];
+    sp.image = [UIImage imageNamed:@"line_h_gray"];
+    [containerView addSubview:sp];
+
+    UIImageView *sp_v = [[UIImageView alloc] initWithFrame:CGRectMake(0, 183+height*2, 5, 35)];
+    sp_v.image = [UIImage imageNamed:@"line_v_red"];
+    [containerView addSubview:sp_v];
+
+    GloriaLabel *lbl_ad = [[GloriaLabel alloc] initWithFrame:CGRectMake(15, 183+height*2, SCREEN_WIDTH-15, 35)];
+    lbl_ad.text = @"广告位";
+    lbl_ad.textColor = [UIColor grayColor];
+    [containerView addSubview:lbl_ad];
+
+
 }
 
 - (void)didReceiveMemoryWarning {
