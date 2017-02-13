@@ -4,6 +4,7 @@
 //
 
 #import "DeviceMainPage.h"
+#import "DeviceAddPage.h"
 
 @interface DeviceMainPage() {
 
@@ -51,7 +52,8 @@
 }
 
 -(void)addAction:(id)sender {
-
+    DeviceAddPage * page = [[DeviceAddPage alloc] initIsFirstPage:NO];
+    [self.navigationController pushViewController:page animated:YES];
 }
 
 @end
