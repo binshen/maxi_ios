@@ -33,9 +33,25 @@
     UIBarButtonItem* rightBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:addButton];
     self.navigationItem.rightBarButtonItem = rightBarButtonItem;
 
+    UIScrollView *containerView = [[UIScrollView alloc] initWithFrame:self.view.frame];
+
+    UIImage *bg_image = [UIImage imageNamed:@"bg_device"];
+    UIImageView *imageView = [[UIImageView alloc] initWithImage:bg_image];
+    [containerView addSubview:imageView];
+
+    UILabel *countLabel = [[UILabel alloc] initWithFrame:CGRectMake(SCREEN_WIDTH/6, bg_image.size.height/3, 120, 50)];
+    countLabel.textAlignment = NSTextAlignmentLeft;
+    countLabel.text = @"2台";
+    [countLabel setTextColor:[UIColor whiteColor]];
+    [countLabel setFont:[UIFont boldSystemFontOfSize:26]];
+    [containerView addSubview:countLabel];
+
+    containerView.contentSize = CGSizeMake(self.view.frame.size.width, bg_image.size.height);
+    [self.view addSubview:containerView];
 }
 
 -(void)addAction:(id)sender {
+
 }
 
 @end
