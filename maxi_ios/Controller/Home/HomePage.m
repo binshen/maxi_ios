@@ -7,6 +7,7 @@
 #import "GloriaLabel.h"
 #import "SDCycleScrollView.h"
 #import "UIButton+ImageTitleStyle.h"
+#import "DeviceMainPage.h"
 
 @interface HomePage() {
 
@@ -46,6 +47,7 @@
     [icon1 setFont:FONT12];
     [icon1 setImage:img1 forState:UIControlStateNormal];
     [icon1 setButtonImageTitleStyle:ButtonImageTitleStyleTop padding:2];
+    [icon1 addTarget:self action:@selector(clickIcon1Handler:) forControlEvents:UIControlEventTouchUpInside];
     [containerView addSubview:icon1];
 
     UIImage *img2 = [UIImage imageNamed:@"icon2_znjj"];
@@ -55,6 +57,7 @@
     [icon2 setFont:FONT12];
     [icon2 setImage:img2 forState:UIControlStateNormal];
     [icon2 setButtonImageTitleStyle:ButtonImageTitleStyleTop padding:2];
+    [icon2 addTarget:self action:@selector(clickIcon2Handler:) forControlEvents:UIControlEventTouchUpInside];
     [containerView addSubview:icon2];
 
     UIImage *img3 = [UIImage imageNamed:@"icon3_ycyl"];
@@ -64,6 +67,7 @@
     [icon3 setFont:FONT12];
     [icon3 setImage:img3 forState:UIControlStateNormal];
     [icon3 setButtonImageTitleStyle:ButtonImageTitleStyleTop padding:2];
+    [icon3 addTarget:self action:@selector(clickIcon3Handler:) forControlEvents:UIControlEventTouchUpInside];
     [containerView addSubview:icon3];
 
     UIImage *img4 = [UIImage imageNamed:@"icon4_bmfw"];
@@ -73,6 +77,7 @@
     [icon4 setFont:FONT12];
     [icon4 setImage:img4 forState:UIControlStateNormal];
     [icon4 setButtonImageTitleStyle:ButtonImageTitleStyleTop padding:2];
+    [icon4 addTarget:self action:@selector(clickIcon4Handler:) forControlEvents:UIControlEventTouchUpInside];
     [containerView addSubview:icon4];
 
     UIImage *img5 = [UIImage imageNamed:@"icon5_wmdc"];
@@ -82,6 +87,7 @@
     [icon5 setFont:FONT12];
     [icon5 setImage:img5 forState:UIControlStateNormal];
     [icon5 setButtonImageTitleStyle:ButtonImageTitleStyleTop padding:2];
+    [icon5 addTarget:self action:@selector(clickIcon5Handler:) forControlEvents:UIControlEventTouchUpInside];
     [containerView addSubview:icon5];
 
     UIImage *img6 = [UIImage imageNamed:@"icon6_sgsx"];
@@ -91,6 +97,7 @@
     [icon6 setFont:FONT12];
     [icon6 setImage:img6 forState:UIControlStateNormal];
     [icon6 setButtonImageTitleStyle:ButtonImageTitleStyleTop padding:2];
+    [icon6 addTarget:self action:@selector(clickIcon6Handler:) forControlEvents:UIControlEventTouchUpInside];
     [containerView addSubview:icon6];
 
     UIImage *img7 = [UIImage imageNamed:@"icon7_zxjc"];
@@ -100,6 +107,7 @@
     [icon7 setFont:FONT12];
     [icon7 setImage:img7 forState:UIControlStateNormal];
     [icon7 setButtonImageTitleStyle:ButtonImageTitleStyleTop padding:2];
+    [icon7 addTarget:self action:@selector(clickIcon7Handler:) forControlEvents:UIControlEventTouchUpInside];
     [containerView addSubview:icon7];
 
     UIImage *img8 = [UIImage imageNamed:@"icon8_sqzx"];
@@ -109,6 +117,7 @@
     [icon8 setFont:FONT12];
     [icon8 setImage:img8 forState:UIControlStateNormal];
     [icon8 setButtonImageTitleStyle:ButtonImageTitleStyleTop padding:2];
+    [icon8 addTarget:self action:@selector(clickIcon8Handler:) forControlEvents:UIControlEventTouchUpInside];
     [containerView addSubview:icon8];
 
     UIImageView *sp1 = [[UIImageView alloc] initWithFrame:CGRectMake(0, 180+height*2, SCREEN_WIDTH, 3)];
@@ -191,4 +200,32 @@
     [super didReceiveMemoryWarning];
     //Dispose of any resources that can be recreated.
 }
+
+-(void)clickIcon1Handler:(id)sender {
+    DeviceMainPage * page = [[DeviceMainPage alloc] initIsFirstPage:NO];
+    [self.navigationController pushViewController:page animated:YES];
+}
+
+-(void)clickIcon2Handler:(id)sender {
+}
+
+-(void)clickIcon3Handler:(id)sender {
+}
+
+-(void)clickIcon4Handler:(id)sender {
+}
+
+-(void)clickIcon5Handler:(id)sender {
+}
+
+-(void)clickIcon6Handler:(id)sender {
+}
+
+-(void)clickIcon7Handler:(id)sender {
+}
+
+-(void)clickIcon8Handler:(id)sender {
+}
+
+
 @end
