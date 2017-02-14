@@ -6,8 +6,10 @@
 #import "DeviceMainPage.h"
 #import "DeviceAddPage.h"
 
-@interface DeviceMainPage() {
+@interface DeviceMainPage()<UITableViewDataSource,UITableViewDelegate> {
 
+    UITableView *_tableView;
+    NSMutableArray *deviceArray;
 }
 @end
 
@@ -49,6 +51,91 @@
 
     containerView.contentSize = CGSizeMake(self.view.frame.size.width, bg_image.size.height);
     [self.view addSubview:containerView];
+
+    _tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, bg_image.size.height, SCREEN_WIDTH, SCREEN_HEIGHT-bg_image.size.height-40) style:UITableViewStyleGrouped];
+    _tableView.dataSource = self;
+    _tableView.delegate = self;
+    [self.view addSubview:_tableView];
+
+    [self loadDeviceInfoList:YES];
+}
+
+-(void)loadDeviceInfoList:(BOOL)bTips
+{
+    deviceArray = [[NSMutableArray alloc] init];
+
+    NSDictionary *device1 = [NSDictionary dictionaryWithObjectsAndKeys:@"淼溪净水器设备1",@"name",@"1",@"status",@"出水水质：非常棒",@"desc",nil];
+    [deviceArray addObject:device1];
+    NSDictionary *device2 = [NSDictionary dictionaryWithObjectsAndKeys:@"淼溪净水器设备2",@"name",@"0",@"status",@"出水水质：不理想",@"desc",nil];
+    [deviceArray addObject:device2];
+}
+
+-(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
+{
+    return 1;
+}
+
+-(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+    return [deviceArray count];
+}
+
+-(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return 60;
+}
+
+-(CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
+{
+    return 1;
+}
+
+-(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    NSString * identifier = @"deviceMainList";
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:identifier];
+    if (nil == cell) {
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:identifier];
+        cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+    }
+
+    cell.selectionStyle = UITableViewCellSelectionStyleNone;
+
+    NSUInteger row = [indexPath row];
+    NSDictionary *device = [deviceArray objectAtIndex:row];
+    cell.textLabel.text = [device valueForKey:@"name"];
+    int status = [device[@"status"] integerValue];
+    if(status == 1) {
+        cell.detailTextLabel.text = @"正在运行";
+        cell.imageView.image = [UIImage imageNamed:@"icon_start"];
+        cell.detailTextLabel.textColor = kUIColorFromRGB(0x6bb3ed);
+    } else {
+        cell.detailTextLabel.text = @"停止运行";
+        cell.imageView.image = [UIImage imageNamed:@"icon_stop"];
+        cell.detailTextLabel.textColor = kUIColorFromRGB(0xff3f54);
+    }
+    cell.textLabel.font = FONT16;
+    cell.textLabel.textColor = BLACKTEXTCOLOR_TITLE;
+    cell.detailTextLabel.font = FONT14;
+
+    return cell;
+}
+
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+
+    _selectedDevice = [[deviceArray objectAtIndex:[indexPath row]] mutableCopy];
+
+//    DeviceDetailsPage *page = [[DeviceDetailsPage alloc] initIsFirstPage:NO];
+//    BaseNaviController *loginNav = [[BaseNaviController alloc] initWithRootViewController:page];
+//    [self presentViewController:loginNav animated:YES completion:nil];
+
+}
+
+- (void)didReceiveMemoryWarning {
+    [super didReceiveMemoryWarning];
+    // Dispose of any resources that can be recreated.
 }
 
 -(void)addAction:(id)sender {
