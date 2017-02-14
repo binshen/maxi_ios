@@ -4,7 +4,7 @@
 //
 
 #import "DeviceAddPage.h"
-
+#import "DeviceMainPage.h"
 
 @interface DeviceAddPage() {
 
@@ -56,8 +56,14 @@
 
     UIImageView *imageView3 = [[UIImageView alloc] initWithFrame:CGRectMake(20, SCREEN_HEIGHT-130, SCREEN_WIDTH-40, 40)];
     imageView3.image = [UIImage imageNamed:@"btn_next"];
+    imageView3.userInteractionEnabled = YES;
+    [imageView3 addGestureRecognizer:[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(doAddDevice:)]];
     [self.view addSubview:imageView3];
 }
 
+-(void)doAddDevice:(UIGestureRecognizer *)gestureRecognizer {
+    DeviceMainPage * page = [[DeviceMainPage alloc] initIsFirstPage:NO];
+    [self.navigationController pushViewController:page animated:YES];
+}
 
 @end
