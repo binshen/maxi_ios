@@ -4,6 +4,7 @@
 //
 
 #import "DeviceConfigPage.h"
+#import "DeviceMainPage.h"
 
 @interface DeviceConfigPage()<UITableViewDataSource,UITableViewDelegate> {
 
@@ -34,6 +35,12 @@
     [self.view addSubview:_tableView];
 
     [self loadDeviceInfoList:YES];
+
+    UIImageView *imageView = [[UIImageView alloc] initWithFrame:CGRectMake(20, SCREEN_HEIGHT-130, SCREEN_WIDTH-40, 40)];
+    imageView.image = [UIImage imageNamed:@"btn_unbind_device"];
+    imageView.userInteractionEnabled = YES;
+    [imageView addGestureRecognizer:[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(doUnbindDevice:)]];
+    [self.view addSubview:imageView];
 }
 
 -(void)loadDeviceInfoList:(BOOL)bTips
@@ -113,6 +120,11 @@
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+-(void)doUnbindDevice:(UIGestureRecognizer *)gestureRecognizer {
+    DeviceMainPage * page = [[DeviceMainPage alloc] initIsFirstPage:NO];
+    [self.navigationController pushViewController:page animated:YES];
 }
 
 @end
