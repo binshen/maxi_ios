@@ -30,7 +30,7 @@
 
 
     UIImageView *imageView = [[UIImageView alloc] initWithFrame:CGRectMake(20, SCREEN_HEIGHT-130, SCREEN_WIDTH-40, 40)];
-    imageView.image = [UIImage imageNamed:@"btn_unbind_device"];
+    imageView.image = [UIImage imageNamed:@"btn_save_device_name"];
     imageView.userInteractionEnabled = YES;
     [imageView addGestureRecognizer:[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(doRenameDevice:)]];
     [self.view addSubview:imageView];
