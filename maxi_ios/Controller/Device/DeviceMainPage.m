@@ -5,6 +5,7 @@
 
 #import "DeviceMainPage.h"
 #import "DeviceAddPage.h"
+#import "DeviceDetailPage.h"
 
 @interface DeviceMainPage()<UITableViewDataSource,UITableViewDelegate> {
 
@@ -125,12 +126,14 @@
 {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
 
-    _selectedDevice = [[deviceArray objectAtIndex:[indexPath row]] mutableCopy];
+//    _selectedDevice = [[deviceArray objectAtIndex:[indexPath row]] mutableCopy];
 
 //    DeviceDetailsPage *page = [[DeviceDetailsPage alloc] initIsFirstPage:NO];
 //    BaseNaviController *loginNav = [[BaseNaviController alloc] initWithRootViewController:page];
 //    [self presentViewController:loginNav animated:YES completion:nil];
 
+    DeviceDetailPage *page = [[DeviceDetailPage alloc] initIsFirstPage:NO];
+    [self.navigationController pushViewController:page animated:YES];
 }
 
 - (void)didReceiveMemoryWarning {
