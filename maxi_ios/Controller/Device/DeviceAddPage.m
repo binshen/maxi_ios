@@ -51,8 +51,13 @@
     imageView2.image = [UIImage imageNamed:@"bg_wifi"];
     [self.view addSubview:imageView2];
 
+    UITextField *wifiNameTextField = [[UITextField alloc] initWithFrame:CGRectMake(25, _height+90, SCREEN_WIDTH-50, 50)];
+    wifiNameTextField.placeholder = @"WIFI名称";
+    [self.view addSubview:wifiNameTextField];
 
-
+    UITextField *wifiPswTextField = [[UITextField alloc] initWithFrame:CGRectMake(25, _height+140, SCREEN_WIDTH-50, 50)];
+    wifiPswTextField.placeholder = @"请输入密码";
+    [self.view addSubview:wifiPswTextField];
 
     UIImageView *imageView3 = [[UIImageView alloc] initWithFrame:CGRectMake(20, SCREEN_HEIGHT-130, SCREEN_WIDTH-40, 40)];
     imageView3.image = [UIImage imageNamed:@"btn_next"];
