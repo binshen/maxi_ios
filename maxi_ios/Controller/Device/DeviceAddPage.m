@@ -29,8 +29,34 @@
 
     UIImage *bg_image = [UIImage imageNamed:@"icon_wifi"];
     UIImageView *imageView = [[UIImageView alloc] initWithImage:bg_image];
-    imageView.center = CGPointMake(SCREEN_WIDTH/2, bg_image.size.height+10);
+    imageView.center = CGPointMake(SCREEN_WIDTH/2, bg_image.size.height/2+30);
     [self.view addSubview:imageView];
+
+    CGFloat _height = bg_image.size.height+30;
+    UILabel *label1 = [[UILabel alloc] initWithFrame:CGRectMake(0, _height+30, SCREEN_WIDTH, 30)];
+    label1.text = @"连接WIFI";
+    label1.textColor = [UIColor grayColor];
+    label1.font = FONT18;
+    label1.textAlignment = NSTextAlignmentCenter;
+    [self.view addSubview:label1];
+
+    UILabel *label2 = [[UILabel alloc] initWithFrame:CGRectMake(0, _height+60, SCREEN_WIDTH, 30)];
+    label2.text = @"连接一个可用的WIFI，让设备接入网络";
+    label2.textColor = [UIColor grayColor];
+    label2.font = FONT12;
+    label2.textAlignment = NSTextAlignmentCenter;
+    [self.view addSubview:label2];
+
+    UIImageView *imageView2 = [[UIImageView alloc] initWithFrame:CGRectMake(20, _height+90, SCREEN_WIDTH-40, 100)];
+    imageView2.image = [UIImage imageNamed:@"bg_wifi"];
+    [self.view addSubview:imageView2];
+
+
+
+
+    UIImageView *imageView3 = [[UIImageView alloc] initWithFrame:CGRectMake(20, SCREEN_HEIGHT-130, SCREEN_WIDTH-40, 40)];
+    imageView3.image = [UIImage imageNamed:@"btn_next"];
+    [self.view addSubview:imageView3];
 }
 
 
