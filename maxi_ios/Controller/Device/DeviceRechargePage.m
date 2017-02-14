@@ -4,6 +4,7 @@
 //
 
 #import "DeviceRechargePage.h"
+#import "DeviceConfigPage.h"
 
 @interface DeviceRechargePage() {
 
@@ -25,6 +26,19 @@
     [backButton addTarget:self action:@selector(backAction) forControlEvents:UIControlEventTouchUpInside];
     UIBarButtonItem* leftBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:backButton];
     self.navigationItem.leftBarButtonItem = leftBarButtonItem;
+
+
+
+    UIImageView *imageView = [[UIImageView alloc] initWithFrame:CGRectMake(20, SCREEN_HEIGHT-130, SCREEN_WIDTH-40, 40)];
+    imageView.image = [UIImage imageNamed:@"btn_confirm_recharge"];
+    imageView.userInteractionEnabled = YES;
+    [imageView addGestureRecognizer:[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(doRechargeDevice:)]];
+    [self.view addSubview:imageView];
+}
+
+-(void)doRechargeDevice:(UIGestureRecognizer *)gestureRecognizer {
+    DeviceConfigPage * page = [[DeviceConfigPage alloc] initIsFirstPage:NO];
+    [self.navigationController pushViewController:page animated:YES];
 }
 
 @end

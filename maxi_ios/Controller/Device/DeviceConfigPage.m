@@ -5,6 +5,8 @@
 
 #import "DeviceConfigPage.h"
 #import "DeviceMainPage.h"
+#import "DeviceUpdateNamePage.h"
+#import "DeviceRechargePage.h"
 
 @interface DeviceConfigPage()<UITableViewDataSource,UITableViewDelegate> {
 
@@ -100,19 +102,12 @@
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
-
-//    _selectedDevice = [[configArray objectAtIndex:[indexPath row]] mutableCopy];
-//
-//    DeviceDetailsPage *page = [[DeviceDetailsPage alloc] initIsFirstPage:NO];
-//    BaseNaviController *loginNav = [[BaseNaviController alloc] initWithRootViewController:page];
-//    [self presentViewController:loginNav animated:YES completion:nil];
-
     int index = [indexPath row];
     if(index == 0) {
-        DeviceConfigPage * page = [[DeviceConfigPage alloc] initIsFirstPage:NO];
+        DeviceUpdateNamePage * page = [[DeviceUpdateNamePage alloc] initIsFirstPage:NO];
         [self.navigationController pushViewController:page animated:YES];
     } else {
-        DeviceConfigPage * page = [[DeviceConfigPage alloc] initIsFirstPage:NO];
+        DeviceRechargePage * page = [[DeviceRechargePage alloc] initIsFirstPage:NO];
         [self.navigationController pushViewController:page animated:YES];
     }
 }
