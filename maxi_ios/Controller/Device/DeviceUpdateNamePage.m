@@ -28,6 +28,16 @@
     self.navigationItem.leftBarButtonItem = leftBarButtonItem;
 
 
+    UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(20, 20, 100, 50)];
+    label.textAlignment = NSTextAlignmentLeft;
+    label.text = @"设备名称：";
+    label.font = FONT18;
+    [self.view addSubview:label];
+
+    UITextField *textField = [[UITextField alloc] initWithFrame:CGRectMake(120, 20, SCREEN_WIDTH - 140, 50)];
+    textField.text = @"淼溪净水器123";
+    textField.font = FONT18;
+    [self.view addSubview:textField];
 
     UIImageView *imageView = [[UIImageView alloc] initWithFrame:CGRectMake(20, SCREEN_HEIGHT-130, SCREEN_WIDTH-40, 40)];
     imageView.image = [UIImage imageNamed:@"btn_save_device_name"];
