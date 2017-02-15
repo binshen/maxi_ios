@@ -33,6 +33,8 @@
     [addButton addTarget:self action:@selector(deviceConfigAction:) forControlEvents:UIControlEventTouchUpInside];
     UIBarButtonItem* rightBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:addButton];
     self.navigationItem.rightBarButtonItem = rightBarButtonItem;
+
+
 }
 
 -(void)deviceConfigAction:(id)sender {
