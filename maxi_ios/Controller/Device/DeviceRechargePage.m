@@ -28,6 +28,28 @@
     self.navigationItem.leftBarButtonItem = leftBarButtonItem;
 
 
+    UILabel *label1 = [[UILabel alloc] initWithFrame:CGRectMake(20, 20, 100, 50)];
+    label1.textAlignment = NSTextAlignmentLeft;
+    label1.text = @"充值设备：";
+    label1.font = FONT18;
+    [self.view addSubview:label1];
+
+    UILabel *textField1 = [[UILabel alloc] initWithFrame:CGRectMake(120, 20, SCREEN_WIDTH - 140, 50)];
+    textField1.text = @"淼溪净水器123";
+    textField1.font = FONT18;
+    [self.view addSubview:textField1];
+
+    UILabel *label2 = [[UILabel alloc] initWithFrame:CGRectMake(20, 70, 100, 50)];
+    label2.textAlignment = NSTextAlignmentLeft;
+    label2.text = @"充值金额：";
+    label2.font = FONT18;
+    [self.view addSubview:label2];
+
+    UITextField *textField2 = [[UITextField alloc] initWithFrame:CGRectMake(120, 70, SCREEN_WIDTH - 140, 50)];
+    textField2.placeholder = @"请输入充值金额";
+    textField2.text = @"";
+    textField2.font = FONT18;
+    [self.view addSubview:textField2];
 
     UIImageView *imageView = [[UIImageView alloc] initWithFrame:CGRectMake(20, SCREEN_HEIGHT-130, SCREEN_WIDTH-40, 40)];
     imageView.image = [UIImage imageNamed:@"btn_confirm_recharge"];
