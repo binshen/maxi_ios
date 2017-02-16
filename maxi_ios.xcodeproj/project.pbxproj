@@ -57,7 +57,6 @@
 		3514A4F56D5B0E3E46DF733D /* MKAnnotationView+WebCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 3514AF1E22019DDEB9244AB7 /* MKAnnotationView+WebCache.m */; };
 		3514A507B96B0A447C75E6A5 /* UILabel+DynamicFrame.m in Sources */ = {isa = PBXBuildFile; fileRef = 3514A6FED48B300B1A4F9F77 /* UILabel+DynamicFrame.m */; };
 		3514A53921F73C732281113B /* MKObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 3514A2CE2526890179BE9165 /* MKObject.m */; };
-		3514A5426DEB85C0E2B902BF /* logo@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3514ABA34FCD89EE3F27F5EB /* logo@2x.png */; };
 		3514A553D123DCAB9A67E48D /* MonitorView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3514AC25143456D0B61613A1 /* MonitorView.m */; };
 		3514A596B17A09092880CFEC /* bg_status_2@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3514ACFCD25B194FC93A1FEA /* bg_status_2@2x.png */; };
 		3514A59B3B8FCE7F9EE92346 /* demo_ad1@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3514A9B4210917B946B399AA /* demo_ad1@2x.png */; };
@@ -354,7 +353,6 @@
 		3514AB7910A3C688D53A02F0 /* SBJsonParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJsonParser.m; sourceTree = "<group>"; };
 		3514ABA0B624FC59919332EE /* ic_launcher_40x40.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ic_launcher_40x40.png; sourceTree = "<group>"; };
 		3514ABA31F2C401FFBBA7163 /* SBJson.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJson.h; sourceTree = "<group>"; };
-		3514ABA34FCD89EE3F27F5EB /* logo@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "logo@2x.png"; sourceTree = "<group>"; };
 		3514ABAFCF4E1523A3DF4E3B /* DeviceUpdateNamePage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DeviceUpdateNamePage.m; sourceTree = "<group>"; };
 		3514ABC06C9DF672D5314658 /* MKObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MKObject.h; sourceTree = "<group>"; };
 		3514ABC349D7233D9D8A9392 /* UIImage+GIF.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+GIF.h"; sourceTree = "<group>"; };
@@ -553,7 +551,6 @@
 				3514AF7888C33E73AC3D24F4 /* start_640x960.png */,
 				3514AAD51144418E8E423B7E /* start_640x1136.png */,
 				3514AC1CDAB6F785989A7282 /* start_320x480.png */,
-				3514ABA34FCD89EE3F27F5EB /* logo@2x.png */,
 				3514ADB9A5BA88E309861048 /* bj@2x.png */,
 				3514A594703839DB67AAE7BD /* btn_register.png */,
 				3514AA118765E42DA169E500 /* btn_login.png */,
@@ -1001,7 +998,7 @@
 				TargetAttributes = {
 					FD3A1E791E4308E2000D0AED = {
 						CreatedOnToolsVersion = 8.2.1;
-						DevelopmentTeam = 7X3Z6AJPMX;
+						DevelopmentTeam = VGXA77XL6T;
 						ProvisioningStyle = Automatic;
 					};
 					FD3A1E921E4308E2000D0AED = {
@@ -1056,7 +1053,6 @@
 				3514A48EC0890A9BFA1B5136 /* start_320x480.png in Resources */,
 				3514A7F0CA40F910D59CBB86 /* LaunchScreen.storyboard in Resources */,
 				3514A6ED609CA95F8C451A8D /* Main.storyboard in Resources */,
-				3514A5426DEB85C0E2B902BF /* logo@2x.png in Resources */,
 				3514AB4901D600A83C9F4724 /* bj@2x.png in Resources */,
 				3514A2C8C8CA4F93E7B7F110 /* btn_register.png in Resources */,
 				3514A161D0154CBD6CA3599E /* btn_login.png in Resources */,
@@ -1362,7 +1358,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				DEVELOPMENT_TEAM = 7X3Z6AJPMX;
+				DEVELOPMENT_TEAM = VGXA77XL6T;
 				GCC_PREFIX_HEADER = maxi_ios/PrefixHeader.pch;
 				INFOPLIST_FILE = maxi_ios/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
@@ -1377,7 +1373,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				DEVELOPMENT_TEAM = 7X3Z6AJPMX;
+				DEVELOPMENT_TEAM = VGXA77XL6T;
 				GCC_PREFIX_HEADER = maxi_ios/PrefixHeader.pch;
 				INFOPLIST_FILE = maxi_ios/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
