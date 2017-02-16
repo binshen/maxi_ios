@@ -18,10 +18,10 @@
     [super viewDidLoad];
 
     self.title = @"淼溪净水";
-    NSDictionary *dic = [NSDictionary dictionaryWithObjects:[NSArray arrayWithObjects:[UIColor blackColor], [UIFont systemFontOfSize:20 weight:20], nil] forKeys:[NSArray arrayWithObjects:NSForegroundColorAttributeName, NSFontAttributeName, nil]];
+    NSDictionary *dic = [NSDictionary dictionaryWithObjects:[NSArray arrayWithObjects:[UIColor whiteColor], [UIFont systemFontOfSize:18 weight:20], nil] forKeys:[NSArray arrayWithObjects:NSForegroundColorAttributeName, NSFontAttributeName, nil]];
     self.navigationController.navigationBar.titleTextAttributes = dic;
 
-    UIImage* backImage = [UIImage imageNamed:@"btn_back"];
+    UIImage* backImage = [UIImage imageNamed:@"btn_back2"];
     UIButton* backButton= [[UIButton alloc] initWithFrame:CGRectMake(0,0,16,20)];
     [backButton setBackgroundImage:backImage forState:UIControlStateNormal];
     [backButton addTarget:self action:@selector(backAction) forControlEvents:UIControlEventTouchUpInside];
@@ -29,7 +29,7 @@
     self.navigationItem.leftBarButtonItem = leftBarButtonItem;
 
     UIImage* addImage = [UIImage imageNamed:@"btn_config"];
-    UIButton* addButton= [[UIButton alloc] initWithFrame:CGRectMake(SCREEN_WIDTH-35,0,20,20)];
+    UIButton* addButton= [[UIButton alloc] initWithFrame:CGRectMake(SCREEN_WIDTH-35,0,20,5)];
     [addButton setBackgroundImage:addImage forState:UIControlStateNormal];
     [addButton addTarget:self action:@selector(deviceConfigAction:) forControlEvents:UIControlEventTouchUpInside];
     UIBarButtonItem* rightBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:addButton];
