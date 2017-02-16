@@ -5,6 +5,7 @@
 
 #import "DeviceDetailPage.h"
 #import "DeviceConfigPage.h"
+#import "JPTabViewController.h"
 
 @interface DeviceDetailPage() {
 
@@ -67,6 +68,21 @@
     label4.font = FONT11;
     label4.textAlignment = NSTextAlignmentLeft;
     [self.view addSubview:label4];
+
+//    UIViewController *redController = [[UIViewController alloc] init];
+//    [redController setTitle:@"RED"];
+//    [[redController view] setBackgroundColor:[UIColor redColor]];
+//
+//    UIViewController *greenController = [[UIViewController alloc] init];
+//    [greenController setTitle:@"GREEN"];
+//    [[greenController view] setBackgroundColor:[UIColor greenColor]];
+//
+//    UIViewController *blueController = [[UIViewController alloc] init];
+//    [blueController setTitle:@"BLUE"];
+//    [[blueController view] setBackgroundColor:[UIColor blueColor]];
+//
+//    JPTabViewController *tabViewController = [[JPTabViewController alloc] initWithControllers:@[redController, greenController, blueController]];
+//    [self.view addSubview:tabViewController.view];
 }
 
 -(void)deviceConfigAction:(id)sender {
