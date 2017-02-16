@@ -69,20 +69,20 @@
     label4.textAlignment = NSTextAlignmentLeft;
     [self.view addSubview:label4];
 
-//    UIViewController *redController = [[UIViewController alloc] init];
-//    [redController setTitle:@"RED"];
-//    [[redController view] setBackgroundColor:[UIColor redColor]];
-//
-//    UIViewController *greenController = [[UIViewController alloc] init];
-//    [greenController setTitle:@"GREEN"];
-//    [[greenController view] setBackgroundColor:[UIColor greenColor]];
-//
-//    UIViewController *blueController = [[UIViewController alloc] init];
-//    [blueController setTitle:@"BLUE"];
-//    [[blueController view] setBackgroundColor:[UIColor blueColor]];
-//
-//    JPTabViewController *tabViewController = [[JPTabViewController alloc] initWithControllers:@[redController, greenController, blueController]];
-//    [self.view addSubview:tabViewController.view];
+    UIScrollView *containerView = [[UIScrollView alloc] initWithFrame:CGRectMake(0, _height+80, SCREEN_WIDTH, SCREEN_HEIGHT-_height-80)];
+
+    UIViewController *redController = [[UIViewController alloc] init];
+    [redController setTitle:@"RED"];
+    [[redController view] setBackgroundColor:[UIColor redColor]];
+
+    UIViewController *blueController = [[UIViewController alloc] init];
+    [blueController setTitle:@"BLUE"];
+    [[blueController view] setBackgroundColor:[UIColor blueColor]];
+
+    JPTabViewController *tabViewController = [[JPTabViewController alloc] initWithControllers:@[redController, blueController]];
+    [containerView addSubview:tabViewController.view];
+
+    [self.view addSubview:containerView];
 }
 
 -(void)deviceConfigAction:(id)sender {
