@@ -17,10 +17,10 @@
     [super viewDidLoad];
 
     self.title = @"修改名称";
-    NSDictionary *dic = [NSDictionary dictionaryWithObjects:[NSArray arrayWithObjects:[UIColor blackColor], [UIFont systemFontOfSize:20 weight:20], nil] forKeys:[NSArray arrayWithObjects:NSForegroundColorAttributeName, NSFontAttributeName, nil]];
+    NSDictionary *dic = [NSDictionary dictionaryWithObjects:[NSArray arrayWithObjects:[UIColor whiteColor], [UIFont systemFontOfSize:20 weight:20], nil] forKeys:[NSArray arrayWithObjects:NSForegroundColorAttributeName, NSFontAttributeName, nil]];
     self.navigationController.navigationBar.titleTextAttributes = dic;
 
-    UIImage* backImage = [UIImage imageNamed:@"btn_back"];
+    UIImage* backImage = [UIImage imageNamed:@"btn_back2"];
     UIButton* backButton= [[UIButton alloc] initWithFrame:CGRectMake(0,0,16,20)];
     [backButton setBackgroundImage:backImage forState:UIControlStateNormal];
     [backButton addTarget:self action:@selector(backAction) forControlEvents:UIControlEventTouchUpInside];
