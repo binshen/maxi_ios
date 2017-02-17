@@ -35,7 +35,7 @@
     UIBarButtonItem* rightBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:addButton];
     self.navigationItem.rightBarButtonItem = rightBarButtonItem;
 
-    UIImage *bg_status = [UIImage imageNamed:@"bg_status_1"];
+    UIImage *bg_status = [self imageCompressWithSimple:[UIImage imageNamed:@"bg_status_1"] scaledToSize:CGSizeMake(SCREEN_WIDTH/3, SCREEN_WIDTH/3)];
     UIImageView *imageView = [[UIImageView alloc] initWithImage:bg_status];
     imageView.center = CGPointMake(SCREEN_WIDTH/2, bg_status.size.height/2+20);
     [self.view addSubview:imageView];
@@ -83,6 +83,14 @@
     [containerView addSubview:tabViewController.view];
 
     [self.view addSubview:containerView];
+}
+
+- (UIImage*)imageCompressWithSimple:(UIImage*)image scaledToSize:(CGSize)size {
+    UIGraphicsBeginImageContext(size);
+    [image drawInRect:CGRectMake(0,0,size.width,size.height)];
+    UIImage* newImage = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    return newImage;
 }
 
 -(void)deviceConfigAction:(id)sender {
