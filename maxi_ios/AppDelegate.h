@@ -14,5 +14,7 @@
 
 
 + (AppDelegate *)AppInstance;
+
+- (void)showMainPage;
 @end
 
