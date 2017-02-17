@@ -62,6 +62,11 @@
     [self loadDeviceInfoList:YES];
 }
 
+-(void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    self.tabBarController.tabBar.hidden = YES;
+}
+
 -(void)loadDeviceInfoList:(BOOL)bTips
 {
     deviceArray = [[NSMutableArray alloc] init];
