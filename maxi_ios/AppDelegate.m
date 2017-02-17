@@ -8,6 +8,8 @@
 
 #import "AppDelegate.h"
 #import "NaviPage.h"
+#import "MainPage.h"
+#import "BaseNavCtrl.h"
 
 @interface AppDelegate ()
 
@@ -19,7 +21,19 @@
     return  (AppDelegate *)[UIApplication sharedApplication].delegate;
 }
 
-- (void)showLoginPage {
+- (void)showMainPage
+{
+    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+    // Override point for customization after application launch.
+    self.window.backgroundColor = [UIColor whiteColor];
+    MainPage *root = [[MainPage alloc]init];
+    BaseNavCtrl *nav = [[BaseNavCtrl alloc]initWithRootViewController:root];//先将root添加在navigation上
+    nav.navigationBarHidden = YES;
+    [self.window setRootViewController:nav];//navigation加在window上
+    [self.window makeKeyAndVisible];
+}
+
+- (void)showNaviPage {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     // Override point for customization after application launch.
     self.window.backgroundColor = [UIColor whiteColor];
@@ -37,7 +51,7 @@
 
     [NSThread sleepForTimeInterval:0.0];
 
-    [self showLoginPage];
+    [self showNaviPage];
 
     return YES;
 }
