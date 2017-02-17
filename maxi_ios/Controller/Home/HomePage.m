@@ -202,8 +202,10 @@
 }
 
 -(void)clickIcon1Handler:(id)sender {
+    self.hidesBottomBarWhenPushed = YES;
     DeviceMainPage * page = [[DeviceMainPage alloc] initIsFirstPage:NO];
     [self.navigationController pushViewController:page animated:YES];
+    self.hidesBottomBarWhenPushed = NO;
 }
 
 -(void)clickIcon2Handler:(id)sender {
