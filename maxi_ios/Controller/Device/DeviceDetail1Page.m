@@ -88,7 +88,7 @@
     lbl33.font = FONT15;
     [self.view addSubview:lbl33];
 
-    UIImage *img4 = [UIImage imageNamed:@"icon_1_3"];
+    UIImage *img4 = [UIImage imageNamed:@"icon_1_4"];
     UIImageView *imgView4 = [[UIImageView alloc] initWithFrame:CGRectMake(20, 110+3*h, w, h)];
     imgView4.image = img4;
     [self.view addSubview:imgView4];
@@ -111,7 +111,7 @@
     lbl43.font = FONT15;
     [self.view addSubview:lbl43];
 
-    UIImage *img5 = [UIImage imageNamed:@"icon_1_3"];
+    UIImage *img5 = [UIImage imageNamed:@"icon_1_5"];
     UIImageView *imgView5 = [[UIImageView alloc] initWithFrame:CGRectMake(20, 140+4*h, w, h)];
     imgView5.image = img5;
     [self.view addSubview:imgView5];
