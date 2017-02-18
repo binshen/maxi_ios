@@ -54,6 +54,7 @@
     _tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, bg_image.size.height, SCREEN_WIDTH, SCREEN_HEIGHT-bg_image.size.height-40) style:UITableViewStyleGrouped];
     _tableView.dataSource = self;
     _tableView.delegate = self;
+    _tableView.backgroundColor = [UIColor whiteColor];
     [self.view addSubview:_tableView];
 
     [self loadDeviceInfoList:YES];
