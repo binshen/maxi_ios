@@ -26,7 +26,7 @@
     UILabel *lbl_a = [[UILabel alloc] initWithFrame:CGRectMake(w_a+40, 20, SCREEN_WIDTH-w_a-40, h_a)];
     lbl_a.text = @"剩余水量（30L）";
     lbl_a.textAlignment = NSTextAlignmentLeft;
-    lbl_a.textColor = [UIColor blackColor];
+    lbl_a.textColor = GRAY_TEXT_COLOR;
     lbl_a.font = FONT15;
     [self.view addSubview:lbl_a];
 
@@ -42,7 +42,7 @@
     UILabel *lbl_b = [[UILabel alloc] initWithFrame:CGRectMake(w_a+40, 40+h_a, SCREEN_WIDTH-w_a-40, h_a)];
     lbl_b.text = @"7天用水量统计";
     lbl_b.textAlignment = NSTextAlignmentLeft;
-    lbl_b.textColor = [UIColor blackColor];
+    lbl_b.textColor = GRAY_TEXT_COLOR;
     lbl_b.font = FONT15;
     [self.view addSubview:lbl_b];
 
@@ -56,13 +56,13 @@
     UILabel *lbl11 = [[UILabel alloc] initWithFrame:CGRectMake(w_a+40, height+15, SCREEN_WIDTH-w_a-40, h)];
     lbl11.text = @"2016-12-28";
     lbl11.textAlignment = NSTextAlignmentLeft;
-    lbl11.textColor = [UIColor grayColor];
+    lbl11.textColor = GRAY_TEXT_COLOR_2;
     lbl11.font = FONT12;
     [self.view addSubview:lbl11];
     UILabel *lbl12 = [[UILabel alloc] initWithFrame:CGRectMake(SCREEN_WIDTH-60, height+15, 40, h)];
     lbl12.text = @"1L";
     lbl12.textAlignment = NSTextAlignmentRight;
-    lbl12.textColor = [UIColor blueColor];
+    lbl12.textColor = BLUE_TEXT_COLOR;
     lbl12.font = FONT12;
     [self.view addSubview:lbl12];
 
@@ -73,13 +73,13 @@
     UILabel *lbl21 = [[UILabel alloc] initWithFrame:CGRectMake(w_a+40, height+20+h, SCREEN_WIDTH-w_a-40, h)];
     lbl21.text = @"2016-12-27";
     lbl21.textAlignment = NSTextAlignmentLeft;
-    lbl21.textColor = [UIColor grayColor];
+    lbl21.textColor = GRAY_TEXT_COLOR_2;
     lbl21.font = FONT12;
     [self.view addSubview:lbl21];
     UILabel *lbl22 = [[UILabel alloc] initWithFrame:CGRectMake(SCREEN_WIDTH-60, height+20+h, 40, h)];
     lbl22.text = @"2L";
     lbl22.textAlignment = NSTextAlignmentRight;
-    lbl22.textColor = [UIColor blueColor];
+    lbl22.textColor = BLUE_TEXT_COLOR;
     lbl22.font = FONT12;
     [self.view addSubview:lbl22];
 
@@ -90,13 +90,13 @@
     UILabel *lbl31 = [[UILabel alloc] initWithFrame:CGRectMake(w_a+40, height+25+2*h, SCREEN_WIDTH-w_a-40, h)];
     lbl31.text = @"2016-12-26";
     lbl31.textAlignment = NSTextAlignmentLeft;
-    lbl31.textColor = [UIColor grayColor];
+    lbl31.textColor = GRAY_TEXT_COLOR_2;
     lbl31.font = FONT12;
     [self.view addSubview:lbl31];
     UILabel *lbl32 = [[UILabel alloc] initWithFrame:CGRectMake(SCREEN_WIDTH-60, height+25+2*h, 40, h)];
     lbl32.text = @"0L";
     lbl32.textAlignment = NSTextAlignmentRight;
-    lbl32.textColor = [UIColor blueColor];
+    lbl32.textColor = BLUE_TEXT_COLOR;
     lbl32.font = FONT12;
     [self.view addSubview:lbl32];
 
@@ -107,13 +107,13 @@
     UILabel *lbl41 = [[UILabel alloc] initWithFrame:CGRectMake(w_a+40, height+30+3*h, SCREEN_WIDTH-w_a-40, h)];
     lbl41.text = @"2016-12-25";
     lbl41.textAlignment = NSTextAlignmentLeft;
-    lbl41.textColor = [UIColor grayColor];
+    lbl41.textColor = GRAY_TEXT_COLOR_2;
     lbl41.font = FONT12;
     [self.view addSubview:lbl41];
     UILabel *lbl42 = [[UILabel alloc] initWithFrame:CGRectMake(SCREEN_WIDTH-60, height+30+3*h, 40, h)];
     lbl42.text = @"0L";
     lbl42.textAlignment = NSTextAlignmentRight;
-    lbl42.textColor = [UIColor blueColor];
+    lbl42.textColor = BLUE_TEXT_COLOR;
     lbl42.font = FONT12;
     [self.view addSubview:lbl42];
 
@@ -124,13 +124,13 @@
     UILabel *lbl51 = [[UILabel alloc] initWithFrame:CGRectMake(w_a+40, height+35+4*h, SCREEN_WIDTH-w_a-40, h)];
     lbl51.text = @"2016-12-24";
     lbl51.textAlignment = NSTextAlignmentLeft;
-    lbl51.textColor = [UIColor grayColor];
+    lbl51.textColor = GRAY_TEXT_COLOR_2;
     lbl51.font = FONT12;
     [self.view addSubview:lbl51];
     UILabel *lbl52 = [[UILabel alloc] initWithFrame:CGRectMake(SCREEN_WIDTH-60, height+35+4*h, 40, h)];
     lbl52.text = @"0L";
     lbl52.textAlignment = NSTextAlignmentRight;
-    lbl52.textColor = [UIColor blueColor];
+    lbl52.textColor = BLUE_TEXT_COLOR;
     lbl52.font = FONT12;
     [self.view addSubview:lbl52];
 
@@ -141,13 +141,13 @@
     UILabel *lbl61 = [[UILabel alloc] initWithFrame:CGRectMake(w_a+40, height+40+5*h, SCREEN_WIDTH-w_a-40, h)];
     lbl61.text = @"2016-12-23";
     lbl61.textAlignment = NSTextAlignmentLeft;
-    lbl61.textColor = [UIColor grayColor];
+    lbl61.textColor = GRAY_TEXT_COLOR_2;
     lbl61.font = FONT12;
     [self.view addSubview:lbl61];
     UILabel *lbl62 = [[UILabel alloc] initWithFrame:CGRectMake(SCREEN_WIDTH-60, height+40+5*h, 40, h)];
     lbl62.text = @"0L";
     lbl62.textAlignment = NSTextAlignmentRight;
-    lbl62.textColor = [UIColor blueColor];
+    lbl62.textColor = BLUE_TEXT_COLOR;
     lbl62.font = FONT12;
     [self.view addSubview:lbl62];
 
@@ -158,13 +158,13 @@
     UILabel *lbl71 = [[UILabel alloc] initWithFrame:CGRectMake(w_a+40, height+45+6*h, SCREEN_WIDTH-w_a-40, h)];
     lbl71.text = @"2016-12-22";
     lbl71.textAlignment = NSTextAlignmentLeft;
-    lbl71.textColor = [UIColor grayColor];
+    lbl71.textColor = GRAY_TEXT_COLOR_2;
     lbl71.font = FONT12;
     [self.view addSubview:lbl71];
     UILabel *lbl72 = [[UILabel alloc] initWithFrame:CGRectMake(SCREEN_WIDTH-60, height+45+6*h, 40, h)];
     lbl72.text = @"0L";
     lbl72.textAlignment = NSTextAlignmentRight;
-    lbl72.textColor = [UIColor blueColor];
+    lbl72.textColor = BLUE_TEXT_COLOR;
     lbl72.font = FONT12;
     [self.view addSubview:lbl72];
 }

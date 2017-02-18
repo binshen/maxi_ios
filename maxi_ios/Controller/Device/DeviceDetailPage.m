@@ -42,28 +42,28 @@
     CGFloat _height = bg_status.size.height+10;
     UILabel *label1 = [[UILabel alloc] initWithFrame:CGRectMake(40, _height+20, SCREEN_WIDTH/2-40, 20)];
     label1.text = @"进水水质/TDS:90";
-    label1.textColor = [UIColor grayColor];
+    label1.textColor = GRAY_TEXT_COLOR;
     label1.font = FONT11;
     label1.textAlignment = NSTextAlignmentLeft;
     [self.view addSubview:label1];
 
     UILabel *label2 = [[UILabel alloc] initWithFrame:CGRectMake(SCREEN_WIDTH/2+20, _height+20, SCREEN_WIDTH/2-20, 20)];
     label2.text = @"设备编号:123";
-    label2.textColor = [UIColor grayColor];
+    label2.textColor = GRAY_TEXT_COLOR;
     label2.font = FONT11;
     label2.textAlignment = NSTextAlignmentLeft;
     [self.view addSubview:label2];
 
     UILabel *label3 = [[UILabel alloc] initWithFrame:CGRectMake(40, _height+40, SCREEN_WIDTH/2-40, 20)];
     label3.text = @"出水水质/TDS:12";
-    label3.textColor = [UIColor grayColor];
+    label3.textColor = GRAY_TEXT_COLOR;
     label3.font = FONT11;
     label3.textAlignment = NSTextAlignmentLeft;
     [self.view addSubview:label3];
 
     UILabel *label4 = [[UILabel alloc] initWithFrame:CGRectMake(SCREEN_WIDTH/2+20, _height+40, SCREEN_WIDTH/2-20, 20)];
     label4.text = @"累计用水量:2L";
-    label4.textColor = [UIColor grayColor];
+    label4.textColor = GRAY_TEXT_COLOR;
     label4.font = FONT11;
     label4.textAlignment = NSTextAlignmentLeft;
     [self.view addSubview:label4];

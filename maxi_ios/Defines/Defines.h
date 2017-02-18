@@ -82,6 +82,11 @@ blue:((float)(rgbValue & 0xFF))/255.0 alpha:1.0]
 #define BLACKTEXTCOLOR_SUB kUIColorFromRGB(0x7b7b7b)
 #define BLUE_BUTTON_COLOR kUIColorFromRGB(0x18ADEB)
 
+#define GRAY_TEXT_COLOR kUIColorFromRGB(0x6a6a6a)
+#define GRAY_TEXT_COLOR_2 kUIColorFromRGB(0xa8a8a8)
+#define BLUE_TEXT_COLOR kUIColorFromRGB(0x65b9f7)
+#define RED_TEXT_COLOR kUIColorFromRGB(0xff7d91)
+#define ORANGE_TEXT_COLOR kUIColorFromRGB(0xff7b47)
 
 // 字体定义
 #define FONT8 [UIFont systemFontOfSize:8.0]
