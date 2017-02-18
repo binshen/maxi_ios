@@ -15,6 +15,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 
+    self.title = @"用水量";
 }
 
 @end

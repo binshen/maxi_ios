@@ -22,6 +22,7 @@
     self.title = @"淼溪净水";
     NSDictionary *dic = [NSDictionary dictionaryWithObjects:[NSArray arrayWithObjects:[UIColor whiteColor], [UIFont systemFontOfSize:18 weight:20], nil] forKeys:[NSArray arrayWithObjects:NSForegroundColorAttributeName, NSFontAttributeName, nil]];
     self.navigationController.navigationBar.titleTextAttributes = dic;
+    [self.view setBackgroundColor:[UIColor whiteColor]];
 
     UIImage* backImage = [UIImage imageNamed:@"btn_back2"];
     UIButton* backButton= [[UIButton alloc] initWithFrame:CGRectMake(0,0,16,20)];
@@ -72,16 +73,7 @@
     [self.view addSubview:label4];
 
     UIScrollView *containerView = [[UIScrollView alloc] initWithFrame:CGRectMake(0, _height+80, SCREEN_WIDTH, SCREEN_HEIGHT-_height-80)];
-
-    DeviceDetail1Page *page1 = [[DeviceDetail1Page alloc] init];
-    [page1 setTitle:@"滤芯状态"];
-    [[page1 view] setBackgroundColor:[UIColor redColor]];
-
-    DeviceDetail2Page *page2 = [[DeviceDetail2Page alloc] init];
-    [page2 setTitle:@"用水量"];
-    [[page2 view] setBackgroundColor:[UIColor blueColor]];
-
-    JPTabViewController *tabViewController = [[JPTabViewController alloc] initWithControllers:@[page1, page2]];
+    JPTabViewController *tabViewController = [[JPTabViewController alloc] initWithControllers:@[[[DeviceDetail1Page alloc] init], [[DeviceDetail2Page alloc] init]]];
     [containerView addSubview:tabViewController.view];
 
     [self.view addSubview:containerView];

@@ -15,6 +15,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 
+    self.title = @"滤芯状态";
 }
 
 @end
