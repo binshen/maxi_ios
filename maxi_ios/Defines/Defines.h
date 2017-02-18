@@ -85,6 +85,7 @@ blue:((float)(rgbValue & 0xFF))/255.0 alpha:1.0]
 #define GRAY_TEXT_COLOR kUIColorFromRGB(0x6a6a6a)
 #define GRAY_TEXT_COLOR_2 kUIColorFromRGB(0xa8a8a8)
 #define BLUE_TEXT_COLOR kUIColorFromRGB(0x65b9f7)
+#define BLUE_TEXT_COLOR_2 kUIColorFromRGB(0x32a0ff)
 #define RED_TEXT_COLOR kUIColorFromRGB(0xff7d91)
 #define ORANGE_TEXT_COLOR kUIColorFromRGB(0xff7b47)
 

@@ -40,7 +40,7 @@
 {
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor whiteColor];
-    _indicatorView.backgroundColor= [UIColor blueColor];
+    _indicatorView.backgroundColor= BLUE_TEXT_COLOR_2;
     _statusHeight = 0;//[[UIApplication sharedApplication] statusBarFrame].size.height;
     if (_controllers != nil)
     {
