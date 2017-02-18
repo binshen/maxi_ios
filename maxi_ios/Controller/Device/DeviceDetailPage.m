@@ -6,6 +6,8 @@
 #import "DeviceDetailPage.h"
 #import "DeviceConfigPage.h"
 #import "JPTabViewController.h"
+#import "DeviceDetail1Page.h"
+#import "DeviceDetail2Page.h"
 
 @interface DeviceDetailPage() {
 
@@ -71,15 +73,15 @@
 
     UIScrollView *containerView = [[UIScrollView alloc] initWithFrame:CGRectMake(0, _height+80, SCREEN_WIDTH, SCREEN_HEIGHT-_height-80)];
 
-    UIViewController *redController = [[UIViewController alloc] init];
-    [redController setTitle:@"RED"];
-    [[redController view] setBackgroundColor:[UIColor redColor]];
+    DeviceDetail1Page *page1 = [[DeviceDetail1Page alloc] init];
+    [page1 setTitle:@"滤芯状态"];
+    [[page1 view] setBackgroundColor:[UIColor redColor]];
 
-    UIViewController *blueController = [[UIViewController alloc] init];
-    [blueController setTitle:@"BLUE"];
-    [[blueController view] setBackgroundColor:[UIColor blueColor]];
+    DeviceDetail2Page *page2 = [[DeviceDetail2Page alloc] init];
+    [page2 setTitle:@"用水量"];
+    [[page2 view] setBackgroundColor:[UIColor blueColor]];
 
-    JPTabViewController *tabViewController = [[JPTabViewController alloc] initWithControllers:@[redController, blueController]];
+    JPTabViewController *tabViewController = [[JPTabViewController alloc] initWithControllers:@[page1, page2]];
     [containerView addSubview:tabViewController.view];
 
     [self.view addSubview:containerView];
