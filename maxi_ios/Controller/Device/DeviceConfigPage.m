@@ -49,9 +49,9 @@
 {
     configArray = [[NSMutableArray alloc] init];
 
-    NSDictionary *device1 = [NSDictionary dictionaryWithObjectsAndKeys:@"净化器名称变更",@"name",@"出水水质：非常棒",@"image",nil];
+    NSDictionary *device1 = [NSDictionary dictionaryWithObjectsAndKeys:@"净化器名称变更",@"name",@"icon_update_name",@"image",nil];
     [configArray addObject:device1];
-    NSDictionary *device2 = [NSDictionary dictionaryWithObjectsAndKeys:@"水量充值",@"name",@"出水水质：不理想",@"image",nil];
+    NSDictionary *device2 = [NSDictionary dictionaryWithObjectsAndKeys:@"水量充值",@"name",@"icon_recharge",@"image",nil];
     [configArray addObject:device2];
 }
 
