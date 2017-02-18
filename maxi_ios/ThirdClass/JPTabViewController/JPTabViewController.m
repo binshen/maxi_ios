@@ -41,7 +41,6 @@
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor whiteColor];
     _indicatorView.backgroundColor= BLUE_TEXT_COLOR_2;
-    _statusHeight = 0;//[[UIApplication sharedApplication] statusBarFrame].size.height;
     if (_controllers != nil)
     {
         [self loadUI];
@@ -50,23 +49,17 @@
 
 -(void)viewWillLayoutSubviews
 {
-    _contentScrollView.frame = CGRectMake(0.0,
-                                          _menuHeight + _statusHeight,
-                                          self.view.frame.size.width,
-                                          self.view.frame.size.height-_menuHeight);
+    _contentScrollView.frame = CGRectMake(0.0, _menuHeight, self.view.frame.size.width, self.view.frame.size.height-_menuHeight);
     
     for (int i=0; i < [_controllers count]; i++)
     {
         // Create content view
         UIViewController *controller = [_controllers objectAtIndex:i];
         
-        [[controller view] setFrame:CGRectMake(i * _contentScrollView.frame.size.width,
-                                               0.0,
-                                               _contentScrollView.frame.size.width,
-                                               _contentScrollView.frame.size.height)];
+        [[controller view] setFrame:CGRectMake(i * _contentScrollView.frame.size.width, 0.0, _contentScrollView.frame.size.width, _contentScrollView.frame.size.height)];
     }
 
-    [_contentScrollView setContentSize:CGSizeMake(self.view.frame.size.width * [_controllers count], self.view.frame.size.height - _menuHeight - _statusHeight)];
+    [_contentScrollView setContentSize:CGSizeMake(self.view.frame.size.width * [_controllers count], self.view.frame.size.height - _menuHeight)];
 }
 
 - (void)didReceiveMemoryWarning
@@ -78,9 +71,7 @@
 {
     _menuHeight = 40.0;
     
-    _contentScrollView = [[UIScrollView alloc] initWithFrame:CGRectMake(0.0,_menuHeight + _statusHeight,
-                                                                        self.view.frame.size.width,
-                                                                        self.view.frame.size.height - _menuHeight -_statusHeight)];
+    _contentScrollView = [[UIScrollView alloc] initWithFrame:CGRectMake(0.0, _menuHeight, self.view.frame.size.width, self.view.frame.size.height - _menuHeight)];
     [_contentScrollView setPagingEnabled:YES];
     [_contentScrollView setDelegate:self];
     _contentScrollView.bounces = NO;
@@ -92,46 +83,26 @@
         // Create content view
         UIViewController *controller = [_controllers objectAtIndex:i];
 
-        [[controller view] setFrame:CGRectMake(i * _contentScrollView.frame.size.width,
-                                               0.0,
-                                               _contentScrollView.frame.size.width,
-                                               _contentScrollView.frame.size.height)];
+        [[controller view] setFrame:CGRectMake(i * _contentScrollView.frame.size.width, 0.0, _contentScrollView.frame.size.width, _contentScrollView.frame.size.height)];
         [_contentScrollView addSubview:[controller view]];
         
         // Create button
-        UIButton *tab = [[UIButton alloc] initWithFrame:CGRectMake(i * tabWidth, _statusHeight, tabWidth, _menuHeight)];
+        UIButton *tab = [[UIButton alloc] initWithFrame:CGRectMake(i * tabWidth, 0, tabWidth, _menuHeight)];
         [tab setTitle:controller.title forState:UIControlStateNormal];
         [tab setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
         [tab addTarget:self action:@selector(selectTab:) forControlEvents:UIControlEventTouchUpInside];
         [self.view addSubview:tab];
         [_tabs addObject:tab];
-
-//remove separators
-//        // Add separator
-//        if( i>0 )
-//        {
-//            UIView *sep = [[UIView alloc] initWithFrame:CGRectMake(i*tabWidth,
-//                                                                   10 + _statusHeight,
-//                                                                   1,
-//                                                                   20)];
-//            [sep setBackgroundColor:[UIColor colorWithWhite:0.7 alpha:1.0]];
-//            [self.view addSubview:sep];
-//        }
     }
     
     UIButton *tab = [_tabs objectAtIndex:0];
     [tab setSelected:YES];
     selectedTab = 0;
-    _indicatorView.frame = CGRectMake(0.0, _menuHeight + _statusHeight - 5.0, tabWidth, 5.0);
-    [self.view addSubview:_indicatorView];
-    
-    UIView *bottomHeaderView = [[UIView alloc]initWithFrame:CGRectMake(0.0, _menuHeight + _statusHeight - 1.0, self.view.frame.size.width, 1.0)];
-    bottomHeaderView.backgroundColor = _indicatorView.backgroundColor;
-    [self.view addSubview:bottomHeaderView];
-    
-    [self.view addSubview:_contentScrollView];
 
-    NSLog(@"++++++++++++++++0");
+    _indicatorView.frame = CGRectMake(0, _menuHeight-3, tabWidth, 3);
+    [self.view addSubview:_indicatorView];
+
+    [self.view addSubview:_contentScrollView];
 }
 
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView
@@ -139,21 +110,16 @@
     CGFloat width = scrollView.frame.size.width;
     int page = (scrollView.contentOffset.x + (0.5f * width)) / width;
     float tabWidth = _indicatorView.frame.size.width;
-    _indicatorView.frame = CGRectMake(page * tabWidth, _menuHeight + _statusHeight - 5.0, tabWidth, 5.0);
+    _indicatorView.frame = CGRectMake(page * tabWidth, _menuHeight-3, tabWidth, 3);
     [self deselectAllTabs];
     UIButton *tab = [_tabs objectAtIndex:page];
     [tab setSelected:YES];
-
-    NSLog(@"++++++++++++++++1");
 }
 
 - (void)selectTab:(id)sender
 {
     selectedTab = [_tabs indexOfObject:sender];
-    CGRect rect = CGRectMake(self.view.frame.size.width * selectedTab,
-                             0.0,
-                             self.view.frame.size.width,
-                             _contentScrollView.contentSize.height);
+    CGRect rect = CGRectMake(self.view.frame.size.width * selectedTab, 0.0, self.view.frame.size.width, _contentScrollView.contentSize.height);
     [_contentScrollView scrollRectToVisible:rect animated:YES];
     [self deselectAllTabs];
     [sender setSelected:YES];
@@ -162,8 +128,6 @@
     {
         [_delegate currentTabHasChanged:selectedTab];
     }
-
-    NSLog(@"++++++++++++++++2");
 }
 
 - (void)deselectAllTabs
@@ -183,8 +147,6 @@
     }
     UIButton *tab = [_tabs objectAtIndex:index];
     [self selectTab:tab];
-
-    NSLog(@"++++++++++++++++3");
 }
 
 - (NSInteger)selectedTab
