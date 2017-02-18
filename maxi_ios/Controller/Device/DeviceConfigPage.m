@@ -116,8 +116,7 @@
 }
 
 -(void)doUnbindDevice:(UIGestureRecognizer *)gestureRecognizer {
-    DeviceMainPage * page = [[DeviceMainPage alloc] initIsFirstPage:NO];
-    [self.navigationController pushViewController:page animated:YES];
+    [self.navigationController popViewControllerAnimated:YES];
 }
 
 @end

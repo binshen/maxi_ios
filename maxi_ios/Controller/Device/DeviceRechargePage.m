@@ -67,8 +67,7 @@
 }
 
 -(void)doRechargeDevice:(UIGestureRecognizer *)gestureRecognizer {
-    DeviceConfigPage * page = [[DeviceConfigPage alloc] initIsFirstPage:NO];
-    [self.navigationController pushViewController:page animated:YES];
+    [self.navigationController popViewControllerAnimated:YES];
 }
 
 -(void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event
