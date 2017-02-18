@@ -18,7 +18,10 @@
     [super viewDidLoad];
     
     self.barBackgroudImage = @"NavigationBar";
-    [super viewDidLoad];
+
+    NSDictionary *dic = [NSDictionary dictionaryWithObjects:[NSArray arrayWithObjects:[UIColor whiteColor], [UIFont systemFontOfSize:20 weight:20], nil] forKeys:[NSArray arrayWithObjects:NSForegroundColorAttributeName, NSFontAttributeName, nil]];
+    self.navigationController.navigationBar.titleTextAttributes = dic;
+    [self.view setBackgroundColor:[UIColor whiteColor]];
 }
 
 - (void)didReceiveMemoryWarning {

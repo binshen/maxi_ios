@@ -20,10 +20,6 @@
     [super viewDidLoad];
 
     self.title = @"淼溪净水";
-    NSDictionary *dic = [NSDictionary dictionaryWithObjects:[NSArray arrayWithObjects:[UIColor whiteColor], [UIFont systemFontOfSize:18 weight:20], nil] forKeys:[NSArray arrayWithObjects:NSForegroundColorAttributeName, NSFontAttributeName, nil]];
-    self.navigationController.navigationBar.titleTextAttributes = dic;
-    [self.view setBackgroundColor:[UIColor whiteColor]];
-
     UIImage* backImage = [UIImage imageNamed:@"btn_back2"];
     UIButton* backButton= [[UIButton alloc] initWithFrame:CGRectMake(0,0,16,20)];
     [backButton setBackgroundImage:backImage forState:UIControlStateNormal];
