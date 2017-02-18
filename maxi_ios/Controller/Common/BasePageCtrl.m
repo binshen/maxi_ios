@@ -52,13 +52,14 @@
     self.view.backgroundColor = BGCOLOR;
     //[self.navigationController.navigationBar setBackgroundImage:[UIImage imageNamed:@"白色图"] forBarMetrics:UIBarMetricsDefault];////why? zxt
 
-    UILabel *titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, 44)];
-    titleLabel.font = [UIFont boldSystemFontOfSize:10.0f];
-    titleLabel.textColor = NAVIGATIONTINTCOLOR;
-    titleLabel.text = self.title;
-    titleLabel.backgroundColor = [UIColor clearColor];
-    titleLabel.textAlignment = NSTextAlignmentCenter;
-    [self.view addSubview:titleLabel];
+//去除统一的标题
+//    UILabel *titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, 44)];
+//    titleLabel.font = [UIFont boldSystemFontOfSize:10.0f];
+//    titleLabel.textColor = NAVIGATIONTINTCOLOR;
+//    titleLabel.text = self.title;
+//    titleLabel.backgroundColor = [UIColor clearColor];
+//    titleLabel.textAlignment = NSTextAlignmentCenter;
+//    [self.view addSubview:titleLabel];
 
     if ([self respondsToSelector:@selector(edgesForExtendedLayout)])
     {

@@ -89,8 +89,9 @@
         // Create button
         UIButton *tab = [[UIButton alloc] initWithFrame:CGRectMake(i * tabWidth, 0, tabWidth, _menuHeight)];
         [tab setTitle:controller.title forState:UIControlStateNormal];
-        [tab setFont:FONT15];
+        [tab setFont:[UIFont boldSystemFontOfSize:15]];
         [tab setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+        [tab setTitleColor:BLUE_TEXT_COLOR_2 forState:UIControlStateSelected];
         [tab addTarget:self action:@selector(selectTab:) forControlEvents:UIControlEventTouchUpInside];
         [self.view addSubview:tab];
         [_tabs addObject:tab];
@@ -114,7 +115,6 @@
     _indicatorView.frame = CGRectMake(page * tabWidth+30, _menuHeight-3, tabWidth-60, 3);
     [self deselectAllTabs];
     UIButton *tab = [_tabs objectAtIndex:page];
-    [tab setFont:[UIFont boldSystemFontOfSize:15]];
     [tab setSelected:YES];
 }
 
@@ -137,8 +137,7 @@
     for (UIButton *tab in _tabs)
     {
         [tab setSelected:NO];
-        [tab setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
-        [tab setFont:FONT15];
+        //[tab setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
     }
 }
 

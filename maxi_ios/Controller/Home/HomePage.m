@@ -192,7 +192,7 @@
     view2.frame = CGRectMake(0, x_height+35, SCREEN_WIDTH, h1+h3+30);
     [containerView addSubview:view2];
 
-    containerView.contentSize = CGSizeMake(self.view.frame.size.width, x_height+h1+h2+65);
+    containerView.contentSize = CGSizeMake(self.view.frame.size.width, x_height+h1+h2+178);
     [self.view addSubview:containerView];
 }
 
