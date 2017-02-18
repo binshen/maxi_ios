@@ -16,6 +16,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 
+    NSDictionary *dic = [NSDictionary dictionaryWithObjects:[NSArray arrayWithObjects:[UIColor blackColor], [UIFont systemFontOfSize:20 weight:20], nil] forKeys:[NSArray arrayWithObjects:NSForegroundColorAttributeName, NSFontAttributeName, nil]];
+    self.navigationController.navigationBar.titleTextAttributes = dic;
 }
 
 @end

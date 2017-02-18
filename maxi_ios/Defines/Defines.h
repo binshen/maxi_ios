@@ -89,6 +89,8 @@ blue:((float)(rgbValue & 0xFF))/255.0 alpha:1.0]
 #define RED_TEXT_COLOR kUIColorFromRGB(0xff7d91)
 #define ORANGE_TEXT_COLOR kUIColorFromRGB(0xff7b47)
 
+#define MAIN_TAB_ACTIVE_COLOR kUIColorFromRGB(0x2698fa)
+
 // 字体定义
 #define FONT8 [UIFont systemFontOfSize:8.0]
 #define FONT10 [UIFont systemFontOfSize:10.0]

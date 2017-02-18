@@ -57,8 +57,12 @@
         navPage = [[UINavigationController alloc] initWithRootViewController:pageController];
         
         pageController.title = pageInfo.name;
-        pageController.tabBarItem.image = [UIImage imageNamed:pageInfo.image];
-        
+        pageController.tabBarItem.image = [[UIImage imageNamed:pageInfo.image] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+        pageController.tabBarItem.selectedImage = [[UIImage imageNamed:pageInfo.selectImage] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+
+        //[[UITabBarItem appearance] setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:[UIColor blackColor], NSForegroundColorAttributeName, [UIFont fontWithName:@"Helvetica" size:12.0f],NSFontAttributeName,nil] forState:UIControlStateNormal];
+        [[UITabBarItem appearance] setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:MAIN_TAB_ACTIVE_COLOR, NSForegroundColorAttributeName,nil] forState:UIControlStateSelected];
+
         [controllers addObject:navPage];
     }
     
