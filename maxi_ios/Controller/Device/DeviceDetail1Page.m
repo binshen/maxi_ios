@@ -42,6 +42,11 @@
     lbl13.font = FONT15;
     [self.view addSubview:lbl13];
 
+    UIImage *img_s = [UIImage imageNamed:@"bg_separator"];
+    UIImageView *imgView_s = [[UIImageView alloc] initWithFrame:CGRectMake(0, 35+h, SCREEN_WIDTH, 1)];
+    imgView_s.image = img_s;
+    [self.view addSubview:imgView_s];
+
     UIImage *img2 = [UIImage imageNamed:@"icon_1_2"];
     UIImageView *imgView2 = [[UIImageView alloc] initWithFrame:CGRectMake(20, 50+h, w, h)];
     imgView2.image = img2;

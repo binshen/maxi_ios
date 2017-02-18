@@ -82,6 +82,7 @@
 		3514A6E7FA70A8B7E2FEE2B0 /* OrderPage.m in Sources */ = {isa = PBXBuildFile; fileRef = 3514A632B20BC506A465D0F9 /* OrderPage.m */; };
 		3514A6ED609CA95F8C451A8D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3514A2E7D51F162980E86758 /* Main.storyboard */; };
 		3514A703B1ED5A0741F8D9D4 /* icon5_wmdc@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3514A2C92528436942812AC2 /* icon5_wmdc@2x.png */; };
+		3514A7051F51700F2022454C /* bg_separator@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3514A98FAF1F638F76F0C360 /* bg_separator@2x.png */; };
 		3514A719C62F75BEADC0B3D2 /* Global.m in Sources */ = {isa = PBXBuildFile; fileRef = 3514AE939A22788E8671AF0E /* Global.m */; };
 		3514A7219A4316EB9E84D4FE /* MBProgressHUD+Add.m in Sources */ = {isa = PBXBuildFile; fileRef = 3514AA78D972291FC3FF5A7F /* MBProgressHUD+Add.m */; };
 		3514A727F4E9B47A2DD15E9C /* SDCycleScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3514AB03820B594FE1B888EA /* SDCycleScrollView.m */; };
@@ -369,6 +370,7 @@
 		3514A965D83F40332E855028 /* icon_2_1@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_2_1@2x.png"; sourceTree = "<group>"; };
 		3514A96A1B31EBA3C6B40F00 /* UIImage+GIF.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+GIF.m"; sourceTree = "<group>"; };
 		3514A982F263A9A08C27C860 /* DeviceInfoWidget.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DeviceInfoWidget.h; sourceTree = "<group>"; };
+		3514A98FAF1F638F76F0C360 /* bg_separator@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bg_separator@2x.png"; sourceTree = "<group>"; };
 		3514A99A1CCA5E7C71F24301 /* ResponseInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ResponseInfo.m; sourceTree = "<group>"; };
 		3514A9ADF835F3F3D5ED26C6 /* DeviceDetail2Page.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DeviceDetail2Page.m; sourceTree = "<group>"; };
 		3514A9B4210917B946B399AA /* demo_ad1@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "demo_ad1@2x.png"; sourceTree = "<group>"; };
@@ -696,6 +698,7 @@
 				3514A637DB5CFD70FF16776A /* icon_2_7@2x.png */,
 				3514AC56EF6C5991BEB0094A /* icon_2_7days@2x.png */,
 				3514AEC3ECB3BF965295F9D9 /* icon_2_rest@2x.png */,
+				3514A98FAF1F638F76F0C360 /* bg_separator@2x.png */,
 			);
 			path = images;
 			sourceTree = "<group>";
@@ -1270,6 +1273,7 @@
 				3514AC541167776485557091 /* icon_2_7@2x.png in Resources */,
 				3514AF4478D51E2FB75AC6DE /* icon_2_7days@2x.png in Resources */,
 				3514A81D1E45FBBC8FCF9B02 /* icon_2_rest@2x.png in Resources */,
+				3514A7051F51700F2022454C /* bg_separator@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

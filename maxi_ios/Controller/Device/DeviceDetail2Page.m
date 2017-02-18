@@ -30,6 +30,11 @@
     lbl_a.font = FONT15;
     [self.view addSubview:lbl_a];
 
+    UIImage *img_s = [UIImage imageNamed:@"bg_separator"];
+    UIImageView *imgView_s = [[UIImageView alloc] initWithFrame:CGRectMake(0, 30+h_a, SCREEN_WIDTH, 1)];
+    imgView_s.image = img_s;
+    [self.view addSubview:imgView_s];
+
     UIImage *img_b = [UIImage imageNamed:@"icon_2_rest"];
     UIImageView *imgView_b = [[UIImageView alloc] initWithFrame:CGRectMake(20, 40+h_a, w_a, h_a)];
     imgView_b.image = img_b;
@@ -88,7 +93,7 @@
     lbl31.textColor = [UIColor grayColor];
     lbl31.font = FONT12;
     [self.view addSubview:lbl31];
-    UILabel *lbl32 = [[UILabel alloc] initWithFrame:CGRectMake(SCREEN_WIDTH-60, height+25+h, 40, h)];
+    UILabel *lbl32 = [[UILabel alloc] initWithFrame:CGRectMake(SCREEN_WIDTH-60, height+25+2*h, 40, h)];
     lbl32.text = @"0L";
     lbl32.textAlignment = NSTextAlignmentRight;
     lbl32.textColor = [UIColor blueColor];
