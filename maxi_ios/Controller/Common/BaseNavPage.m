@@ -93,6 +93,15 @@
     else
         self.navigationItem.leftBarButtonItem = item;
 }
+
+-(BOOL)textFieldShouldReturn:(UITextField *)textField
+{
+    if ([textField isFirstResponder]) {
+        [textField resignFirstResponder];
+    }
+    return YES;
+}
+
 /*
 #pragma mark - Navigation
 

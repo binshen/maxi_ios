@@ -113,4 +113,11 @@
 
 }
 
+-(void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event
+{
+    [self textFieldShouldReturn:userPhoneTextField];
+    [self textFieldShouldReturn:userCodeTextField];
+    [self textFieldShouldReturn:userPasswordTextField];
+}
+
 @end

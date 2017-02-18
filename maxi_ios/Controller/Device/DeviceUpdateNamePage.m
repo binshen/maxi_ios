@@ -8,6 +8,7 @@
 
 @interface DeviceUpdateNamePage() {
 
+    UITextField * deviceNameTextField;
 }
 @end
 
@@ -31,10 +32,10 @@
     label.font = FONT18;
     [self.view addSubview:label];
 
-    UITextField *textField = [[UITextField alloc] initWithFrame:CGRectMake(120, 20, SCREEN_WIDTH - 140, 50)];
-    textField.text = @"淼溪净水器123";
-    textField.font = FONT18;
-    [self.view addSubview:textField];
+    deviceNameTextField = [[UITextField alloc] initWithFrame:CGRectMake(120, 20, SCREEN_WIDTH - 140, 50)];
+    deviceNameTextField.text = @"淼溪净水器123";
+    deviceNameTextField.font = FONT18;
+    [self.view addSubview:deviceNameTextField];
 
     UIImageView *imageView = [[UIImageView alloc] initWithFrame:CGRectMake(20, SCREEN_HEIGHT-130, SCREEN_WIDTH-40, 40)];
     imageView.image = [UIImage imageNamed:@"btn_save_device_name"];
@@ -46,6 +47,11 @@
 -(void)doRenameDevice:(UIGestureRecognizer *)gestureRecognizer {
     DeviceConfigPage * page = [[DeviceConfigPage alloc] initIsFirstPage:NO];
     [self.navigationController pushViewController:page animated:YES];
+}
+
+-(void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event
+{
+    [self textFieldShouldReturn:deviceNameTextField];
 }
 
 @end

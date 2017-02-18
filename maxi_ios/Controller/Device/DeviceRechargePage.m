@@ -8,6 +8,7 @@
 
 @interface DeviceRechargePage() {
 
+    UITextField * rechargeValueTextField;
 }
 @end
 
@@ -42,11 +43,11 @@
     label2.font = FONT18;
     [self.view addSubview:label2];
 
-    UITextField *textField2 = [[UITextField alloc] initWithFrame:CGRectMake(120, 70, SCREEN_WIDTH - 140, 50)];
-    textField2.placeholder = @"请输入充值金额";
-    textField2.text = @"";
-    textField2.font = FONT18;
-    [self.view addSubview:textField2];
+    rechargeValueTextField = [[UITextField alloc] initWithFrame:CGRectMake(120, 70, SCREEN_WIDTH - 140, 50)];
+    rechargeValueTextField.placeholder = @"请输入充值金额";
+    rechargeValueTextField.text = @"";
+    rechargeValueTextField.font = FONT18;
+    [self.view addSubview:rechargeValueTextField];
 
     UIImageView *imageView = [[UIImageView alloc] initWithFrame:CGRectMake(20, SCREEN_HEIGHT-130, SCREEN_WIDTH-40, 40)];
     imageView.image = [UIImage imageNamed:@"btn_confirm_recharge"];
@@ -58,6 +59,11 @@
 -(void)doRechargeDevice:(UIGestureRecognizer *)gestureRecognizer {
     DeviceConfigPage * page = [[DeviceConfigPage alloc] initIsFirstPage:NO];
     [self.navigationController pushViewController:page animated:YES];
+}
+
+-(void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event
+{
+    [self textFieldShouldReturn:rechargeValueTextField];
 }
 
 @end
