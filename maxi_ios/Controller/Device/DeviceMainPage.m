@@ -149,4 +149,37 @@
     [self.navigationController pushViewController:page animated:YES];
 }
 
+//- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
+//{
+//    static NSString *ID = @"header";
+//    // 先从缓存池中找header
+//    UITableViewHeaderFooterView *header = [tableView dequeueReusableHeaderFooterViewWithIdentifier:ID];
+//
+//    UILabel *label = nil;
+//    if (header == nil) { // 缓存池中有，自己创建
+//        header = [[UITableViewHeaderFooterView alloc] initWithReuseIdentifier:ID];
+//        header.contentView.backgroundColor = [UIColor blackColor];
+//
+//        label = [[UILabel alloc] init];
+//        label.textColor = MAIN_TAB_ACTIVE_COLOR;
+////        label.width = 200;
+////        label.x = TopicCellMargin;
+//        label.autoresizingMask = UIViewAutoresizingFlexibleHeight;
+//        label.tag = 99;
+//        [header.contentView addSubview:label];
+//    }else{
+//        // 从缓冲池中取出来
+//        label = (UILabel *)[header viewWithTag:99];
+//    }
+//
+//    // 设置文字
+//    if (section == 0) {
+//        label.text = @"最热评论";
+//    }else{
+//        label.text = @"最新评论";
+//    }
+//
+//    return header;
+//}
+
 @end

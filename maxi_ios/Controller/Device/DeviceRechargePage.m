@@ -26,16 +26,21 @@
     self.navigationItem.leftBarButtonItem = leftBarButtonItem;
 
 
-    UILabel *label1 = [[UILabel alloc] initWithFrame:CGRectMake(20, 20, 100, 50)];
+    UILabel *label1 = [[UILabel alloc] initWithFrame:CGRectMake(20, 10, 100, 50)];
     label1.textAlignment = NSTextAlignmentLeft;
     label1.text = @"充值设备：";
     label1.font = FONT18;
     [self.view addSubview:label1];
 
-    UILabel *textField1 = [[UILabel alloc] initWithFrame:CGRectMake(120, 20, SCREEN_WIDTH - 140, 50)];
+    UILabel *textField1 = [[UILabel alloc] initWithFrame:CGRectMake(120, 10, SCREEN_WIDTH - 140, 50)];
     textField1.text = @"淼溪净水器123";
     textField1.font = FONT18;
     [self.view addSubview:textField1];
+
+    UIImage *img_s1 = [UIImage imageNamed:@"bg_separator"];
+    UIImageView *imgView_s1 = [[UIImageView alloc] initWithFrame:CGRectMake(20, 65, SCREEN_WIDTH-40, 1)];
+    imgView_s1.image = img_s1;
+    [self.view addSubview:imgView_s1];
 
     UILabel *label2 = [[UILabel alloc] initWithFrame:CGRectMake(20, 70, 100, 50)];
     label2.textAlignment = NSTextAlignmentLeft;
@@ -48,6 +53,11 @@
     rechargeValueTextField.text = @"";
     rechargeValueTextField.font = FONT18;
     [self.view addSubview:rechargeValueTextField];
+
+    UIImage *img_s2 = [UIImage imageNamed:@"bg_separator"];
+    UIImageView *imgView_s2 = [[UIImageView alloc] initWithFrame:CGRectMake(20, 125, SCREEN_WIDTH-40, 1)];
+    imgView_s2.image = img_s2;
+    [self.view addSubview:imgView_s2];
 
     UIImageView *imageView = [[UIImageView alloc] initWithFrame:CGRectMake(20, SCREEN_HEIGHT-130, SCREEN_WIDTH-40, 40)];
     imageView.image = [UIImage imageNamed:@"btn_confirm_recharge"];
