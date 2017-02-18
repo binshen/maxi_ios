@@ -106,16 +106,17 @@
         [self.view addSubview:tab];
         [_tabs addObject:tab];
 
-        // Add separator
-        if( i>0 )
-        {
-            UIView *sep = [[UIView alloc] initWithFrame:CGRectMake(i*tabWidth,
-                                                                   10 + _statusHeight,
-                                                                   1,
-                                                                   20)];
-            [sep setBackgroundColor:[UIColor colorWithWhite:0.7 alpha:1.0]];
-            [self.view addSubview:sep];
-        }
+//remove separators
+//        // Add separator
+//        if( i>0 )
+//        {
+//            UIView *sep = [[UIView alloc] initWithFrame:CGRectMake(i*tabWidth,
+//                                                                   10 + _statusHeight,
+//                                                                   1,
+//                                                                   20)];
+//            [sep setBackgroundColor:[UIColor colorWithWhite:0.7 alpha:1.0]];
+//            [self.view addSubview:sep];
+//        }
     }
     
     UIButton *tab = [_tabs objectAtIndex:0];
@@ -129,6 +130,8 @@
     [self.view addSubview:bottomHeaderView];
     
     [self.view addSubview:_contentScrollView];
+
+    NSLog(@"++++++++++++++++0");
 }
 
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView
@@ -140,6 +143,8 @@
     [self deselectAllTabs];
     UIButton *tab = [_tabs objectAtIndex:page];
     [tab setSelected:YES];
+
+    NSLog(@"++++++++++++++++1");
 }
 
 - (void)selectTab:(id)sender
@@ -157,6 +162,8 @@
     {
         [_delegate currentTabHasChanged:selectedTab];
     }
+
+    NSLog(@"++++++++++++++++2");
 }
 
 - (void)deselectAllTabs
@@ -176,6 +183,8 @@
     }
     UIButton *tab = [_tabs objectAtIndex:index];
     [self selectTab:tab];
+
+    NSLog(@"++++++++++++++++3");
 }
 
 - (NSInteger)selectedTab

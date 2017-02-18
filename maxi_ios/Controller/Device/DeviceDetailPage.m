@@ -69,7 +69,9 @@
     [self.view addSubview:label4];
 
     UIScrollView *containerView = [[UIScrollView alloc] initWithFrame:CGRectMake(0, _height+80, SCREEN_WIDTH, SCREEN_HEIGHT-_height-80)];
-    JPTabViewController *tabViewController = [[JPTabViewController alloc] initWithControllers:@[[[DeviceDetail1Page alloc] init], [[DeviceDetail2Page alloc] init]]];
+    UIViewController *page1 = [[DeviceDetail1Page alloc] init];
+    UIViewController *page2 = [[DeviceDetail2Page alloc] init];
+    JPTabViewController *tabViewController = [[JPTabViewController alloc] initWithControllers:@[page1, page2]];
     [containerView addSubview:tabViewController.view];
 
     [self.view addSubview:containerView];
