@@ -89,6 +89,7 @@
         // Create button
         UIButton *tab = [[UIButton alloc] initWithFrame:CGRectMake(i * tabWidth, 0, tabWidth, _menuHeight)];
         [tab setTitle:controller.title forState:UIControlStateNormal];
+        [tab setFont:FONT15];
         [tab setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
         [tab addTarget:self action:@selector(selectTab:) forControlEvents:UIControlEventTouchUpInside];
         [self.view addSubview:tab];
@@ -99,7 +100,7 @@
     [tab setSelected:YES];
     selectedTab = 0;
 
-    _indicatorView.frame = CGRectMake(0, _menuHeight-3, tabWidth, 3);
+    _indicatorView.frame = CGRectMake(30, _menuHeight-3, tabWidth-60, 3);
     [self.view addSubview:_indicatorView];
 
     [self.view addSubview:_contentScrollView];
@@ -109,10 +110,11 @@
 {
     CGFloat width = scrollView.frame.size.width;
     int page = (scrollView.contentOffset.x + (0.5f * width)) / width;
-    float tabWidth = _indicatorView.frame.size.width;
-    _indicatorView.frame = CGRectMake(page * tabWidth, _menuHeight-3, tabWidth, 3);
+    float tabWidth = _indicatorView.frame.size.width+60;
+    _indicatorView.frame = CGRectMake(page * tabWidth+30, _menuHeight-3, tabWidth-60, 3);
     [self deselectAllTabs];
     UIButton *tab = [_tabs objectAtIndex:page];
+    [tab setFont:[UIFont boldSystemFontOfSize:15]];
     [tab setSelected:YES];
 }
 
@@ -123,7 +125,7 @@
     [_contentScrollView scrollRectToVisible:rect animated:YES];
     [self deselectAllTabs];
     [sender setSelected:YES];
-    
+
     if(_delegate && [_delegate respondsToSelector:@selector(currentTabHasChanged:)] )
     {
         [_delegate currentTabHasChanged:selectedTab];
@@ -136,6 +138,7 @@
     {
         [tab setSelected:NO];
         [tab setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+        [tab setFont:FONT15];
     }
 }
 
