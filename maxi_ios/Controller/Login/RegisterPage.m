@@ -35,6 +35,7 @@
     userPhoneTextField.leftViewMode = UITextFieldViewModeAlways;
     userPhoneTextField.contentVerticalAlignment = UIControlContentVerticalAlignmentCenter;
     userPhoneTextField.delegate = self;
+    userPhoneTextField.keyboardType = UIKeyboardTypeNumberPad;
     [userPhoneTextField setSecureTextEntry:YES];
     [self.view addSubview:userPhoneTextField];
     UIView *lineView1 = [[UIView alloc]initWithFrame:CGRectMake(0, 36, SCREEN_WIDTH-40, 1)];
@@ -49,6 +50,7 @@
     userCodeTextField.leftViewMode = UITextFieldViewModeAlways;
     userCodeTextField.contentVerticalAlignment = UIControlContentVerticalAlignmentCenter;
     userCodeTextField.delegate = self;
+    userCodeTextField.keyboardType = UIKeyboardTypeNumberPad;
     [userCodeTextField setSecureTextEntry:YES];
     [self.view addSubview:userCodeTextField];
     UIView *lineView2 = [[UIView alloc]initWithFrame:CGRectMake(0, 36, SCREEN_WIDTH-150, 1)];

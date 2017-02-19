@@ -7,7 +7,7 @@
 
 @implementation Global
 
-NSString * const MORAL_API_BASE_PATH = @"api.7drlb.com";
+NSString * const MAXI_API_BASE_PATH = @"120.55.161.114:8888";
 
 NSMutableDictionary * _loginUser;
 NSMutableDictionary * _selectedDevice;

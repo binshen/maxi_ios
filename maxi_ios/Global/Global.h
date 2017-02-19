@@ -29,7 +29,7 @@
 
 
 
-extern NSString * const MORAL_API_BASE_PATH;
+extern NSString * const MAXI_API_BASE_PATH;
 extern NSMutableDictionary * _loginUser;
 extern NSMutableDictionary * _selectedDevice;
 

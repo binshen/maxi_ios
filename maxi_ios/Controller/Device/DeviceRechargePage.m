@@ -45,6 +45,7 @@
     rechargeValueTextField.placeholder = @"请输入充值金额";
     rechargeValueTextField.text = @"";
     rechargeValueTextField.font = FONT18;
+    rechargeValueTextField.keyboardType = UIKeyboardTypeDecimalPad;
     [self.view addSubview:rechargeValueTextField];
 
     UIImage *img_s2 = [UIImage imageNamed:@"bg_separator"];
