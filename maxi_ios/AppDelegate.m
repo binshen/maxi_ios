@@ -41,7 +41,6 @@
     UINavigationController *nav = [[UINavigationController alloc]initWithRootViewController:root];//先将root添加在navigation上
     nav.navigationBarHidden = YES;
     [self.window setRootViewController:nav];//navigation加在window上
-
     [self.window makeKeyAndVisible];
 }
 
@@ -53,7 +52,7 @@
 
     [self showNaviPage];
 
-    [[UITextField appearance] setTintColor:[UIColor blackColor]];
+    [[UITextField appearance] setTintColor:[UIColor lightGrayColor]];
 
     return YES;
 }

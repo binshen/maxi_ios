@@ -25,9 +25,9 @@
     self.title = @"登录";
 
     userPhoneTextField = [[UITextField alloc] initWithFrame:CGRectMake(20, 25, SCREEN_WIDTH-40, 35)];
-    userPhoneTextField.placeholder = @"  请输入手机号";
-    UIImageView *textImageView1 = [[UIImageView alloc] initWithFrame:CGRectMake(-20, 0, 32, 30)];
-    textImageView1.image = [UIImage imageNamed:@"shouji"];
+    userPhoneTextField.placeholder = @"请输入手机号";
+    UIImageView *textImageView1 = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 25, 25)];
+    textImageView1.image = [UIImage imageNamed:@"txt_shouji"];
     userPhoneTextField.leftView = textImageView1;
     userPhoneTextField.leftViewMode = UITextFieldViewModeAlways;
     userPhoneTextField.contentVerticalAlignment = UIControlContentVerticalAlignmentCenter;
@@ -39,9 +39,9 @@
     [userPhoneTextField addSubview:lineView1];
 
     userPasswordTextField = [[UITextField alloc] initWithFrame:CGRectMake(20, 75, SCREEN_WIDTH-40, 35)];
-    userPasswordTextField.placeholder = @"  请输入6-16位密码";
-    UIImageView *textImageView3 = [[UIImageView alloc] initWithFrame:CGRectMake(-20, 0, 32, 30)];
-    textImageView3.image = [UIImage imageNamed:@"mima"];
+    userPasswordTextField.placeholder = @"请输入6-16位密码";
+    UIImageView *textImageView3 = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 25, 25)];
+    textImageView3.image = [UIImage imageNamed:@"txt_mima"];
     userPasswordTextField.leftView = textImageView3;
     userPasswordTextField.leftViewMode = UITextFieldViewModeAlways;
     userPasswordTextField.contentVerticalAlignment = UIControlContentVerticalAlignmentCenter;
