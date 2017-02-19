@@ -58,6 +58,8 @@
     [self.view addSubview:_tableView];
 
     [self loadDeviceInfoList:YES];
+
+    self.hidesBottomBarWhenPushed = YES;
 }
 
 -(void)viewWillAppear:(BOOL)animated {
