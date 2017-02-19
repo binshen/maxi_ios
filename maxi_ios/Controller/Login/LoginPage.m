@@ -137,8 +137,7 @@
             else
             {
                 [UserDefault setObject:@"0" forKey:@"isLogin"];
-                NSString *error = [json objectForKey:@"error"];
-                [Global alertMessageEx:error title:@"登录失败" okTtitle:nil cancelTitle:@"确定" delegate:self];
+                [Global alertMessageEx:[json objectForKey:@"error"] title:@"登录失败" okTtitle:nil cancelTitle:@"确定" delegate:self];
             }
         }
     }];

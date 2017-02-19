@@ -120,7 +120,7 @@
         {
             NSDictionary *json = [NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:&error];
             BASE_INFO_FUN(json);
-            NSInteger *code = [[json objectForKey:@"code"] integerValue];
+            long code = [[json objectForKey:@"code"] longValue];
             if (code >= 0)
             {
                 //发送成功提示
@@ -128,7 +128,7 @@
             }
             else
             {
-                [Global alertMessageEx:@"网络故障，请稍候重试" title:@"错误信息" okTtitle:nil cancelTitle:@"OK" delegate:self];
+                [Global alertMessageEx:[json objectForKey:@"error"] title:@"错误信息" okTtitle:nil cancelTitle:@"OK" delegate:self];
             }
         }
     }];
@@ -182,8 +182,7 @@
                 }
                 else
                 {
-                    NSString *error = [json objectForKey:@"error"];
-                    [Global alertMessageEx:error title:@"错误信息" okTtitle:nil cancelTitle:@"OK" delegate:self];
+                    [Global alertMessageEx:[json objectForKey:@"error"] title:@"错误信息" okTtitle:nil cancelTitle:@"OK" delegate:self];
                 }
             }
         }];
