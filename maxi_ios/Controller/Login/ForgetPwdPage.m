@@ -101,7 +101,7 @@
 }
 
 -(void)doResetPwd:(UIGestureRecognizer *)gestureRecognizer {
-
+    [self.navigationController popViewControllerAnimated:YES];
 }
 
 -(void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event

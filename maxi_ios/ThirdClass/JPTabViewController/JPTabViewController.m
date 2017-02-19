@@ -142,7 +142,7 @@
 }
 
 - (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView {
-    NSLog(@"+++++++++++++++++++++5");
+    //NSLog(@"+++++++++++++++++++++5");
 }
 
 
