@@ -35,7 +35,7 @@
     [userPhoneTextField setSecureTextEntry:YES];
     [self.view addSubview:userPhoneTextField];
     UIView *lineView1 = [[UIView alloc]initWithFrame:CGRectMake(0, 36, SCREEN_WIDTH-40, 1)];
-    lineView1.backgroundColor = kUIColorFromRGB(0x1b96fe);
+    lineView1.backgroundColor = BLUE_TEXT_BOTTOM_COLOR;
     [userPhoneTextField addSubview:lineView1];
 
     userPasswordTextField = [[UITextField alloc] initWithFrame:CGRectMake(20, 75, SCREEN_WIDTH-40, 35)];
@@ -49,7 +49,7 @@
     [userPasswordTextField setSecureTextEntry:YES];
     [self.view addSubview:userPasswordTextField];
     UIView *lineView3 = [[UIView alloc]initWithFrame:CGRectMake(0, 36, SCREEN_WIDTH-40, 1)];
-    lineView3.backgroundColor = kUIColorFromRGB(0x1b96fe);
+    lineView3.backgroundColor = BLUE_TEXT_BOTTOM_COLOR;
     [userPasswordTextField addSubview:lineView3];
 
     lblForgetPassword = [[GloriaLabel alloc] initWithFrame:CGRectMake(SCREEN_WIDTH-110, 125, 90, 35)];

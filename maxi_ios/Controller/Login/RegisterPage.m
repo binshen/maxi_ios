@@ -38,7 +38,7 @@
     [userPhoneTextField setSecureTextEntry:YES];
     [self.view addSubview:userPhoneTextField];
     UIView *lineView1 = [[UIView alloc]initWithFrame:CGRectMake(0, 36, SCREEN_WIDTH-40, 1)];
-    lineView1.backgroundColor = kUIColorFromRGB(0x1b96fe);
+    lineView1.backgroundColor = BLUE_TEXT_BOTTOM_COLOR;
     [userPhoneTextField addSubview:lineView1];
 
     userCodeTextField = [[UITextField alloc] initWithFrame:CGRectMake(20, 75, SCREEN_WIDTH-150, 35)];
@@ -52,7 +52,7 @@
     [userCodeTextField setSecureTextEntry:YES];
     [self.view addSubview:userCodeTextField];
     UIView *lineView2 = [[UIView alloc]initWithFrame:CGRectMake(0, 36, SCREEN_WIDTH-150, 1)];
-    lineView2.backgroundColor = kUIColorFromRGB(0x1b96fe);
+    lineView2.backgroundColor = BLUE_TEXT_BOTTOM_COLOR;
     [userCodeTextField addSubview:lineView2];
 
     userPasswordTextField = [[UITextField alloc] initWithFrame:CGRectMake(20, 125, SCREEN_WIDTH-40, 35)];
@@ -66,7 +66,7 @@
     [userPasswordTextField setSecureTextEntry:YES];
     [self.view addSubview:userPasswordTextField];
     UIView *lineView3 = [[UIView alloc]initWithFrame:CGRectMake(0, 36, SCREEN_WIDTH-40, 1)];
-    lineView3.backgroundColor = kUIColorFromRGB(0x1b96fe);
+    lineView3.backgroundColor = BLUE_TEXT_BOTTOM_COLOR;
     [userPasswordTextField addSubview:lineView3];
 
     btnRequestCodeView = [[UIImageView alloc] initWithFrame:CGRectMake(SCREEN_WIDTH-110, 75, 90, 35)];
@@ -78,7 +78,7 @@
 
     getCheckCodeLabel = [[GloriaLabel alloc] initWithFrame:CGRectMake(SCREEN_WIDTH-110, 75, 90, 35)];
     getCheckCodeLabel.font = FONT14;
-    getCheckCodeLabel.textColor = kUIColorFromRGB(0x1b96fe);
+    getCheckCodeLabel.textColor = BLUE_TEXT_BOTTOM_COLOR;
     getCheckCodeLabel.textAlignment = NSTextAlignmentCenter;
     getCheckCodeLabel.text = @"获取验证码";
     [self.view addSubview:getCheckCodeLabel];

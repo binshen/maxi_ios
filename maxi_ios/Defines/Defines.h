@@ -91,6 +91,7 @@ blue:((float)(rgbValue & 0xFF))/255.0 alpha:1.0]
 #define MAIN_SEPARATOR_COLOR kUIColorFromRGB(0xf2f2f2)
 #define MAIN_AD_BORDER_COLOR kUIColorFromRGB(0xf1f1f1)
 #define MAIN_TAB_ACTIVE_COLOR kUIColorFromRGB(0x2698fa)
+#define BLUE_TEXT_BOTTOM_COLOR kUIColorFromRGB(0x1b96fe)
 
 // 字体定义
 #define FONT8 [UIFont systemFontOfSize:8.0]
