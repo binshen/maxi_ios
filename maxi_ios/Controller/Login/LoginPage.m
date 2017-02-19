@@ -5,7 +5,6 @@
 
 #import "LoginPage.h"
 #import "GloriaLabel.h"
-#import "RegisterPage.h"
 #import "ForgetPwdPage.h"
 
 @interface LoginPage() {
@@ -147,21 +146,6 @@
     [host startRequest:request];
 }
 
--(void)registAction
-{
-    // 调转注册界面操作
-    RegisterPage * registerPage = [[RegisterPage alloc] initIsFirstPage:NO];
-    [self.navigationController pushViewController:registerPage animated:YES];
-}
-
--(void)fogotPwdAction
-{
-//    // 调转重置界面操作
-//    FogetPwdPage * fogetPwdPage = [[FogetPwdPage alloc] initIsFirstPage:NO];
-//    [self.navigationController pushViewController:fogetPwdPage animated:YES];
-
-}
-
 -(BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string
 {
     NSInteger textLength = 0;
@@ -174,32 +158,19 @@
         textLength = textField.text.length+1;
     }
 
-    BOOL flag = NO;
+    BOOL flag = YES;
     if( textField == userPhoneTextField )
     {
-        // 检测手机号是否合法
-        if( textLength == 11 && [StringUtil isMobile:[userPhoneTextField.text stringByAppendingString:string]] == NO)
-        {
-            [Global alertMessage:@"手机号码不合法，请重新输入！"];
-        }
+//        // 检测手机号是否合法
+//        if( textLength == 11 && [StringUtil isMobile:[userPhoneTextField.text stringByAppendingString:string]] == NO)
+//        {
+//            [Global alertMessage:@"手机号码不合法，请重新输入！"];
+//        }
 
         // 大于11位数不让输入
         if( textLength > 11 )
             return NO;
     }
-
-    flag = YES;
-    if (flag)
-    {
-//        [loginBtn setBackgroundColor:BLUECOLOR];
-//        loginBtn.userInteractionEnabled = YES;
-    }
-    else
-    {
-//        loginBtn.backgroundColor = [UIColor lightGrayColor];
-//        loginBtn.userInteractionEnabled = NO;
-    }
-
     return flag;
 }
 

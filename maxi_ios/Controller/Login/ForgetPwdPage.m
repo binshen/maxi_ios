@@ -146,7 +146,7 @@
     }
     else if(userPasswordTextField.text.length == 0)
     {
-        [Global alertMessageEx:@"请输入新密码." title:@"错误信息" okTtitle:nil cancelTitle:@"OK" delegate:self];
+        [Global alertMessageEx:@"请输入6-16位新密码." title:@"错误信息" okTtitle:nil cancelTitle:@"OK" delegate:self];
     }
     else
     {
@@ -196,6 +196,41 @@
     [self textFieldShouldReturn:userPhoneTextField];
     [self textFieldShouldReturn:userCodeTextField];
     [self textFieldShouldReturn:userPasswordTextField];
+}
+
+-(BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string
+{
+    NSInteger textLength = 0;
+
+    if ([string isEqualToString:@""]) {
+        textLength = textField.text.length-1;
+    }
+    else
+    {
+        textLength = textField.text.length+1;
+    }
+
+    BOOL flag = YES;
+    if( textField == userPhoneTextField )
+    {
+//        // 检测手机号是否合法
+//        if( textLength == 11 && [StringUtil isMobile:[userPhoneTextField.text stringByAppendingString:string]] == NO)
+//        {
+//            [Global alertMessage:@"手机号码不合法，请重新输入！"];
+//        }
+
+        // 大于11位数不让输入
+        if( textLength > 11 )
+            return NO;
+    }
+
+    if( textField == userCodeTextField )
+    {
+        // 大于6位数不让输入
+        if( textLength > 6 )
+            return NO;
+    }
+    return flag;
 }
 
 #pragma mark custom function begin
