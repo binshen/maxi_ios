@@ -150,7 +150,7 @@
     }
     else
     {
-        NSString *path = [[NSString alloc] initWithFormat:@"/user/register"];
+        NSString *path = [[NSString alloc] initWithFormat:@"/user/forget_password"];
         NSMutableDictionary *param = [[NSMutableDictionary alloc] init];
         [param setValue:userPhoneTextField.text forKey:@"tel"];
         [param setValue:userPasswordTextField.text forKey:@"password"];
