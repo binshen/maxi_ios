@@ -92,16 +92,103 @@
 }
 
 //获取验证码
--(void)getCheckCodeAction {
-
-}
-
 -(void)doRequestCode:(UIGestureRecognizer *)gestureRecognizer {
+    if(userPhoneTextField.text.length == 0)
+    {
+        [Global alertMessageEx:@"请输入手机号." title:@"错误信息" okTtitle:nil cancelTitle:@"OK" delegate:self];
+        return;
+    }
 
+    NSString *path = [[NSString alloc] initWithFormat:@"/user/request_code"];
+    NSMutableDictionary *param = [[NSMutableDictionary alloc] init];
+    [param setValue:userPhoneTextField.text forKey:@"tel"];
+
+    MKNetworkHost *host = [[MKNetworkHost alloc] initWithHostName:MAXI_API_BASE_PATH];
+    host.defaultParameterEncoding = MKNKParameterEncodingJSON;
+    MKNetworkRequest *request = [host requestWithPath:path params:param httpMethod:HTTPPOST];
+    BASE_INFO_FUN(param);
+    [request addCompletionHandler: ^(MKNetworkRequest *completedRequest) {
+
+        NSError *error = [completedRequest error];
+        NSData *data = [completedRequest responseData];
+
+        if(data == nil)
+        {
+            [Global alertMessageEx:[error localizedDescription] title:@"错误信息" okTtitle:nil cancelTitle:@"OK" delegate:self];
+        }
+        else
+        {
+            NSDictionary *json = [NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:&error];
+            BASE_INFO_FUN(json);
+            NSInteger *code = [[json objectForKey:@"code"] integerValue];
+            if (code >= 0)
+            {
+                //发送成功提示
+                [self startCountDown];
+            }
+            else
+            {
+                [Global alertMessageEx:@"网络故障，请稍候重试" title:@"错误信息" okTtitle:nil cancelTitle:@"OK" delegate:self];
+            }
+        }
+    }];
+    [host startRequest:request];
 }
 
 -(void)doResetPwd:(UIGestureRecognizer *)gestureRecognizer {
-    [self.navigationController popViewControllerAnimated:YES];
+    if(userPhoneTextField.text.length == 0)
+    {
+        [Global alertMessageEx:@"请输入手机号." title:@"错误信息" okTtitle:nil cancelTitle:@"OK" delegate:self];
+    }
+    else if(userCodeTextField.text.length == 0)
+    {
+        [Global alertMessageEx:@"请输入验证码." title:@"错误信息" okTtitle:nil cancelTitle:@"OK" delegate:self];
+    }
+    else if(userPasswordTextField.text.length == 0)
+    {
+        [Global alertMessageEx:@"请输入新密码." title:@"错误信息" okTtitle:nil cancelTitle:@"OK" delegate:self];
+    }
+    else
+    {
+        NSString *path = [[NSString alloc] initWithFormat:@"/user/register"];
+        NSMutableDictionary *param = [[NSMutableDictionary alloc] init];
+        [param setValue:userPhoneTextField.text forKey:@"tel"];
+        [param setValue:userPasswordTextField.text forKey:@"password"];
+        [param setValue:userCodeTextField.text forKey:@"code"];
+        [param setValue:@"XXXX" forKey:@"name"];
+
+        MKNetworkHost *host = [[MKNetworkHost alloc] initWithHostName:MAXI_API_BASE_PATH];
+        host.defaultParameterEncoding = MKNKParameterEncodingJSON;
+        MKNetworkRequest *request = [host requestWithPath:path params:param httpMethod:HTTPPOST];
+        BASE_INFO_FUN(param);
+        [request addCompletionHandler: ^(MKNetworkRequest *completedRequest) {
+
+            NSError *error = [completedRequest error];
+            NSData *data = [completedRequest responseData];
+
+            if(data == nil)
+            {
+                [Global alertMessageEx:[error localizedDescription] title:@"错误信息" okTtitle:nil cancelTitle:@"OK" delegate:self];
+            }
+            else
+            {
+                NSDictionary *json = [NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:&error];
+                BASE_INFO_FUN(json);
+                long code = [[json objectForKey:@"code"] longValue];
+                if (code >= 0)
+                {
+                    //[Global alertMessageEx:@"恭喜你，账号注册成功!" title:@"提示信息" okTtitle:nil cancelTitle:@"OK" delegate:self];
+                    [self.navigationController popViewControllerAnimated:YES];
+                }
+                else
+                {
+                    NSString *error = [json objectForKey:@"error"];
+                    [Global alertMessageEx:error title:@"错误信息" okTtitle:nil cancelTitle:@"OK" delegate:self];
+                }
+            }
+        }];
+        [host startRequest:request];
+    }
 }
 
 -(void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event
@@ -110,5 +197,48 @@
     [self textFieldShouldReturn:userCodeTextField];
     [self textFieldShouldReturn:userPasswordTextField];
 }
+
+#pragma mark custom function begin
+////倒计时提醒
+-(void)startCountDown{
+    __block int timeout = 59; //倒计时时间
+    dispatch_queue_t queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
+    //    dispatch_source_t _timer = dispatch_source_create(DISPATCH_SOURCE_TYPE_TIMER, 0, 0,queue);
+    _timer = dispatch_source_create(DISPATCH_SOURCE_TYPE_TIMER, 0, 0,queue);
+    dispatch_source_set_timer(_timer,dispatch_walltime(NULL, 0),1.0*NSEC_PER_SEC, 0); //每秒执行
+    dispatch_source_set_event_handler(_timer, ^{
+        if(timeout<=0){ //倒计时结束，关闭
+            dispatch_source_cancel(_timer);
+            dispatch_async(dispatch_get_main_queue(), ^{
+                //设置界面的按钮显示 根据自己需求设置
+                btnRequestCodeView.userInteractionEnabled=YES;
+                btnRequestCodeView.alpha=1;
+
+                //[sendBtn setTitle:@"重新获取验证码" forState:UIControlStateNormal];
+                getCheckCodeLabel.text = @"重新获取";
+
+            });
+        }
+        else
+        {
+            int seconds = timeout % 60;
+            NSString *strTime = [NSString stringWithFormat:@"%.2d", seconds];
+
+            dispatch_async(dispatch_get_main_queue(), ^{
+                //设置界面的按钮显示 根据自己需求设置
+                FxLog(@"____%@",strTime);
+                btnRequestCodeView.userInteractionEnabled=NO;
+                btnRequestCodeView.alpha=0.4;
+                //[sendBtn setTitle:[NSString stringWithFormat:@"%@s",strTime] forState:UIControlStateNormal];
+                getCheckCodeLabel.text = [NSString stringWithFormat:@"剩余%@秒",strTime];
+            });
+
+            timeout--;
+
+        }
+    });
+    dispatch_resume(_timer);
+}
+# pragma mark custom function end
 
 @end

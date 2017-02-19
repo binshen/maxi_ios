@@ -118,18 +118,18 @@
             NSDictionary *json = [NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:&error];
             BASE_INFO_FUN(json);
 
-            NSInteger *code = [[json objectForKey:@"code"] integerValue];
-            NSDictionary *user = [json objectForKey:@"content"];
-            if (code >= 0 && ![user isEqual:[NSNull null]])
+            long code = [[json objectForKey:@"code"] longValue];
+            NSDictionary *content = [json objectForKey:@"content"];
+            if (code >= 0 && ![content isEqual:[NSNull null]])
             {
-                _loginUser = [user mutableCopy];
+                _loginUser = [content mutableCopy];
 
                 // 存储用户信息
                 [UserDefault setObject:@"1" forKey:@"isLogin"];
-                [UserDefault setObject:user[@"_id"] forKey:@"_id"];
-                [UserDefault setObject:user[@"tel"] forKey:@"tel"];
-                [UserDefault setObject:user[@"password"] forKey:@"password"];
-                [UserDefault setObject:user[@"name"] forKey:@"name"];
+                [UserDefault setObject:content[@"_id"] forKey:@"_id"];
+                [UserDefault setObject:content[@"tel"] forKey:@"tel"];
+                [UserDefault setObject:content[@"password"] forKey:@"password"];
+                [UserDefault setObject:content[@"name"] forKey:@"name"];
                 [UserDefault synchronize];//使用synchronize强制立即将数据写入磁盘,防止在写完NSUserDefaults后程序退出导致的数据丢失
 
                 // 跳转主界面
@@ -138,7 +138,8 @@
             else
             {
                 [UserDefault setObject:@"0" forKey:@"isLogin"];
-                [Global alertMessageEx:@"输入的用户名或密码错误." title:@"登录失败" okTtitle:nil cancelTitle:@"确定" delegate:self];
+                NSString *error = [json objectForKey:@"error"];
+                [Global alertMessageEx:error title:@"登录失败" okTtitle:nil cancelTitle:@"确定" delegate:self];
             }
         }
     }];
