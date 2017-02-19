@@ -11,7 +11,7 @@
 
 @interface HomePage() {
 
-
+    MBProgressHUD *HUD;
 }
 @end
 
@@ -214,25 +214,94 @@
 }
 
 -(void)clickIcon2Handler:(id)sender {
+    HUD = [[MBProgressHUD alloc] initWithView:self.view];
+    [self.view addSubview:HUD];
+    HUD.labelText = @"您点击了：智能家居";
+    HUD.mode = MBProgressHUDModeCustomView;
+    [HUD showAnimated:YES whileExecutingBlock:^{
+        sleep(1);
+    } completionBlock:^{
+        [HUD removeFromSuperview];
+        HUD = nil;
+    }];
 }
 
 -(void)clickIcon3Handler:(id)sender {
+    HUD = [[MBProgressHUD alloc] initWithView:self.view];
+    [self.view addSubview:HUD];
+    HUD.labelText = @"您点击了：远程医疗";
+    HUD.mode = MBProgressHUDModeCustomView;
+    [HUD showAnimated:YES whileExecutingBlock:^{
+        sleep(1);
+    } completionBlock:^{
+        [HUD removeFromSuperview];
+        HUD = nil;
+    }];
 }
 
 -(void)clickIcon4Handler:(id)sender {
+    HUD = [[MBProgressHUD alloc] initWithView:self.view];
+    [self.view addSubview:HUD];
+    HUD.labelText = @"您点击了：便民服务";
+    HUD.mode = MBProgressHUDModeCustomView;
+    [HUD showAnimated:YES whileExecutingBlock:^{
+        sleep(1);
+    } completionBlock:^{
+        [HUD removeFromSuperview];
+        HUD = nil;
+    }];
 }
 
 -(void)clickIcon5Handler:(id)sender {
+    HUD = [[MBProgressHUD alloc] initWithView:self.view];
+    [self.view addSubview:HUD];
+    HUD.labelText = @"您点击了：外卖订餐";
+    HUD.mode = MBProgressHUDModeCustomView;
+    [HUD showAnimated:YES whileExecutingBlock:^{
+        sleep(1);
+    } completionBlock:^{
+        [HUD removeFromSuperview];
+        HUD = nil;
+    }];
 }
 
 -(void)clickIcon6Handler:(id)sender {
+    HUD = [[MBProgressHUD alloc] initWithView:self.view];
+    [self.view addSubview:HUD];
+    HUD.labelText = @"您点击了：蔬果生鲜";
+    HUD.mode = MBProgressHUDModeCustomView;
+    [HUD showAnimated:YES whileExecutingBlock:^{
+        sleep(1);
+    } completionBlock:^{
+        [HUD removeFromSuperview];
+        HUD = nil;
+    }];
 }
 
 -(void)clickIcon7Handler:(id)sender {
+    HUD = [[MBProgressHUD alloc] initWithView:self.view];
+    [self.view addSubview:HUD];
+    HUD.labelText = @"您点击了：装修建材";
+    HUD.mode = MBProgressHUDModeCustomView;
+    [HUD showAnimated:YES whileExecutingBlock:^{
+        sleep(1);
+    } completionBlock:^{
+        [HUD removeFromSuperview];
+        HUD = nil;
+    }];
 }
 
 -(void)clickIcon8Handler:(id)sender {
+    HUD = [[MBProgressHUD alloc] initWithView:self.view];
+    [self.view addSubview:HUD];
+    HUD.labelText = @"您点击了：社区资讯";
+    HUD.mode = MBProgressHUDModeCustomView;
+    [HUD showAnimated:YES whileExecutingBlock:^{
+        sleep(1);
+    } completionBlock:^{
+        [HUD removeFromSuperview];
+        HUD = nil;
+    }];
 }
-
 
 @end
