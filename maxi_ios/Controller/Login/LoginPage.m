@@ -33,7 +33,6 @@
     userPhoneTextField.contentVerticalAlignment = UIControlContentVerticalAlignmentCenter;
     userPhoneTextField.delegate = self;
     userPhoneTextField.keyboardType = UIKeyboardTypeNumberPad;
-    [userPhoneTextField setSecureTextEntry:YES];
     [self.view addSubview:userPhoneTextField];
     UIView *lineView1 = [[UIView alloc]initWithFrame:CGRectMake(0, 36, SCREEN_WIDTH-40, 1)];
     lineView1.backgroundColor = BLUE_TEXT_BOTTOM_COLOR;
@@ -82,68 +81,69 @@
 
 -(void)doUserLogin:(UIGestureRecognizer *)gestureRecognizer {
 
-    [GetAppDelegate showMainPage];
+//    [GetAppDelegate showMainPage];
 
-//    // 执行登录操作
-//    MBProgressHUD *HUD = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
-//    HUD.labelText = @"登录中...";
-//    // 隐藏时候从父控件中移除
-//    HUD.removeFromSuperViewOnHide = YES;
-//    // YES代表需要蒙版效果
-//    HUD.dimBackground = YES;
-//
-//    NSString *path = [[NSString alloc] initWithFormat:@"/user/login"];
-//    NSMutableDictionary *param = [[NSMutableDictionary alloc] init];
-//    [param setValue:userPhoneTextField.text forKey:@"tel"];
-//    [param setValue:userPasswordTextField.text forKey:@"password"];
-//
-//    MKNetworkHost *host = [[MKNetworkHost alloc] initWithHostName:MAXI_API_BASE_PATH];
-//    MKNetworkRequest *request = [host requestWithPath:path params:param httpMethod:HTTPPOST];
-//    BASE_INFO_FUN(param);
-//    [request addCompletionHandler: ^(MKNetworkRequest *completedRequest) {
-//
-//        HUD.hidden = YES;
-//
-//        //NSString *response = [completedRequest responseAsString];
-//        NSError *error = [completedRequest error];
-//        NSData *data = [completedRequest responseData];
-//
-//        if (data == nil)
-//        {
-//            BASE_ERROR_FUN(error);
-//            [Global alertMessageEx:@"请检查网络." title:@"登录失败" okTtitle:nil cancelTitle:@"确定" delegate:self];
-//        }
-//        else
-//        {
-//            NSDictionary *json = [NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:&error];
-//            NSString *success = [json objectForKey:@"code"];
-//            BASE_INFO_FUN(json);
-//            NSDictionary *user = [json objectForKey:@"user"];
-//            if (success != nil && [success boolValue] && ![user isEqual:[NSNull null]])
-//            {
-////                _loginUser = [user mutableCopy];
-////
-////                // 存储用户信息
-////                [UserDefault setObject:@"1" forKey:@"isLogin"];
-////                [UserDefault setObject:user[@"_id"] forKey:@"user_id"];
-////                [UserDefault setObject:user[@"username"] forKey:@"username"];
-////                [UserDefault setObject:user[@"password"] forKey:@"password"];
-////                [UserDefault setObject:user[@"email"] forKey:@"email"];
-////                [UserDefault setObject:user[@"nickname"] forKey:@"nickname"];
-////                [UserDefault synchronize];//使用synchronize强制立即将数据写入磁盘,防止在写完NSUserDefaults后程序退出导致的数据丢失
-//
-//                // 跳转主界面
-//                [GetAppDelegate showMainPage];
-//            }
-//            else
-//            {
-//                [UserDefault setObject:@"0" forKey:@"isLogin"];
-//                [Global alertMessageEx:@"输入的用户名或密码错误." title:@"登录失败" okTtitle:nil cancelTitle:@"确定" delegate:self];
-//            }
-//        }
-//    }];
-//
-//    [host startRequest:request];
+    // 执行登录操作
+    MBProgressHUD *HUD = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+    HUD.labelText = @"登录中...";
+    // 隐藏时候从父控件中移除
+    HUD.removeFromSuperViewOnHide = YES;
+    // YES代表需要蒙版效果
+    HUD.dimBackground = YES;
+
+    NSString *path = [[NSString alloc] initWithFormat:@"/user/login"];
+    NSMutableDictionary *param = [[NSMutableDictionary alloc] init];
+    [param setValue:userPhoneTextField.text forKey:@"tel"];
+    [param setValue:userPasswordTextField.text forKey:@"password"];
+
+    MKNetworkHost *host = [[MKNetworkHost alloc] initWithHostName:MAXI_API_BASE_PATH];
+    host.defaultParameterEncoding = MKNKParameterEncodingJSON;
+    MKNetworkRequest *request = [host requestWithPath:path params:param httpMethod:HTTPPOST];
+    BASE_INFO_FUN(param);
+    [request addCompletionHandler: ^(MKNetworkRequest *completedRequest) {
+
+        HUD.hidden = YES;
+
+        //NSString *response = [completedRequest responseAsString];
+        NSError *error = [completedRequest error];
+        NSData *data = [completedRequest responseData];
+
+        if (data == nil)
+        {
+            BASE_ERROR_FUN(error);
+            [Global alertMessageEx:@"请检查网络." title:@"登录失败" okTtitle:nil cancelTitle:@"确定" delegate:self];
+        }
+        else
+        {
+            NSDictionary *json = [NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:&error];
+            BASE_INFO_FUN(json);
+
+            NSInteger *code = [[json objectForKey:@"code"] integerValue];
+            NSDictionary *user = [json objectForKey:@"content"];
+            if (code >= 0 && ![user isEqual:[NSNull null]])
+            {
+                _loginUser = [user mutableCopy];
+
+                // 存储用户信息
+                [UserDefault setObject:@"1" forKey:@"isLogin"];
+                [UserDefault setObject:user[@"_id"] forKey:@"_id"];
+                [UserDefault setObject:user[@"tel"] forKey:@"tel"];
+                [UserDefault setObject:user[@"password"] forKey:@"password"];
+                [UserDefault setObject:user[@"name"] forKey:@"name"];
+                [UserDefault synchronize];//使用synchronize强制立即将数据写入磁盘,防止在写完NSUserDefaults后程序退出导致的数据丢失
+
+                // 跳转主界面
+                [GetAppDelegate showMainPage];
+            }
+            else
+            {
+                [UserDefault setObject:@"0" forKey:@"isLogin"];
+                [Global alertMessageEx:@"输入的用户名或密码错误." title:@"登录失败" okTtitle:nil cancelTitle:@"确定" delegate:self];
+            }
+        }
+    }];
+
+    [host startRequest:request];
 }
 
 -(void)registAction
