@@ -20,12 +20,6 @@
     [super viewDidLoad];
 
     self.title = @"淼溪净水";
-    UIImage* backImage = [UIImage imageNamed:@"btn_back2"];
-    UIButton* backButton= [[UIButton alloc] initWithFrame:CGRectMake(0,0,16,20)];
-    [backButton setBackgroundImage:backImage forState:UIControlStateNormal];
-    [backButton addTarget:self action:@selector(backAction) forControlEvents:UIControlEventTouchUpInside];
-    UIBarButtonItem* leftBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:backButton];
-    self.navigationItem.leftBarButtonItem = leftBarButtonItem;
 
     UIImage* addImage = [UIImage imageNamed:@"btn_config"];
     UIButton* addButton= [[UIButton alloc] initWithFrame:CGRectMake(SCREEN_WIDTH-35,0,20,5)];

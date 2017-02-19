@@ -3,8 +3,8 @@
 // Copyright (c) 2017 Bin Shen. All rights reserved.
 //
 
-#import "BaseNavPage.h"
+#import "BaseDevicePage.h"
 
 
-@interface DeviceDetailPage : BaseNavPage<UITextFieldDelegate>
+@interface DeviceDetailPage : BaseDevicePage<UITextFieldDelegate>
 @end

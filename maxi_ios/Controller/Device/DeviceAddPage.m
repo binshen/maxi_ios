@@ -20,12 +20,6 @@
     [super viewDidLoad];
 
     self.title = @"设备配对";
-    UIImage *backImage = [UIImage imageNamed:@"btn_back2"];
-    UIButton *backButton = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 16, 20)];
-    [backButton setBackgroundImage:backImage forState:UIControlStateNormal];
-    [backButton addTarget:self action:@selector(backAction) forControlEvents:UIControlEventTouchUpInside];
-    UIBarButtonItem *leftBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:backButton];
-    self.navigationItem.leftBarButtonItem = leftBarButtonItem;
 
     TPKeyboardAvoidingScrollView *containerView = [[TPKeyboardAvoidingScrollView alloc] initWithFrame:self.view.frame];
 
