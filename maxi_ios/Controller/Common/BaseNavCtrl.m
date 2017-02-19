@@ -12,6 +12,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     self.navigationBar.backgroundColor = [UIColor whiteColor];
+    self.navigationBar.barTintColor = [UIColor whiteColor];
 
     [self.navigationBar setTitleTextAttributes:[
             NSDictionary dictionaryWithObjectsAndKeys:
@@ -35,6 +36,7 @@
     UIBarButtonItem *newBackButton = [[UIBarButtonItem alloc] initWithCustomView:backBtn];
 
     [[self navigationItem] setLeftBarButtonItem: newBackButton];
+
 }
 
 

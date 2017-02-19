@@ -3,5 +3,7 @@
 // Copyright (c) 2016 Bin Shen. All rights reserved.
 //
 
-@interface BaseNavCtrl : UINavigationController
+#import "CRNavigationController.h"
+
+@interface BaseNavCtrl : CRNavigationController
 @end

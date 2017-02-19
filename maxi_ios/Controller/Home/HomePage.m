@@ -21,6 +21,8 @@
     [super viewDidLoad];
 
     self.navigationController.navigationBar.backgroundColor = kUIColorFromRGB(0x2698f9);
+    self.navigationController.navigationBar.barTintColor = kUIColorFromRGB(0x2698f9);
+
     self.navigationItem.hidesBackButton = YES;
     UIImageView *imgView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"bg_logo"]];
     self.navigationItem.titleView = imgView;
