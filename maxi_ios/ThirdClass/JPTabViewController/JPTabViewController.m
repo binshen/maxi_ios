@@ -109,6 +109,7 @@
     int page = (scrollView.contentOffset.x + (0.5f * width)) / width;
     float tabWidth = _indicatorView.frame.size.width+60;
     _indicatorView.frame = CGRectMake(page * tabWidth+30, _menuHeight-3, tabWidth-60, 3);
+    selectedTab = page;
 }
 
 - (void)selectTab:(id)sender
@@ -142,8 +143,9 @@
 }
 
 - (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView {
-    //NSLog(@"+++++++++++++++++++++5");
+    //NSLog(@"%d", selectedTab);
+    [[_tabs objectAtIndex:selectedTab] setTitleColor:BLUE_TEXT_COLOR_2 forState:UIControlStateNormal];
+    [[_tabs objectAtIndex:selectedTab==0?1:0] setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
 }
-
 
 @end
