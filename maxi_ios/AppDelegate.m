@@ -53,6 +53,8 @@
 
     [self showNaviPage];
 
+    [[UITextField appearance] setTintColor:[UIColor blackColor]];
+
     return YES;
 }
 

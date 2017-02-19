@@ -7,6 +7,7 @@
 #import "DeviceAddPage.h"
 #import "DeviceDetailPage.h"
 #import "BaseNavCtrl.h"
+#import "MaxiTableViewCell.h"
 
 @interface DeviceMainPage()<UITableViewDataSource,UITableViewDelegate> {
 
@@ -71,9 +72,9 @@
 {
     deviceArray = [[NSMutableArray alloc] init];
 
-    NSDictionary *device1 = [NSDictionary dictionaryWithObjectsAndKeys:@"淼溪净水器设备1",@"name",@"1",@"status",@"出水水质：非常棒",@"desc",nil];
+    NSDictionary *device1 = [NSDictionary dictionaryWithObjectsAndKeys:@"淼溪净水器设备1\n",@"name",@"1",@"status",@"出水水质：非常棒",@"desc",nil];
     [deviceArray addObject:device1];
-    NSDictionary *device2 = [NSDictionary dictionaryWithObjectsAndKeys:@"淼溪净水器设备2",@"name",@"0",@"status",@"出水水质：不理想",@"desc",nil];
+    NSDictionary *device2 = [NSDictionary dictionaryWithObjectsAndKeys:@"淼溪净水器设备2\n",@"name",@"0",@"status",@"出水水质：不理想",@"desc",nil];
     [deviceArray addObject:device2];
 }
 
@@ -102,7 +103,7 @@
     NSString * identifier = @"deviceMainList";
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:identifier];
     if (nil == cell) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:identifier];
+        cell = [[MaxiTableViewCell alloc] initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:identifier];
         cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
     }
 
@@ -110,6 +111,7 @@
 
     NSUInteger row = [indexPath row];
     NSDictionary *device = [deviceArray objectAtIndex:row];
+    cell.textLabel.numberOfLines = 2;
     cell.textLabel.text = [device valueForKey:@"name"];
     int status = [device[@"status"] integerValue];
     if(status == 1) {
@@ -124,6 +126,13 @@
     cell.textLabel.font = FONT16;
     cell.textLabel.textColor = BLACKTEXTCOLOR_TITLE;
     cell.detailTextLabel.font = FONT14;
+
+    UILabel *labelDesc = [[UILabel alloc] initWithFrame:CGRectMake(cell.imageView.image.size.width+30, 30, 200, 30)];
+    labelDesc.text = [device valueForKey:@"desc"];
+    labelDesc.font = FONT13;
+    labelDesc.textAlignment = NSTextAlignmentLeft;
+    labelDesc.textColor = GRAY_TEXT_COLOR_2;
+    [cell.contentView addSubview:labelDesc];
 
     return cell;
 }
