@@ -16,8 +16,6 @@
 
 @property (nonatomic, strong) NSMutableArray *tabs;
 
-@property (nonatomic) float statusHeight;
-
 @property (nonatomic, strong) UIView *indicatorView;
 
 @end
@@ -90,15 +88,13 @@
         UIButton *tab = [[UIButton alloc] initWithFrame:CGRectMake(i * tabWidth, 0, tabWidth, _menuHeight)];
         [tab setTitle:controller.title forState:UIControlStateNormal];
         [tab setFont:[UIFont boldSystemFontOfSize:15]];
-        [tab setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
-        [tab setTitleColor:BLUE_TEXT_COLOR_2 forState:UIControlStateSelected];
+        [tab setTitleColor:i == 0 ? BLUE_TEXT_COLOR_2 : [UIColor blackColor] forState:UIControlStateNormal];
         [tab addTarget:self action:@selector(selectTab:) forControlEvents:UIControlEventTouchUpInside];
         [self.view addSubview:tab];
         [_tabs addObject:tab];
     }
     
     UIButton *tab = [_tabs objectAtIndex:0];
-    [tab setSelected:YES];
     selectedTab = 0;
 
     _indicatorView.frame = CGRectMake(30, _menuHeight-3, tabWidth-60, 3);
@@ -113,9 +109,6 @@
     int page = (scrollView.contentOffset.x + (0.5f * width)) / width;
     float tabWidth = _indicatorView.frame.size.width+60;
     _indicatorView.frame = CGRectMake(page * tabWidth+30, _menuHeight-3, tabWidth-60, 3);
-    [self deselectAllTabs];
-    UIButton *tab = [_tabs objectAtIndex:page];
-    [tab setSelected:YES];
 }
 
 - (void)selectTab:(id)sender
@@ -123,22 +116,14 @@
     selectedTab = [_tabs indexOfObject:sender];
     CGRect rect = CGRectMake(self.view.frame.size.width * selectedTab, 0.0, self.view.frame.size.width, _contentScrollView.contentSize.height);
     [_contentScrollView scrollRectToVisible:rect animated:YES];
-    [self deselectAllTabs];
-    [sender setSelected:YES];
 
     if(_delegate && [_delegate respondsToSelector:@selector(currentTabHasChanged:)] )
     {
         [_delegate currentTabHasChanged:selectedTab];
     }
-}
 
-- (void)deselectAllTabs
-{
-    for (UIButton *tab in _tabs)
-    {
-        [tab setSelected:NO];
-        //[tab setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
-    }
+    [[_tabs objectAtIndex:selectedTab] setTitleColor:BLUE_TEXT_COLOR_2 forState:UIControlStateNormal];
+    [[_tabs objectAtIndex:selectedTab==0?1:0] setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
 }
 
 - (void)selectTabNum:(NSInteger)index
@@ -155,5 +140,10 @@
 {
     return selectedTab;
 }
+
+- (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView {
+    NSLog(@"+++++++++++++++++++++5");
+}
+
 
 @end
