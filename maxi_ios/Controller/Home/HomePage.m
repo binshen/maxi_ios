@@ -122,8 +122,8 @@
     [icon8 addTarget:self action:@selector(clickIcon8Handler:) forControlEvents:UIControlEventTouchUpInside];
     [containerView addSubview:icon8];
 
-    UIImageView *sp1 = [[UIImageView alloc] initWithFrame:CGRectMake(0, 180+height*2, SCREEN_WIDTH, 3)];
-    sp1.image = [UIImage imageNamed:@"line_h_gray"];
+    UIView *sp1 = [[UIView alloc] initWithFrame:CGRectMake(0, 178+height*2, SCREEN_WIDTH, 5)];
+    sp1.backgroundColor = MAIN_SEPARATOR_COLOR;
     [containerView addSubview:sp1];
 
     UIImageView *sp_v1 = [[UIImageView alloc] initWithFrame:CGRectMake(0, 183+height*2, 5, 35)];
@@ -161,7 +161,7 @@
     ad14.image = img14;
     [view1 addSubview:ad14];
 
-    view1.backgroundColor = [UIColor lightGrayColor];
+    view1.backgroundColor = MAIN_AD_BORDER_COLOR;
     view1.frame = CGRectMake(0, 218+height*2, SCREEN_WIDTH, h1+h3+30);
     [containerView addSubview:view1];
 
@@ -190,7 +190,7 @@
     UIImageView *ad24 = [[UIImageView alloc] initWithFrame:CGRectMake((SCREEN_WIDTH-30)/2+20,h2+20,(SCREEN_WIDTH-30)/2, h4)];
     ad24.image = img14;
     [view2 addSubview:ad24];
-    view2.backgroundColor = [UIColor lightGrayColor];
+    view2.backgroundColor = MAIN_AD_BORDER_COLOR;
     view2.frame = CGRectMake(0, x_height+35, SCREEN_WIDTH, h1+h3+30);
     [containerView addSubview:view2];
 

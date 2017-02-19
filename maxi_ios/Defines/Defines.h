@@ -88,7 +88,8 @@ blue:((float)(rgbValue & 0xFF))/255.0 alpha:1.0]
 #define BLUE_TEXT_COLOR_2 kUIColorFromRGB(0x32a0ff)
 #define RED_TEXT_COLOR kUIColorFromRGB(0xff7d91)
 #define ORANGE_TEXT_COLOR kUIColorFromRGB(0xff7b47)
-
+#define MAIN_SEPARATOR_COLOR kUIColorFromRGB(0xf2f2f2)
+#define MAIN_AD_BORDER_COLOR kUIColorFromRGB(0xf1f1f1)
 #define MAIN_TAB_ACTIVE_COLOR kUIColorFromRGB(0x2698fa)
 
 // 字体定义
