@@ -3,7 +3,7 @@
 // Copyright (c) 2016 Bin Shen. All rights reserved.
 //
 
-#import "BaseNavPage.h"
+#import "BaseLoginPage.h"
 
-@interface RegisterPage : BaseNavPage<UITextFieldDelegate>
+@interface RegisterPage : BaseLoginPage<UITextFieldDelegate>
 @end

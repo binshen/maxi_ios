@@ -3,8 +3,8 @@
 // Copyright (c) 2017 Bin Shen. All rights reserved.
 //
 
-#import "BaseNavPage.h"
+#import "BaseLoginPage.h"
 
 
-@interface ForgetPwdPage : BaseNavPage<UITextFieldDelegate>
+@interface ForgetPwdPage : BaseLoginPage<UITextFieldDelegate>
 @end

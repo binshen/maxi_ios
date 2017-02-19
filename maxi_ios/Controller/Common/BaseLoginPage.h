@@ -6,5 +6,5 @@
 #import "BaseNavPage.h"
 
 
-@interface BaseDevicePage : BaseNavPage
+@interface BaseLoginPage : BaseNavPage
 @end

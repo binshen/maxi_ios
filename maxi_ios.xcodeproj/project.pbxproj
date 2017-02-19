@@ -77,6 +77,7 @@
 		3514A5B1E492B757D71E29DF /* DateUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 3514A6A62C7F3DBF7453A4B4 /* DateUtil.m */; };
 		3514A5C556B90B6C11FAAD37 /* UIButton+ImageTitleStyle.m in Sources */ = {isa = PBXBuildFile; fileRef = 3514A463CAC63D4F98DA6830 /* UIButton+ImageTitleStyle.m */; };
 		3514A5C885836DB3A61CE6C2 /* DeviceAddPage.m in Sources */ = {isa = PBXBuildFile; fileRef = 3514AA5C862CC6919D63542D /* DeviceAddPage.m */; };
+		3514A601228E3917A260CC00 /* BaseLoginPage.m in Sources */ = {isa = PBXBuildFile; fileRef = 3514A6C4589D448B519FD72C /* BaseLoginPage.m */; };
 		3514A6135153254504B06CE6 /* NearByPage.m in Sources */ = {isa = PBXBuildFile; fileRef = 3514A14B90FA1A9601EBE38C /* NearByPage.m */; };
 		3514A6236CEC6EA3BACC88F4 /* bg_device@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3514AB5F95EF9BD151B5D4DC /* bg_device@2x.png */; };
 		3514A684FFF1F1582F113C90 /* MKNetworkHost.m in Sources */ = {isa = PBXBuildFile; fileRef = 3514A077CE093F386E7F34AD /* MKNetworkHost.m */; };
@@ -274,6 +275,7 @@
 		3514A3DF0BD6D26E17F05F22 /* SDCycleScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDCycleScrollView.h; sourceTree = "<group>"; };
 		3514A3E436B04897B3AB7221 /* MaxiTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MaxiTableViewCell.h; sourceTree = "<group>"; };
 		3514A3E5D106A049DB7EB817 /* btn_config@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "btn_config@2x.png"; sourceTree = "<group>"; };
+		3514A3EB8C008A2D109C0341 /* BaseLoginPage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseLoginPage.h; sourceTree = "<group>"; };
 		3514A3F2D3117EBF06BC8482 /* RegisterPage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegisterPage.h; sourceTree = "<group>"; };
 		3514A400C189F6739872A84E /* PageInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PageInfo.h; sourceTree = "<group>"; };
 		3514A43272F33BE8BECC6B62 /* icon_1_4@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_1_4@2x.png"; sourceTree = "<group>"; };
@@ -333,6 +335,7 @@
 		3514A6B6AA7742EC360C1DA4 /* SBJsonStreamParserAccumulator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJsonStreamParserAccumulator.h; sourceTree = "<group>"; };
 		3514A6B9E989964801F7705B /* UIImageView+MKNKAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+MKNKAdditions.m"; sourceTree = "<group>"; };
 		3514A6C37E15C93FB9550A9F /* URLDefines.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = URLDefines.h; sourceTree = "<group>"; };
+		3514A6C4589D448B519FD72C /* BaseLoginPage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseLoginPage.m; sourceTree = "<group>"; };
 		3514A6D064461DAB91A23A81 /* UIImageView+WebCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+WebCache.m"; sourceTree = "<group>"; };
 		3514A6DDCCFB6C7B37762416 /* UIImageView+HighlightedWebCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+HighlightedWebCache.m"; sourceTree = "<group>"; };
 		3514A6DF1473D30BDB26EAB0 /* SBJsonUTF8Stream.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJsonUTF8Stream.m; sourceTree = "<group>"; };
@@ -856,6 +859,8 @@
 				3514AF0C5263A7C8271C052C /* MainPage.h */,
 				3514AC4EA53E5EEAE0EE441F /* BaseDevicePage.m */,
 				3514AF5ADD655153F0787DE1 /* BaseDevicePage.h */,
+				3514A6C4589D448B519FD72C /* BaseLoginPage.m */,
+				3514A3EB8C008A2D109C0341 /* BaseLoginPage.h */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -1457,6 +1462,7 @@
 				3514A40FE2E36D48A60585F0 /* CRNavigationBar.m in Sources */,
 				3514ADA3248D324C066563BA /* CRNavigationController.m in Sources */,
 				3514A2149AF24CA4DF5533F7 /* BaseDevicePage.m in Sources */,
+				3514A601228E3917A260CC00 /* BaseLoginPage.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -11,7 +11,6 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 
-    self.title = @"设备配对";
     UIImage *backImage = [UIImage imageNamed:@"btn_back2"];
     UIButton *backButton = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 16, 20)];
     [backButton setBackgroundImage:backImage forState:UIControlStateNormal];
