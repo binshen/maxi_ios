@@ -6,6 +6,7 @@
 #import "LoginPage.h"
 #import "GloriaLabel.h"
 #import "ForgetPwdPage.h"
+#import "MainPage.h"
 
 @interface LoginPage() {
     UITextField * userPhoneTextField;
@@ -132,7 +133,11 @@
                 [UserDefault synchronize];//使用synchronize强制立即将数据写入磁盘,防止在写完NSUserDefaults后程序退出导致的数据丢失
 
                 // 跳转主界面
-                [GetAppDelegate showMainPage];
+                //[GetAppDelegate showMainPage];
+
+                MainPage * page = [[MainPage alloc] init];
+                //[self.navigationController pushViewController:page animated:YES];
+                [self presentViewController:page animated:YES completion:nil];
             }
             else
             {
