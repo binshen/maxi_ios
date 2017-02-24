@@ -26,19 +26,20 @@
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     // Override point for customization after application launch.
     self.window.backgroundColor = [UIColor whiteColor];
-    MainPage *root = [[MainPage alloc]init];
+    MainPage *root = [[MainPage alloc] init];
     BaseNavCtrl *nav = [[BaseNavCtrl alloc]initWithRootViewController:root];//先将root添加在navigation上
     nav.navigationBarHidden = YES;
     [self.window setRootViewController:nav];//navigation加在window上
     [self.window makeKeyAndVisible];
 }
 
-- (void)showNaviPage {
+- (void)showNaviPage
+{
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     // Override point for customization after application launch.
     self.window.backgroundColor = [UIColor whiteColor];
-    NaviPage *root = [[NaviPage alloc]init];
-    UINavigationController *nav = [[UINavigationController alloc]initWithRootViewController:root];//先将root添加在navigation上
+    NaviPage *root = [[NaviPage alloc] init];
+    UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:root];//先将root添加在navigation上
     nav.navigationBarHidden = YES;
     [self.window setRootViewController:nav];//navigation加在window上
     [self.window makeKeyAndVisible];
@@ -48,12 +49,9 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
 
-    [NSThread sleepForTimeInterval:0.0];
-
+    //[NSThread sleepForTimeInterval:0.0];
     [self showNaviPage];
-
     [[UITextField appearance] setTintColor:[UIColor lightGrayColor]];
-
     return YES;
 }
 
